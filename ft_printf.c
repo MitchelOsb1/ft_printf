@@ -6,37 +6,37 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 20:02:54 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/12 16:48:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/15 18:27:41 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdbool.h>
 
-int	is_valid(char *str)
+int	is_valid(char *str, int i)
 {
-	static int i = 0;
-
-	if (str[i] == '%')
-		i++;
-	if (is_digit(str[i]))
-		return (1);
-	if (str[i] == CONV(str[i]))
-		return (1);
-	if (str[i] == FLAG(str[i]))
+	while (str[i])
 	{
-		i++;
-		if (is_digit(str[i]))
+		if (str[i] == CONV(str[i]))
 			return (1);
-	}
-	if (str[i] == '%')
-		return (1);
+		if (isdigit(str[i]) != | (str[i] == FLAG(str[i])))
+			return (check_width(str, i));
+		
+}
 }
 
-char	*parse_form(char *str)
+char	*parse_form(char *str, va_list input)
 {
-	while ()
+	int i;
+
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] == '')
+		if (str[i] == 's')
+			convert_s(str, i);
+		i++;
 	}
 }
 
@@ -49,9 +49,9 @@ int	ft_printf(char const *restrict str, ...)
 	va_start(input, str);
 	while(str[x])
 	{
-		if (*str == '%' && is_valid(str[x]))
+		if (str[x] == '%' && is_valid(str, x))
 		{
-			ret = parse_form(str);
+			ret = parse_form(str, input);
 		}
 		x++;
 	}
@@ -61,6 +61,6 @@ int	ft_printf(char const *restrict str, ...)
 
 int	main(void)
 {
-	ft_printf("%s", "Hello");
+	// ft_printf("%s", "Hello");
 	printf("%s", "hello\n");
 }
