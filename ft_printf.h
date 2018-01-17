@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/16 20:28:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/16 23:06:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@
 # define ZERO tools->zero
 # define SPACE tools->spac
 # define HASH tools->hash
-# define IFPREC tools->ifprec
 # define TYPE tools->type
 # define WIDTH tools.width
 # define PREC tools.precision
-# define ARG tools.argument
-# define RET tools.ret
+# define MODIFIER tools.modifier
+# define STR tools.str
 # define LEN tools.len
 
 typedef struct  s_tools
@@ -38,14 +37,11 @@ typedef struct  s_tools
     bool    zero;
     bool    space;
     bool    hash;
-    bool    ifprec;
-    bool    display;
     bool    star;
-    char    type;
     int     width;
     int     precision;
-    int     argument;
-    int     ret;
+    int     modifier;
+    int     str;
     int     len;
 }               t_tools;
 

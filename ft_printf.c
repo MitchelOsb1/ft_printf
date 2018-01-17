@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/16 20:27:23 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/17 00:06:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	init_tools(t_tools *format)
 	format->len = 0;
 }
 
-void	set_flags(char c, char *ret, int x)
+void	set_flags(char c, char *ret, int *x)
 {
 	struct s_tools i;
 
@@ -49,23 +49,33 @@ void	set_flags(char c, char *ret, int x)
 		i.hash=true;
 }
 
-void	set_width(char c)
+void	set_width(char *str, int *x)
 {
 	struct s_tools i;
 
-	if (ft_isdigit(c))
-		i.width *= c; // fix decimal val
+	while (ft_isdigit(str[x]) != 0 | str[x] == '*')
+	{
+		if (str[x] == '*' && str[x])
+			i.star=true;
+		else if (str[x] && str[x] >= 10)
+		{
+			i.width = i.width * 10 + (str[x] - 48);
+		}
+		x++;
+	}
 }
 	
 void	set_prec(char *str, int x)
 {
+	struct s_tools i;
+
 	if (str[x] == '.')
 		{
-			
+
 		}
 }
 
-char	*parse_form(char *str, char *ret, int x)
+char	*parse_form(char *str, char *ret, int *x)
 {
 	t_tools		format;
 
@@ -73,8 +83,8 @@ char	*parse_form(char *str, char *ret, int x)
 	while ((str[x] != '\0') && ((str[x] == FLAG(str[x])) | (str[x] == CONV(str[x])) |
 	 (str[x] == MOD(str[x])) | (ft_isdigit(str[x]) == 1) | (str[x] == '.')))
 	{
-		set_flags(str[x]);
-		set_width(str[x]); // Pass va_list 
+		set_flags(str, x);
+		set_width(str, x); // Pass va_list 
 		set_prec(str, x); // pass va_list
 		x++;
 	}
@@ -83,7 +93,6 @@ char	*parse_form(char *str, char *ret, int x)
 int	ft_printf(char const *restrict str, ...)
 {
 	char		*ret;
-	static int	i = -1;
 	static int	x = 0;
 	va_list		input;
 
@@ -92,8 +101,8 @@ int	ft_printf(char const *restrict str, ...)
 	{
 		if (str[x] == '%')
 			ret = parse_form((char *)str, x);
-		if (str[x] == ',')
-			print_arg(ret, str, x);
+		// if (str[x] == ',')
+		// 	print_arg(ret, str, x);
 		x++;
 	}
 	printf("%5.1s\n", ret);
