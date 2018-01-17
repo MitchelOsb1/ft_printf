@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/03 20:02:54 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/16 19:09:41 by mosborne         ###   ########.fr       */
+/*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
+/*   Updated: 2018/01/16 20:27:23 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ char	*parse_form(char *str, char *ret, int x)
 		set_prec(str, x); // pass va_list
 		x++;
 	}
-	return (str);
 }
 
 int	ft_printf(char const *restrict str, ...)
@@ -104,6 +103,7 @@ int	ft_printf(char const *restrict str, ...)
 
 int	main(void)
 {
-	ft_printf("%s: %s", "HeY", "Hello");
-	printf("\n%s", "hello\n");
+
+	// ft_printf("%s", "Hello");
+	printf("%s", "hello\n");
 }
