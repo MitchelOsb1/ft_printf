@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/17 17:38:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/18 13:47:58 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ typedef struct  s_tools
     c == 'c' || c == 'C')
 
 /* Modifier Flags */
-# define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'hh' || c == 'll')
+# define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'z' || c == 'q')
+
+/* Print Before Precent */
+void	print_prefix(char *str, int x);
 
 #endif
 
