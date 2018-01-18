@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/16 23:06:47 by marvin           ###   ########.fr       */
+/*   Updated: 2018/01/17 17:38:03 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct  s_tools
 }               t_tools;
 
 /* Spacing Flags */
-# define FLAG(c) (c == '-' || c == '0' || c == '+' || c == ' ' || c == '#')
+# define OP(c) (c == '-' || c == '0' || c == '+' || c == ' ' || c == '#')
 
 /* Conversion Flags */
 # define CONV(c) (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || \
