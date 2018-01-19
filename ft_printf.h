@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/18 13:47:58 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/19 14:03:29 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct  s_tools
     bool    hash;
     bool    star;
     int     width;
+    int     dot;
     int     precision;
     int     modifier;
     int     str;
@@ -54,10 +55,26 @@ typedef struct  s_tools
     c == 'c' || c == 'C')
 
 /* Modifier Flags */
-# define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'z' || c == 'q')
+# define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'q')
 
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
+void	set_mods(char *str, int *x, t_tools i);
+void	set_flags(char *str, int *x, t_tools i);
+void	set_prec(char *str, int *x, va_list input, t_tools i);
+void	set_width(char *str, int *x, va_list input, t_tools i);
+
+/*
+    Modifier Flags
+    0 = h
+    1 = hh
+    2 = l
+    3 = ll
+    4 = j
+    5 = z
+    6 = q
+*/
+
 
 #endif
 
@@ -67,12 +84,15 @@ void	print_prefix(char *str, int x);
 
 
 /*
-	while (f[*i] != '\0' && (f[*i] == '.' || f[*i] == '-' || f[*i] == '+' ||
-			f[*i] == ' ' || f[*i] == '#' || f[*i] == '0' || f[*i] == '*' ||
-			f[*i] == 'h' || f[*i] == 'l' || f[*i] == 'j' || f[*i] == 'z' ||
-			f[*i] == 'q' || (f[*i] >= '0' && f[*i] <= '9')))
+
+while (f[*i] > 47 && f[*i] < 58)
+				*i += 1;
 
 
+while ((f[*i] != '\0' && f[*i] > 47 && f[*i] < 58) || f[*i] == '-')
+                *i += 1;
+                
+                
 ** argument prototype: %[flags][width/margin][.precision][hh|h|l|ll|j|z]type
 **
 ** flags:			'+' || '-' || ' ' || '#' || '0';
