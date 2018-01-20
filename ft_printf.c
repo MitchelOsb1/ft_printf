@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/19 14:38:11 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/20 13:41:31 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <stdbool.h>
 
-void	init_tools(t_tools *format)
+void	init_tools(t_utils *format)
 {
 	format->minus = false;
 	format->plus = false;
@@ -31,47 +31,49 @@ void	init_tools(t_tools *format)
 	format->len = 0;
 }
 
-char	*parse_form(char *str, int *x, va_list input, t_tools i)
+char	*parse_form(char *str, int *x, va_list input, t_utils *i)
 {
 	print_prefix(str, *x);
-	x++;
-	while (str[*x])
+	*x += 1;
+	while (str[*x] && (OP(str[*x]) || str[*x] == MOD(str[*x]) || ft_isdigit(str[*x]) != 0 || 
+		str[*x] == '.' || str[*x] == '*'))
 	{
-		set_flags(str, x, i); // incerment each function so x doesnt need to icnrement in here
+		set_flags(str, x, i); // incerment each function so x doesnt need to icnrhere
 		set_mods(str, x, i); //
 		set_width(str, x, input, i);
 		set_prec(str, x, input, i);
-		x++;
 	}
+	if (str[*x] == CONV(str[*x]))
+		set_conv(str, x, input, i);
 	return (str);
 }
 
-int	ft_printf(char const *restrict str, ...)
+int	ft_printf(char const *restrict format, ...)
 {
 	char		*ret;
 	static int	x = 0;
 	va_list		input;
-	t_tools		format;
+	t_utils		strut;
 
-	init_tools(&format);
-	va_start(input, str);
-	while (str[x])
+	init_tools(&strut);
+	va_start(input, format);
+	while (format[x])
 	{
-		if (str[x] == '%')
+		if (format[x] == '%')
 		{
-			ret = parse_form((char *)str, &x, input, format);
+			ret = parse_form((char *)format, &x, input, &strut);
 		}
 		x++;
 	}
-	printf("%s", ret);
-	printf("\nprecision:%d", format.minus);
-	printf("\nwidth:%d", format.width);
+	printf("\n\nminus:%d", strut.minus);
+	printf("\nprecision:%d", strut.precision);
+	printf("\nwidth:%d", strut.width);
 	va_end(input);
 	return (1);
 }
 
 int	main(void)
 {
-	ft_printf("\n%-1s", "hey");
-	printf("\n%-1s", "hey");
+	ft_printf("\n%-.1s", "hey");
+	printf("\n%-.1s", "hey");
 }

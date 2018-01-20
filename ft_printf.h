@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/19 14:03:29 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/20 13:36:49 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define STR tools.str
 # define LEN tools.len
 
-typedef struct  s_tools
+typedef struct  s_utils
 {
     bool    plus;
     bool    minus;
@@ -44,7 +44,7 @@ typedef struct  s_tools
     int     modifier;
     int     str;
     int     len;
-}               t_tools;
+}               t_utils;
 
 /* Spacing Flags */
 # define OP(c) (c == '-' || c == '0' || c == '+' || c == ' ' || c == '#')
@@ -59,10 +59,10 @@ typedef struct  s_tools
 
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
-void	set_mods(char *str, int *x, t_tools i);
-void	set_flags(char *str, int *x, t_tools i);
-void	set_prec(char *str, int *x, va_list input, t_tools i);
-void	set_width(char *str, int *x, va_list input, t_tools i);
+void	set_mods(char *str, int *x, t_utils *i);
+void	set_flags(char *str, int *x, t_utils *i);
+void	set_prec(char *str, int *x, va_list input, t_utils *i);
+void	set_width(char *str, int *x, va_list input, t_utils *i);
 
 /*
     Modifier Flags
