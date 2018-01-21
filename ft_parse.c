@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/20 15:26:31 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 00:01:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,21 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 	{
 		if (str[*x] == 's')
 			convert_string(i, input);
-		// if (str[*x] == 'S')
-		// 	convert_
+		else if (str[*x] == 'S')
+			convert_S;
+		else if (str[*x] == 'p')
+			convert_p;
+		else if (str[*x] == 'c' || str[*x] == 'C')
+			convert_char;
+		else if (str[*x] == 'f' || str[*x] == 'F')
+			convert_f;
+		else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
+			convert_int;
+		else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'b')
+			convert_unsigned_int;
+		else if (str[*x] == 'x' || str[*x] == 'X' || str[*x] == 'u' ||
+				 str[*x] == 'U')
+			convert_unsigned_int;
 	}
 }
 
