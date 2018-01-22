@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 18:45:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 19:06:37 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	convert_string(t_utils *i, va_list input, char *ret)
 
 	if (i->width > 0)
 		i->len = i->width;
-	str = va_arg(input, char *);
-	ft_strcpy(ret, str);
+	str = va_arg(input, char *); // Seg faulting here
+	ft_strcpy(ret, str); // Fix writing to the string ret and adding widht and precisionc
 	ft_putstr(ret);
 }
 
@@ -29,11 +29,6 @@ void	convert_string(t_utils *i, va_list input, char *ret)
 // }
 
 // void	convert_point(t_utils *i, va_list input)
-// {
-	
-// }
-
-// void	convert_float(t_utils *i, va_list input)
 // {
 	
 // }

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 18:19:32 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:56:02 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i, char *ret)
 		// 	convert_point(i, input);
 		// else if (str[*x] == 'c' || str[*x] == 'C')
 		// 	convert_char(i, input);
-		// else if (str[*x] == 'f' || str[*x] == 'F')
-		// 	convert_float(i, input);
 		// else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
 		// 	convert_int(i, input);
 		// else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'b')

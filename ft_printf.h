@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 18:34:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 19:04:46 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,12 @@ typedef struct  s_utils
 /* Modifier Flags */
 # define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'q')
 
+
+
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
 
 /* Setting Flags */
-
 void	set_mods(char *str, int *x, t_utils *i);
 void	set_flags(char *str, int *x, t_utils *i);
 void	set_prec(char *str, int *x, va_list input, t_utils *i);
@@ -69,6 +70,8 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i, char *ret);
 
 /* Convert / Print Flags */
 void	convert_string(t_utils *i, va_list input, char *ret);
+
+
 
 /*
     Modifier Flags
