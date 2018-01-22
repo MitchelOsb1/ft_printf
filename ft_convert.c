@@ -6,22 +6,21 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 16:54:12 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:45:48 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	convert_string(t_utils *i, va_list input)
+void	convert_string(t_utils *i, va_list input, char *ret)
 {
 	char *str;
-	static int x = 0;
 
+	if (i->width > 0)
+		i->len = i->width;
 	str = va_arg(input, char *);
-	while (str[x] && x < i->width)
-	{
-		
-	}
+	ft_strcpy(ret, str);
+	ft_putstr(ret);
 }
 
 // void	convert_wchar_s(t_utils *i, va_list input)

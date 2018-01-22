@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 16:46:10 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:34:14 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	print_prefix(char *str, int x);
 void	set_mods(char *str, int *x, t_utils *i);
 void	set_flags(char *str, int *x, t_utils *i);
 void	set_prec(char *str, int *x, va_list input, t_utils *i);
-void	set_conv(char *str, int *x, va_list input, t_utils *i);
+void	set_conv(char *str, int *x, va_list input, t_utils *i, char *ret);
 void	set_width(char *str, int *x, t_utils *i);
-void	parse_form(char *str, int *x, va_list input, t_utils *i);
+void	parse_form(char *str, int *x, va_list input, t_utils *i, char *ret);
 
 /* Convert / Print Flags */
-void	convert_string(t_utils *i, va_list input);
+void	convert_string(t_utils *i, va_list input, char *ret);
 
 /*
     Modifier Flags

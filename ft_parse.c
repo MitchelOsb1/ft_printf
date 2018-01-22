@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 16:45:58 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 18:19:32 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	set_flags(char *str, int *x, t_utils *i)
 	}
 }
 
-void	set_conv(char *str, int *x, va_list input, t_utils *i)
+void	set_conv(char *str, int *x, va_list input, t_utils *i, char *ret)
 {
 	printf("%c", str[*x]);
 	while (CONV(str[*x]) && str[*x])
 	{
 		if (str[*x] == 's')
-			convert_string(i, input);
+			convert_string(i, input, ret);
 		// else if (str[*x] == 'S')
 		// 	convert_wchar_s(i, input);
 		// else if (str[*x] == 'p')
