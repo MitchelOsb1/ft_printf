@@ -12,6 +12,25 @@
 
 #include "ft_printf.h"
 
+/*
+char t = 0, space, or another character
+c = count
+*/
+
+char	*ins_w(char *str, int c, char t)
+{
+	char *tmp;
+	static int x = 0;
+	
+	while (c--)
+	{
+		tmp[x] = t;
+		x++;
+	}
+	ft_strjoin(tmp, str)
+	free(tmp);
+}
+
 char	*handle_w(t_utils *i, char *str, va_list input)
 {
 	static int x = 0;
