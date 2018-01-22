@@ -6,7 +6,7 @@
 #    By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/03 20:02:51 by mosborne          #+#    #+#              #
-#    Updated: 2018/01/21 19:05:47 by mosborne         ###   ########.fr        #
+#    Updated: 2018/01/22 10:56:23 by mosborne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ GCC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_print.c ft_parse.c ft_convert.c
+SRCS = ft_printf.c ft_print.c ft_parse.c ft_convert.c ft_tools.c
 
 INCUDES = ft_printf.h
 

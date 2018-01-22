@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 19:04:06 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:03:47 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,40 +29,47 @@ void	init_tools(t_utils *format)
 	format->len = 0;
 }
 
-void	parse_form(char *str, int *x, va_list input, t_utils *i, char *ret)
+void	parse_form(char *str, int *x, va_list input, t_utils *i)
 {
 	print_prefix(str, *x);
 	*x += 1;
-	while (str[*x] && (OP(str[*x]) || str[*x] == MOD(str[*x]) || ft_isdigit(str[*x]) != 0 || 
-		str[*x] == '.' || str[*x] == '*'))
+	while (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' ||
+	str[*x] == ' ' || str[*x] == '#' || ft_isdigit(str[*x]) != 0 ||
+	str[*x] == '.' || str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' ||
+	str[*x] == 'j' || str[*x] == 'z' || str[*x] == 'q')
 	{
 		set_flags(str, x, i);
 		set_mods(str, x, i);
 		set_width(str, x, i);
 		set_prec(str, x, input, i);
 	}
-	if (CONV(str[*x]))
-		set_conv(str, x, input, i, ret);
+	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' || str[*x] == 'd'
+	|| str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' || str[*x] == 'O' ||
+	str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' || str[*x] == 'X' ||
+	str[*x] == 'c' || str[*x] == 'C')
+		set_conv(str, x, input, i);
 }
 
 int	ft_printf(char const *restrict format, ...)
 {
-	char 		ret[1024];
+	char 		*ret;
 	static int	x = 0;
 	va_list		input;
 	t_utils		strut;
 
+	ret = NULL;
 	init_tools(&strut);
 	va_start(input, format);
 	while (format[x])
 	{
 		if (format[x] == '%')
 		{
-			parse_form((char *)format, &x, input, &strut, ret);
+			printf("Here");
+			parse_form((char *)format, &x, input, &strut);
 		}
 		x++;
 	}
-	printf("\n\nminus:%d", strut.minus);
+	printf("minus:%d", strut.modifier);
 	printf("\nplus:%d", strut.plus);
 	printf("\nwidth:%d", strut.width);
 	printf("\nprecision:%d", strut.precision);
@@ -72,6 +79,6 @@ int	ft_printf(char const *restrict format, ...)
 
 int	main(void)
 {
-	ft_printf("\n%s", "hey");
-	printf("\n%-.1s", "hey");
+	ft_printf("\n%1s", "hey");
+	printf("\n ************** \nPrintf:%s", "hey");
 }

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:04:07 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 18:46:33 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 13:50:20 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,33 @@ char	*ins_w(char *str, int c, char t)
 {
 	char *tmp;
 	static int x = 0;
-	
-	while (c--)
+	static int i = 0;
+
+	tmp = ft_strnew(ft_strlen(str) + c);
+	if (c > 0)
 	{
-		tmp[x] = t;
-		x++;
+		while (c--)
+		{
+			tmp[x] = t;
+			x++;
+		}
 	}
-	ft_strjoin(tmp, str)
-	free(tmp);
+	while (str[i] && tmp[x])
+	{
+		tmp[x] = str[i];
+		x++;
+		i++;
+	}
+	return (tmp);
 }
 
-char	*handle_w(t_utils *i, char *str, va_list input)
-{
-	static int x = 0;
-	static int c = 0;
+// char	*handle_w(t_utils *i, char *str, va_list input)
+// {
+// 	static int x = 0;
+// 	static int c = 0;
 
-	if (i->width > ft_strlen(str))
-		x = (i->width - ft_strlen(str));
-	if (i->width < ft_strlen(str))
-		ft_putstr(str);
-}
+// 	if (i->width > ft_strlen(str))
+// 		x = (i->width - ft_strlen(str));
+// 	if (i->width < ft_strlen(str))
+// 		ft_putstr(str);
+// }
