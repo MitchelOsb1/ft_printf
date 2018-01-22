@@ -6,7 +6,7 @@
 #    By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/26 19:04:18 by mosborne          #+#    #+#              #
-#    Updated: 2018/01/21 18:51:51 by mosborne         ###   ########.fr        #
+#    Updated: 2018/01/21 18:52:49 by mosborne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME):
 	@gcc $(FLAGS) -c $(SRCS) -I $(HEADER)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@echo "/Libft Created\"
+	@echo "Libft Created"
 
 clean:
 	@rm -rf $(OBJS)
