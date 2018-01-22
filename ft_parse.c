@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:03:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:09:26 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	set_width(char *str, int *x, t_utils *i)
 		}
 		*x += 1;
 	}
+	*x += 1;
 }
 
 void	set_prec(char *str, int *x, va_list input, t_utils *i)

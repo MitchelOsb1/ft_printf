@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:03:47 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:25:55 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,22 @@ int	ft_printf(char const *restrict format, ...)
 	{
 		if (format[x] == '%')
 		{
-			printf("Here");
 			parse_form((char *)format, &x, input, &strut);
 		}
 		x++;
 	}
-	printf("minus:%d", strut.modifier);
-	printf("\nplus:%d", strut.plus);
-	printf("\nwidth:%d", strut.width);
-	printf("\nprecision:%d", strut.precision);
 	va_end(input);
 	return (1);
 }
 
 int	main(void)
 {
-	ft_printf("\n%1s", "hey");
-	printf("\n ************** \nPrintf:%s", "hey");
+	ft_printf("\n%2s", "hey");
+	printf("\n%2s", "hey");
 }
+
+ft_convert.c
+        modified:   ft_parse.c
+        modified:   ft_printf.c
+        modified:   ft_printf.h
+        modified:   ft_tools.c

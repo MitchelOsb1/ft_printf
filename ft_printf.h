@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 19:04:46 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:02:53 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,6 @@ typedef struct  s_utils
     int     len;
 }               t_utils;
 
-/* Spacing Flags */
-# define OP(c) (c == '-' || c == '0' || c == '+' || c == ' ' || c == '#')
-
-/* Conversion Flags */
-# define CONV(c) (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || \
-    c == 'i' || c == 'o' || c == 'O' || c == 'u' || c == 'x' || c == 'X' || \
-    c == 'c' || c == 'C')
-
-/* Modifier Flags */
-# define MOD(c) (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == 'q')
-
-
-
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
 
@@ -64,14 +51,15 @@ void	print_prefix(char *str, int x);
 void	set_mods(char *str, int *x, t_utils *i);
 void	set_flags(char *str, int *x, t_utils *i);
 void	set_prec(char *str, int *x, va_list input, t_utils *i);
-void	set_conv(char *str, int *x, va_list input, t_utils *i, char *ret);
+void	set_conv(char *str, int *x, va_list input, t_utils *i);
 void	set_width(char *str, int *x, t_utils *i);
-void	parse_form(char *str, int *x, va_list input, t_utils *i, char *ret);
+void	parse_form(char *str, int *x, va_list input, t_utils *i);
 
 /* Convert / Print Flags */
-void	convert_string(t_utils *i, va_list input, char *ret);
+void	convert_string(t_utils *i, va_list input);
 
-
+/* Tools */
+char    *ins_w(char *str, int c, char t);
 
 /*
     Modifier Flags

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:03:59 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:08:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@ void	convert_string(t_utils *i, va_list input)
 {
 	char *str;
 	int x;
+	static int z;
 
 	x = i->width;
-	printf("%d", x);
 	str = va_arg(input, char *);
-	printf("%s", str);
+	if (i->width > 0)
+		ft_putstr(ins_w(str, i->width, ' '));
+	while (x--)
+		ft_putchar(str[z++]);
+	// printf("%s", str);
 }
 
 // void	convert_wchar_s(t_utils *i, va_list input)

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:04:07 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 13:50:20 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/22 15:25:14 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,20 @@ char	*ins_w(char *str, int c, char t)
 	char *tmp;
 	static int x = 0;
 	static int i = 0;
-
-	tmp = ft_strnew(ft_strlen(str) + c);
+	
+	if (c > ft_strlen(str))
+		x = c - ft_strlen(str);
+	tmp = ft_strnew(x);
 	if (c > 0)
 	{
-		while (c--)
+		while (x)
 		{
-			tmp[x] = t;
-			x++;
+			tmp[i] = t;
+			x--;
+			i++;
 		}
 	}
-	while (str[i] && tmp[x])
+	while (tmp[x] && str[i] && x < c)
 	{
 		tmp[x] = str[i];
 		x++;
