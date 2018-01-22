@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/18 14:23:31 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 12:13:09 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,3 @@ void	print_prefix(char *str, int x)
 		i++;
 	}
 }
-
-// void	split_params(char *str, int x)
-// {
-// 	if (str[x] == ',')
-// 	{
-// 		while (str[x])
-// 		{
-// 			if (str[x] == ',')
-				
-// 		}
-// 	}
-// }

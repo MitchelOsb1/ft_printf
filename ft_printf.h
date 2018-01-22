@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/20 13:36:49 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/21 16:46:10 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ typedef struct  s_utils
     bool    zero;
     bool    space;
     bool    hash;
-    bool    star;
     int     width;
-    int     dot;
     int     precision;
     int     modifier;
     int     str;
@@ -59,10 +57,18 @@ typedef struct  s_utils
 
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
+
+/* Setting Flags */
+
 void	set_mods(char *str, int *x, t_utils *i);
 void	set_flags(char *str, int *x, t_utils *i);
 void	set_prec(char *str, int *x, va_list input, t_utils *i);
-void	set_width(char *str, int *x, va_list input, t_utils *i);
+void	set_conv(char *str, int *x, va_list input, t_utils *i);
+void	set_width(char *str, int *x, t_utils *i);
+void	parse_form(char *str, int *x, va_list input, t_utils *i);
+
+/* Convert / Print Flags */
+void	convert_string(t_utils *i, va_list input);
 
 /*
     Modifier Flags
@@ -77,45 +83,3 @@ void	set_width(char *str, int *x, va_list input, t_utils *i);
 
 
 #endif
-
-
-
-
-
-
-/*
-
-while (f[*i] > 47 && f[*i] < 58)
-				*i += 1;
-
-
-while ((f[*i] != '\0' && f[*i] > 47 && f[*i] < 58) || f[*i] == '-')
-                *i += 1;
-                
-                
-** argument prototype: %[flags][width/margin][.precision][hh|h|l|ll|j|z]type
-**
-** flags:			'+' || '-' || ' ' || '#' || '0';
-**
-** width/margin:	min amount of displayed digits, does not cut digits if less,
-**					fill with spaces on the left side;
-**					if '*' added it's necessary to pass one more parameter with
-**					a number of spaces before the actual parameter;
-**
-** .precision:		for diouxX min amount of digits, fill with 0 is necessary;
-**					for eEf amount of digits after dot;
-**					for gG amount of all digits, if bigger displays number;
-**					for sS max amount of characters;
-**					if '*' added is necessary to pass one more parameter with a
-**					number of spaces before the actual parameter;
-**
-** hh|h|l|ll|j|z|q:	default values' modification:
-**						hh:	for idouxX - char;
-**						h:	for idouxX - short int;
-**						l:	for idouxX - long int, for feE - double;
-**						ll:	for idouxX - long long int;
-**						j:	for idouxX - intmax_t;
-**						z:	for idouxX - size_t;
-**						q:	for CS - prints Unicode
-
-*/
