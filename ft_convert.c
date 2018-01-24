@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:08:24 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/23 16:40:53 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	convert_string(t_utils *i, va_list input)
 	int x;
 	static int z;
 
+	printf("C_S:");
 	x = i->width;
 	str = va_arg(input, char *);
 	if (i->width > 0)

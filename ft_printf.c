@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:25:55 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/23 16:40:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_tools(t_utils *format)
 void	parse_form(char *str, int *x, va_list input, t_utils *i)
 {
 	print_prefix(str, *x);
-	*x += 1;
+	*x +=1;
 	while (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' ||
 	str[*x] == ' ' || str[*x] == '#' || ft_isdigit(str[*x]) != 0 ||
 	str[*x] == '.' || str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' ||
@@ -43,6 +43,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_width(str, x, i);
 		set_prec(str, x, input, i);
 	}
+	printf("%c", str[*x]);
 	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' || str[*x] == 'd'
 	|| str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' || str[*x] == 'O' ||
 	str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' || str[*x] == 'X' ||
@@ -74,12 +75,6 @@ int	ft_printf(char const *restrict format, ...)
 
 int	main(void)
 {
-	ft_printf("\n%2s", "hey");
-	printf("\n%2s", "hey");
+	ft_printf("\nHere:%2s", "hey");
+	printf("\nPrintf:%2s", "hey");
 }
-
-ft_convert.c
-        modified:   ft_parse.c
-        modified:   ft_printf.c
-        modified:   ft_printf.h
-        modified:   ft_tools.c

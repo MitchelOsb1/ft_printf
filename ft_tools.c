@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_tools.c                                         :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:04:07 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/22 15:25:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/23 12:44:19 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,16 @@ char	*ins_w(char *str, int c, char t)
 {
 	char *tmp;
 	static int x = 0;
-	static int i = 0;
 	
-	if (c > ft_strlen(str))
-		x = c - ft_strlen(str);
-	tmp = ft_strnew(x);
-	if (c > 0)
+	tmp = ft_strnew(c);
+	while (tmp[x])
 	{
-		while (x)
-		{
-			tmp[i] = t;
-			x--;
-			i++;
-		}
-	}
-	while (tmp[x] && str[i] && x < c)
-	{
-		tmp[x] = str[i];
+		tmp[x] = t;
 		x++;
-		i++;
 	}
-	return (tmp);
+	str = ft_strjoin(tmp, str);
+	free(tmp);
+	return (str);
 }
 
 // char	*handle_w(t_utils *i, char *str, va_list input)
