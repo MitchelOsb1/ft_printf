@@ -6,26 +6,22 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/23 16:40:53 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/26 13:05:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	convert_string(t_utils *i, va_list input)
+void	convert_char(t_utils *i, va_list input)
 {
 	char *str;
-	int x;
-	static int z;
+	char *va_string;
+	static int x = 0;
 
-	printf("C_S:");
-	x = i->width;
-	str = va_arg(input, char *);
-	if (i->width > 0)
-		ft_putstr(ins_w(str, i->width, ' '));
-	while (x--)
-		ft_putchar(str[z++]);
-	// printf("%s", str);
+	str = (char *)malloc(sizeof(i->width + 1));
+	va_string = va_arg(input, char *);
+	ft_strcpy
+	ft_putstr("cmon");
 }
 
 // void	convert_wchar_s(t_utils *i, va_list input)

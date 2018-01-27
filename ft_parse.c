@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/23 16:35:17 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/01/26 13:05:20 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 void	set_flags(char *str, int *x, t_utils *i)
 {
 	
-	while (str[*x])
-	{
-		if (str[*x] == '-')
-			i->minus = true;
-		else if (str[*x] == '0' && i->minus == false)
-			i->zero = true;
-		else if (str[*x] == '+')
-			i->plus = true;
-		else if (str[*x] == ' ' && i->plus == false)
-			i->space = true;
-		else if (str[*x] == '#')
-			i->hash = true;
-		*x+= 1;
-	}
+	if (str[*x] == '-')
+		i->minus = true;
+	else if (str[*x] == '0' && i->minus == false)
+		i->zero = true;
+	else if (str[*x] == '+')
+		i->plus = true;
+	else if (str[*x] == ' ' && i->plus == false)
+		i->space = true;
+	else if (str[*x] == '#')
+		i->hash = true;
 }
 
 void	set_mods(char *str, int *x, t_utils *i)
@@ -65,10 +61,9 @@ void	set_width(char *str, int *x, t_utils *i)
 		}
 		*x += 1;
 	}
-	*x += 1;
 }
 
-void	set_prec(char *str, int *x, va_list input, t_utils *i)
+void	set_prec(char *str, int *x, t_utils *i)
 {
 
 	if (str[*x] == '.')
@@ -78,7 +73,6 @@ void	set_prec(char *str, int *x, va_list input, t_utils *i)
 		if (i->precision == 0)
 		{
 			str += *x;
-			i->precision = va_arg(input, int);
 			i->precision = ft_atoi(str);
 		}
 		*x+= 1;
@@ -94,7 +88,7 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C')
 	{
 		if (str[*x] == 's')
-			convert_string(i, input);
+			convert_char(i, input);
 		// else if (str[*x] == 'S')
 		// 	convert_wchar_s(i, input);
 		// else if (str[*x] == 'p')
