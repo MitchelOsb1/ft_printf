@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/26 12:44:27 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/09 14:34:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_width(str, x, i);
 		set_prec(str, x, i);
 	}
-	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' || str[*x] == 'd'
-	|| str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' || str[*x] == 'O' ||
-	str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' || str[*x] == 'X' ||
-	str[*x] == 'c' || str[*x] == 'C')
-		set_conv(str, x, input, i);
+	set_conv(str, x, input, i);
+	printf("\nWidth:%d", i->width);
+	printf("Precision:%d\n", i->precision);
 }
 
 int	ft_printf(char const *restrict format, ...)
@@ -69,14 +67,14 @@ int	ft_printf(char const *restrict format, ...)
 		x++;
 	}
 	va_end(input);
-	return (1);
+	return (strut.len);
 }
 
 int	main(void)
 {
 	char *str;
 
-	str = "Why are you broken";
-	printf("printf:%20s\n", str);
-	ft_printf("\nMine:%20s", str);
+	str = "Hellooooo";
+	printf("PRINTF:%4.5s\n", str);
+	ft_printf("\nFT_PRINTF:%4.5s", str);
 }

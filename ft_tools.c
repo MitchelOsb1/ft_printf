@@ -14,32 +14,18 @@
 
 /*
 char t = 0, space, or another character
-c = count
+c = strlen
 */
 
-char	*ins_w(char *str, int c, char t)
+void	ins_w(t_utils *i)
 {
-	char *tmp;
-	static int x = 0;
-	
-	tmp = ft_strnew(c);
-	while (tmp[x])
-	{
-		tmp[x] = t;
-		x++;
-	}
-	str = ft_strjoin(tmp, str);
-	free(tmp);
-	return (str);
+	char cha_r;
+
+	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	if (i->width < i->precision || i->width > i->precision)
+		i->len = i->precision;
+	if (i->len == i->precision && i->width > i->len)
+		i->width = i->width - i->len;
+	while (i->width--)
+		ft_putchar(cha_r);
 }
-
-// char	*handle_w(t_utils *i, char *str, va_list input)
-// {
-// 	static int x = 0;
-// 	static int c = 0;
-
-// 	if (i->width > ft_strlen(str))
-// 		x = (i->width - ft_strlen(str));
-// 	if (i->width < ft_strlen(str))
-// 		ft_putstr(str);
-// }
