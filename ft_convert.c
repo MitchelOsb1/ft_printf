@@ -20,9 +20,9 @@ void	convert_char(t_utils *i, va_list input)
 
 	x = ft_strlen(str);
 	va_string = va_arg(input, char *);
-	str = (char *)malloc(sizeof(i->width + 1));
-	ins_w(i);
-	ft_strcpy(str, va_string);
+	ins_w(i, x);
+	str = (char *)malloc(sizeof(i->len + 1));
+	ft_strncpy(str, va_string, i->len);
 	ft_putstr(str);
 }
 
