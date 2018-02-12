@@ -17,15 +17,30 @@ char t = 0, space, or another character
 c = strlen
 */
 
-void	ins_w(t_utils *i)
+void	char_w(t_utils *i, int x)
 {
 	char cha_r;
 
-	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
-	if (i->width < i->precision || i->width > i->precision)
+	if (i->precision >= 0 || i->width >= 0)
 		i->len = i->precision;
-	if (i->len == i->precision && i->width > i->len)
-		i->width = i->width - i->len;
-	while (i->width--)
-		ft_putchar(cha_r);
+	if (i->width > x && i->minus == true)
+	{
+		
+	}
 }
+
+
+/*
+
+Handle: Minus, Zero
+
+If precision is > lenth of string then find the difference 
+Use the difference to putchar spacing
+If minus
+	Strcpy the putchar
+else
+	putchar strcpy
+
+putstr
+
+*/

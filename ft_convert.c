@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/08 15:55:51 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/11 18:02:57 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void	convert_char(t_utils *i, va_list input)
 {
 	int x;
 	char *str;
+	char cha_r;
 	char *va_string;
 
 	x = ft_strlen(str);
 	va_string = va_arg(input, char *);
-	str = (char *)malloc(sizeof(i->width + 1));
-	ins_w(i);
-	ft_strcpy(str, va_string);
+
+	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	str = (char *)malloc(sizeof(x + 1));
+	char_w(i, x);
+
+	ft_strncpy(str, va_string, i->len);
 	ft_putstr(str);
 }
 
