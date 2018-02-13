@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/12 18:41:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/13 15:18:43 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	set_flags(char *str, int *x, t_utils *i)
 		i->space = true;
 	else if (str[*x] == '#')
 		i->hash = true;
-	else if (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' || str[*x] == ' ' ||
+	if (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' || str[*x] == ' ' ||
 	 str[*x] == '#')
 		*x+=1;
 }
@@ -68,7 +68,7 @@ void	set_prec(char *str, int *x, t_utils *i)
 
 	if (str[*x] == '.')
 		*x+= 1;
-	while (str[*x] && (str[*x] == '-' || ft_isdigit(str[*x])))
+	while (str[*x] && (ft_isdigit(str[*x])))
 	{
 		if (i->precision == 0)
 		{

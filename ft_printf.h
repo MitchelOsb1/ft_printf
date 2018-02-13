@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/12 18:16:00 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/13 14:43:18 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i);
 void	convert_string(t_utils *i, va_list input);
 
 /* Tools */
-void    char_w(t_utils *i, char *str);
+void    char_w(t_utils *i, char cha_r);
 
 /*
     Modifier Flags
