@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/21 12:13:09 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:11:52 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,14 @@ void	print_prefix(char *str, int x)
 	{
 		write(1, &str[i], 1);
 		i++;
+	}
+}
+
+void	print_postfix(char *str, int x)
+{
+	while (str[x])
+	{
+		write(1, &str[x], 1);
+		x++;
 	}
 }
