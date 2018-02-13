@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/11 13:29:23 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:16:29 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_prec(str, x, i);
 	}
 	set_conv(str, x, input, i);
+	print_postfix(str, *x);
 }
 
 int	ft_printf(char const *restrict format, ...)
@@ -73,6 +74,6 @@ int	main(void)
 	char *str;
 
 	str = "Hellooooo";
-	printf("PRINTF:%5s\n", str);
-	ft_printf("FT_PRINTF:%5s", str);
+	printf("1: [%5s]\n", str);
+	ft_printf("2: [%5s]\n", str);
 }

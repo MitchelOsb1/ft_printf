@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/12 18:11:45 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:16:00 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct  s_utils
 
 /* Print Before Precent */
 void	print_prefix(char *str, int x);
+void	print_postfix(char *str, int x);
 
 /* Setting Flags */
 void	set_mods(char *str, int *x, t_utils *i);
@@ -56,10 +57,10 @@ void	set_width(char *str, int *x, t_utils *i);
 void	parse_form(char *str, int *x, va_list input, t_utils *i);
 
 /* Convert / Print Flags */
-void	convert_char(t_utils *i, va_list input);
+void	convert_string(t_utils *i, va_list input);
 
 /* Tools */
-void    char_w(t_utils *i, int x);
+void    char_w(t_utils *i, char *str);
 
 /*
     Modifier Flags
