@@ -44,8 +44,6 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_prec(str, x, i);
 	}
 	set_conv(str, x, input, i);
-	printf("\nWidth:%d", i->width);
-	printf("Precision:%d\n", i->precision);
 }
 
 int	ft_printf(char const *restrict format, ...)
@@ -75,6 +73,6 @@ int	main(void)
 	char *str;
 
 	str = "Hellooooo";
-	printf("PRINTF:%4.5s\n", str);
-	ft_printf("\nFT_PRINTF:%4.5s", str);
+	printf("PRINTF:%5s\n", str);
+	ft_printf("FT_PRINTF:%5s", str);
 }

@@ -17,16 +17,23 @@ char t = 0, space, or another character
 c = strlen
 */
 
-void	char_w(t_utils *i, int x)
+void	char_w(t_utils *i, char *str)
 {
-	char cha_r;
+	int			x;
+	char		cha_r;
+	static int	a = -1;
 
-	if (i->precision >= 0 || i->width >= 0)
+	x = i->width;
+	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	if (i->precision < i->len && i->precision >= 0)
 		i->len = i->precision;
-	if (i->width > x && i->minus == true)
-	{
-		
-	}
+	if (i->width > i->len)
+		i->width -= i->len;
+	while (++a < i->len && i->minus == true)
+			ft_putchar(str[a]);
+	if (x > i->len)
+		while (i->width--)
+			ft_putchar(cha_r);
 }
 
 
