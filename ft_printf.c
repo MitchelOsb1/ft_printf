@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/12 18:16:29 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:51:09 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 int	ft_printf(char const *restrict format, ...)
 {
 	char 		*ret;
-	static int	x = 0;
+	int			x;
 	va_list		input;
 	t_utils		strut;
 
+	x = 0;
 	ret = NULL;
 	init_tools(&strut);
 	va_start(input, format);
@@ -74,6 +75,15 @@ int	main(void)
 	char *str;
 
 	str = "Hellooooo";
-	printf("1: [%5s]\n", str);
-	ft_printf("2: [%5s]\n", str);
+	printf("1: [%1.0s]\n", str);
+	ft_printf("2: [%1.0s]\n", str);
+
+	printf("1: [%1.10s]\n", str);
+	ft_printf("2: [%1.10s]\n", str);
+
+	printf("1: [%5.0s]\n", str);
+	ft_printf("2: [%5.0s]\n", str);
+
+	printf("1: [%-5.0s]\n", str);
+	ft_printf("2: [%-5.0s]\n", str);
 }

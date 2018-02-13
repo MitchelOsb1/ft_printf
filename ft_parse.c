@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/01/26 13:05:20 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:41:08 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	set_flags(char *str, int *x, t_utils *i)
 {
-	
 	if (str[*x] == '-')
 		i->minus = true;
 	else if (str[*x] == '0' && i->minus == false)
@@ -25,16 +24,17 @@ void	set_flags(char *str, int *x, t_utils *i)
 		i->space = true;
 	else if (str[*x] == '#')
 		i->hash = true;
+	else if (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' || str[*x] == ' ' ||
+	 str[*x] == '#')
+		*x+=1;
 }
 
 void	set_mods(char *str, int *x, t_utils *i)
 {
-
 	if (str[*x] == 'h')
 	{
 		*x+= 1;
-		i->modifier = str[*x] == 'h' ? 1 : 0;
-		
+		i->modifier = str[*x] == 'h' ? 1 : 0;	
 	}
 	if (str[*x] == 'l')
 	{
@@ -88,7 +88,7 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C')
 	{
 		if (str[*x] == 's')
-			convert_char(i, input);
+			convert_string(i, input);
 		// else if (str[*x] == 'S')
 		// 	convert_wchar_s(i, input);
 		// else if (str[*x] == 'p')

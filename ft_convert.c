@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/12 18:14:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/12 18:53:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	convert_string(t_utils *i, va_list input)
 {
-	char		*va_string;
-	static int	x = -1;
+	int		x;
+	char	*va_string;
 
+	x = -1;
 	va_string = va_arg(input, char *);
 	i->len = ft_strlen(va_string);
 	char_w(i, va_string);
