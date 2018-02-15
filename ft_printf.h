@@ -60,7 +60,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i);
 void	convert_string(t_utils *i, va_list input);
 
 /* Tools */
-void    char_w(t_utils *i, char cha_r);
+void    char_s(t_utils *i, char cha_r);
 
 /*
     Modifier Flags

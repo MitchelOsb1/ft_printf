@@ -100,14 +100,14 @@ int	main(void)
     ft_printf("precyzja 1:         [%.1s]\n", "Hello");
     printf("width 10 prec 1:       [%10.1s]\n", "Hello");
     ft_printf("width 10 prec 1:        [%10.1s]\n", "Hello");
-    // printf("width 10 prec 6:       [%10.6s]\n", "Hello");
-    // ft_printf("width 10 prec 6:        [%10.6s]\n", "Hello");
-    // printf("empty:             [%s]\n", "");
-    // ft_printf("empty:              [%s]\n", "");
-    // printf("null:              [%s]\n", NULL);
-    // ft_printf("null:               [%s]\n", NULL);
-    // printf("[%s]\n", "100% des gens qui parlent à Ly adorent Ly.");
-    // ft_printf("[%s]\n", "100% des gens qui parlent à Ly adorent Ly.");
+    printf("width 10 prec 6:       [%10.6s]\n", "Hello");
+    ft_printf("width 10 prec 6:        [%10.6s]\n", "Hello");
+    printf("empty:             [%s]\n", "");
+    ft_printf("empty:              [%s]\n", "");
+    printf("null:              [%s]\n", NULL);
+    ft_printf("null:               [%s]\n", NULL);
+    printf("[%s]\n", "100% des gens qui parlent à Ly adorent Ly.");
+    ft_printf("[%s]\n", "100% des gens qui parlent à Ly adorent Ly.");
     printf("width 5 prec . = [%5.s]\n", "supfag");
     ft_printf("width 5 prec . = [%5.s]\n", "supfag");
 

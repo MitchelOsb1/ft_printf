@@ -17,7 +17,7 @@ char t = 0, space, or another character
 c = strlen
 */
 
-void	char_w(t_utils *i, char cha_r)
+void	char_s(t_utils *i, char cha_r)
 {
 	int		x;
 
@@ -26,7 +26,7 @@ void	char_w(t_utils *i, char cha_r)
 		i->len = i->precision;
 	if (i->width > i->len)
 		i->width -= i->len;
-	if (x > i->len && i->minus == false)
+	if ((x > i->len && i->minus == false) || (i->precision == -69))
 		while (i->width--)
 			ft_putchar(cha_r);
 }

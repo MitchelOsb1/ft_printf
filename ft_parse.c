@@ -68,7 +68,9 @@ void	set_prec(char *str, int *x, t_utils *i)
 
 	if (str[*x] == '.')
 		*x+= 1;
-	while (str[*x] && (ft_isdigit(str[*x])))
+	if (ft_isdigit(str[*x]) != 1 && (str[*x - 1] == '.'))
+		i->precision = -69;
+	while (str[*x] && (ft_isdigit(str[*x])) && (i->precision != -69))
 	{
 		if (i->precision == 0)
 		{

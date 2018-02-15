@@ -22,10 +22,12 @@ void	convert_string(t_utils *i, va_list input)
 	x = -1;
 	a = i->width;
 	va_string = va_arg(input, char *);
+	if (va_string == NULL)
+		va_string = "(null)";
 	i->len = ft_strlen(va_string);
 	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
-	char_w(i, cha_r);
-	while (++x < i->len)
+	char_s(i, cha_r);
+	while (++x < i->len && i->precision != -69)
 		ft_putchar(va_string[x]);
 	if (a > i->len && i->minus == true)
 		while (i->width--)
