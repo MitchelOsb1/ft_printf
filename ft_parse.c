@@ -97,8 +97,8 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		// 	convert_point(i, input);
 		// else if (str[*x] == 'c' || str[*x] == 'C')
 		// 	convert_char(i, input);
-		// else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
-		// 	convert_int(i, input);
+		else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
+			convert_int(i, input);
 		// else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'b')
 		// 	convert_unsigned_int(i, input);
 		// else if (str[*x] == 'x' || str[*x] == 'X' || str[*x] == 'u' ||

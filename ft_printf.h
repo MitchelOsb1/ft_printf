@@ -58,9 +58,11 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i);
 
 /* Convert / Print Flags */
 void	convert_string(t_utils *i, va_list input);
+void    convert_int(t_utils *i, va_list input);
 
 /* Tools */
-void    char_s(t_utils *i, char cha_r);
+void    s_wpl(t_utils *i, char cha_r);
+void	i_wpl(t_utils *i, int x);
 
 /*
     Modifier Flags
