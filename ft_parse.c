@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/19 16:51:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/19 18:21:55 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	set_flags(char *str, int *x, t_utils *i)
 		i->minus = true;
 	else if (str[*x] == '+')
 		i->plus = true;
-	if (str[*x] == '0' && i->minus == false)
+	else if (str[*x] == '0' && i->minus == false)
 		i->zero = true;
 	else if (str[*x] == ' ' && i->plus == false)
 		i->space = true;
