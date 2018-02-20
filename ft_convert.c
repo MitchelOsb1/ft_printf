@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/19 18:43:39 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/20 13:47:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,21 @@ void	convert_string(t_utils *i, va_list input)
 void	convert_int(t_utils *i, va_list input)
 {
 	int		x;
-	int		z;
 	int		w;
+	int		count;
 	char	cha_r;
 	char	*str;
 
-	z = -1;
+	count = -1;
 	w = i->width;
 	x = va_arg(input, int);
 	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
 	str = ft_itoa(x);
 	i->len = ft_strlen(str);
 	i_wpl(i, cha_r);
-	while (++z < i->len && i->precision != -69)
-		ft_putchar(str[z]);
-	if (w > i->len && i->minus == true)
+	while (count++ < i->len && i->precision != -69)
+		ft_putchar(str[count]);
+	if ((w > i->len && i->minus == true))
 		while (i->width--)
 			ft_putchar(cha_r);
 	free(str);
