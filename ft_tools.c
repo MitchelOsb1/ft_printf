@@ -36,10 +36,10 @@ void	i_wpl(t_utils *i, char cha_r)
 	int		x;
 
 	x = i->width;
-	if (i->width > i->len)
+	if (x > i->len)
 		i->width -= i->len;
-	if (i->precision > i->len && i->width > 0) // need to fix
-		i->width = i->precision - i->len; // if precision is greater than width than make it width
+	if (i->precision > i->len)
+		i->width += i->len - i->precision;
 	if ((x > i->len && i->minus == false) || (i->precision == -69))
 		while (i->width--)
 			ft_putchar(cha_r);
