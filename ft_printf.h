@@ -40,7 +40,7 @@ typedef struct  s_utils
     int     width;
     int     precision;
     int     modifier;
-    int     str;
+    int     buf;
     int     len;
 }               t_utils;
 

@@ -25,7 +25,7 @@ void	init_tools(t_utils *format)
 	format->width = 0;
 	format->precision = 0;
 	format->modifier = 0;
-	format->str = 0;
+	format->buf = 0;
 	format->len = 0;
 }
 

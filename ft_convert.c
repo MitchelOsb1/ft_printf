@@ -46,11 +46,11 @@ void	convert_string(t_utils *i, va_list input)
 
 void	convert_int(t_utils *i, va_list input)
 {
-	int		x;
-	int		w;
-	int		count;
-	char	cha_r;
-	char	*str;
+	int			w;
+	int			count;
+	char		cha_r;
+	char		*str;
+	long int	x;
 
 	count = -1;
 	w = i->width;

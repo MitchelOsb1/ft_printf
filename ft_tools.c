@@ -38,11 +38,18 @@ void	i_wpl(t_utils *i, char cha_r)
 
 	x = i->width;
 	len = i->len;
-	if (i->precision < i->len && i->precision >= 0)
-		i->len = i->precision;
+
+	if (i->precision > i->len && i->len >= 0)
+		i->buf = i->precision - i->len;
 	if (i->width > i->len)
-		i->width -= i->len;
-	if ((x > i->len && i->minus == false) || (i->precision == 69))
+		i->width -= i->len + i->buf;
+	if (i->precision != -69)
+		i->precision -= i->len;
+	if ((x > i->len && i->minus == false && i->zero == false)
+		 || (i->precision == -69))
 		while (i->width--)
 			ft_putchar(cha_r);
+	if (x > i->len && i->minus == false)
+		while (i->buf--)
+			ft_putchar('0');
 }
