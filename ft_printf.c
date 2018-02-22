@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/20 11:31:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/21 13:51:46 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ int	ft_printf(char const *restrict format, ...)
 		}
 		x++;
 	}
+	printf("M:%d", strut.minus);
+	printf("W:%d", strut.width);
+	printf("B:%d", strut.buf);
+	printf("P:%d\n", strut.precision);
 	va_end(input);
 	return (strut.len);
 }
@@ -218,9 +222,10 @@ int	main(void)
 	
     printf("0 width 3 prec 2:	[%03.2d]\n", 0);
 	ft_printf("0 width 3 prec 2:	[%03.2d]\n", 0);
-	
+
     printf("0 width 3 prec 2:	[%03.2d]\n", -1);
 	ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
-	
+
+
 	return (1);
 }

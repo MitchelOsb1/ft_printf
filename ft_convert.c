@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/20 13:47:50 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/21 16:38:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,12 @@ void	convert_int(t_utils *i, va_list input)
 	str = ft_itoa(x);
 	i->len = ft_strlen(str);
 	i_wpl(i, cha_r);
-	while (count++ < i->len && i->precision != -69)
+	while (++count < i->len && i->precision != -69)
+	{
+		if (str[count] == '+' || str[count] == '-')
+			count++;
 		ft_putchar(str[count]);
+	}
 	if ((w > i->len && i->minus == true))
 		while (i->width--)
 			ft_putchar(cha_r);
