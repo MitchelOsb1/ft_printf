@@ -63,6 +63,7 @@ void    convert_int(t_utils *i, va_list input);
 /* Tools */
 void    s_wpl(t_utils *i, char cha_r);
 void	i_wpl(t_utils *i, char cha_r);
+void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w);
 
 /*
     Modifier Flags

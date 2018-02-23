@@ -47,27 +47,20 @@ void	convert_string(t_utils *i, va_list input)
 void	convert_int(t_utils *i, va_list input)
 {
 	int			w;
-	int			count;
 	char		cha_r;
 	char		*str;
+	char		sign;
 	long int	x;
 
-	count = -1;
 	w = i->width;
 	x = va_arg(input, int);
 	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	sign = i->plus == 1 || i->minus  == 1 ? sign = '-' : '+';
+	//setup x
 	str = ft_itoa(x);
 	i->len = ft_strlen(str);
 	i_wpl(i, cha_r);
-	while (++count < i->len && i->precision != -69)
-	{
-		if (str[count] == '+' || str[count] == '-')
-			count++;
-		ft_putchar(str[count]);
-	}
-	if ((w > i->len && i->minus == true))
-		while (i->width--)
-			ft_putchar(cha_r);
+	i2_wpl(i, str, cha_r, sign, w);
 	free(str);
 }
 

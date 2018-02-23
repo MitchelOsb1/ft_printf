@@ -67,10 +67,6 @@ int	ft_printf(char const *restrict format, ...)
 		}
 		x++;
 	}
-	printf("M:%d", strut.minus);
-	printf("W:%d", strut.width);
-	printf("B:%d", strut.buf);
-	printf("P:%d\n", strut.precision);
 	va_end(input);
 	return (strut.len);
 }
@@ -148,35 +144,35 @@ int	main(void)
 
 	// -----------------------------------------------
 
-	printf("' ':	[% d]\n", -12);
-    ft_printf("' ':	[% d]\n", -12);
+	// printf("' ':	[% d]\n", -12);
+    // ft_printf("' ':	[% d]\n", -12);
 	
-	printf("10.6:	[% 10.6d]\n", 12);
-    ft_printf("10.6:	[% 10.6d]\n", 12);
+	// printf("10.6:	[% 10.6d]\n", 12);
+    // ft_printf("10.6:	[% 10.6d]\n", 12);
 	
-	printf("0 10.6:	[%0 10.6d]\n", 12);
-    ft_printf("0 10.6:	[%0 10.6d]\n", 12);
+	// printf("0 10.6:	[%0 10.6d]\n", 12);
+    // ft_printf("0 10.6:	[%0 10.6d]\n", 12);
 	
-	printf("-+10.5:	[%-+10.5d]\n", -12);
-    ft_printf("-+10.5:	[%-+10.5d]\n", -12);
+	// printf("-+10.5:	[%-+10.5d]\n", -12);
+    // ft_printf("-+10.5:	[%-+10.5d]\n", -12);
 	
-	printf("zero:	[%0i]\n", 12);
-    ft_printf("zero:	[%0i]\n", 12);
+	// printf("zero:	[%0i]\n", 12);
+    // ft_printf("zero:	[%0i]\n", 12);
 	
-	printf("width 10:	[%10i]\n", 12);
-    ft_printf("width 10:	[%10i]\n", 12);
+	// printf("width 10:	[%10i]\n", 12);
+    // ft_printf("width 10:	[%10i]\n", 12);
 	
-    printf("minus and width 10:	[%-10i]\n", 12);
-	ft_printf("minus and width 10:	[%-10i]\n", 12);
+    // printf("minus and width 10:	[%-10i]\n", 12);
+	// ft_printf("minus and width 10:	[%-10i]\n", 12);
 	
-    printf("precyzja 1:	[%.1i]\n", 12);
-	ft_printf("precyzja 1:	[%.1i]\n", 12);
-	
-    printf("width 10 prec 1:	[%10.1i]\n", 12);
-	ft_printf("width 10 prec 1:	[%10.1i]\n", 12);
+    // printf("precyzja 1:	[%.1i]\n", 12);
+	// ft_printf("precyzja 1:	[%.1i]\n", 12);
 	
     printf("width 10 prec 6:	[%10.6i]\n", 12);
 	ft_printf("width 10 prec 6:	[%10.6i]\n", 12);
+
+	printf("W 10 P 1:	[%10.1i]\n", 12);
+	ft_printf("W 10 P 1:	[%10.1i]\n", 12);
 	
     printf("- width 10 prec 6:	[%-10.6i]\n", 12);
 	ft_printf("- width 10 prec 6:	[%-10.6i]\n", 12);
