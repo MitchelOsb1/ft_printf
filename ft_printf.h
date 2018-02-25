@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/19 16:41:49 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/24 13:23:42 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,17 @@
 
 typedef struct  s_utils
 {
-    bool    plus;
-    bool    minus;
-    bool    zero;
-    bool    space;
-    bool    hash;
-    int     width;
-    int     precision;
-    int     modifier;
-    int     buf;
-    int     len;
+    bool        plus;
+    bool        minus;
+    bool        zero;
+    bool        space;
+    bool        hash;
+    int         width;
+    int         precision;
+    int         modifier;
+    int         buf;
+    int         len;
+    long int    i_nt;
 }               t_utils;
 
 /* Print Before Precent */

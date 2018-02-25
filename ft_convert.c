@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/21 16:38:40 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/24 16:26:16 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,29 @@ void	convert_int(t_utils *i, va_list input)
 
 	w = i->width;
 	x = va_arg(input, int);
-	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
-	sign = i->plus == 1 || i->minus  == 1 ? sign = '-' : '+';
-	//setup x
 	str = ft_itoa(x);
 	i->len = ft_strlen(str);
+	i->i_nt = x;
+	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	sign = '0';
+	if (i->plus == 1 && i->minus == 0 && x > 0)
+	{
+		i->plus = 1;
+		sign = '+';
+	}
+	if ((i->minus == 1 && i->plus == 1) || i->minus == 1)
+	{
+		i->minus = 1;
+		i->plus = 0;
+		sign = '-';
+	}
+	if ((i->minus == 0 && i->plus == 0 )|| (x < 0))
+		sign = '-';
+	if (i->minus == 1 || i->plus == 1 || x < 0)
+		i->precision += 1;
 	i_wpl(i, cha_r);
 	i2_wpl(i, str, cha_r, sign, w);
-	free(str);
+	ft_strdel(&str);
 }
 
 // void	convert_unsigned_int(t_utils *i, va_list input)

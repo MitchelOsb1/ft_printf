@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/19 18:21:55 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/24 14:13:03 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	set_mods(char *str, int *x, t_utils *i)
 	if (str[*x] == 'h')
 	{
 		*x+= 1;
-		i->modifier = str[*x] == 'h' ? 1 : 0;	
+		i->modifier = str[*x] == 'h' ? 1 : 0;
 	}
 	if (str[*x] == 'l')
 	{
@@ -47,11 +47,13 @@ void	set_mods(char *str, int *x, t_utils *i)
 		i->modifier = 5;
 	else if (str[*x] == 'q')
 		i->modifier = 6;
+	if (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' || str[*x] == 'z' ||
+	 str[*x] == 'q')
+	  	*x+=1;
 }
 
 void	set_width(char *str, int *x, t_utils *i)
 {
-
 	while (str[*x] && (ft_isdigit(str[*x]) != 0))
 	{
 		if (i->width == 0)
@@ -59,13 +61,14 @@ void	set_width(char *str, int *x, t_utils *i)
 			str += *x;
 			i->width = ft_atoi(str);
 		}
+		// printf("\nStringX:%c", str[*x]);
+		// printf("\nW:[%d]", i->width);
 		*x += 1;
 	}
 }
 
 void	set_prec(char *str, int *x, t_utils *i)
 {
-
 	if (str[*x] == '.')
 		*x+= 1;
 	if (ft_isdigit(str[*x]) != 1 && (str[*x - 1] == '.'))
