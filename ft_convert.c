@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/24 16:26:16 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/25 17:38:21 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,12 @@ void	convert_int(t_utils *i, va_list input)
 	}
 	if ((i->minus == 0 && i->plus == 0 )|| (x < 0))
 		sign = '-';
-	if (i->minus == 1 || i->plus == 1 || x < 0)
-		i->precision += 1;
+	if (i->space == 1 && x > 0)
+		sign = ' ';
 	i_wpl(i, cha_r);
 	i2_wpl(i, str, cha_r, sign, w);
 	ft_strdel(&str);
+	printf("a");
 }
 
 // void	convert_unsigned_int(t_utils *i, va_list input)
