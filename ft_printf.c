@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/26 17:43:06 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/27 15:37:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_tools(t_utils *format)
 	format->hash = false;
 	format->zero = false;
 	format->i_nt = 0;
-	format->width = 0;
+	format->width = -1;
 	format->precision = 0;
 	format->modifier = 0;
 	format->buf = 0;
@@ -34,21 +34,17 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 {
 	print_prefix(str, *x);
 	if (str[*x] == '%')
-		*x +=1;
-	while (str[*x] && (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' ||
-	str[*x] == ' ' || str[*x] == '#' || ft_isdigit(str[*x]) == 1 ||
-	str[*x] == '.' || str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' ||
-	str[*x] == 'j' || str[*x] == 'z' || str[*x] == 'q'))
+		*x += 1;
+	while (str[*x] && (str[*x] == '-' || str[*x] == '+' || str[*x] == ' ' ||
+		str[*x] == '#' || ft_isdigit(str[*x]) == 1 || str[*x] == '.' ||
+		str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' ||
+		str[*x] == 'j' || str[*x] == 'z' || str[*x] == 'q'))
 	{
 		set_flags(str, x, i);
 		set_mods(str, x, i);
 		set_width(str, x, i);
 		set_prec(str, x, i);
 	}
-	printf("\nW:%d", i->width);
-	printf("\nCharacter: [%c]", str[*x]);	
-	printf("\nM:%d", i->minus);
-	printf("\nP:%d", i->precision);
 	set_conv(str, x, input, i);
 	print_postfix(str, *x);
 }
@@ -185,8 +181,8 @@ int	main(void)
     // printf("0 width 4 prec 3:	[%04.3d]\n", -1);
 	// ft_printf("0 width 4 prec 3:	[%04.3d]\n", -1);
 	
-    printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
-	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
+    // printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
+	// ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
 	
     // printf("width 10 prec 5:	[%+10.5d]\n", -25);
 	// ft_printf("width 10 prec 5:	[%+10.5d]\n", -25);
@@ -212,14 +208,14 @@ int	main(void)
     printf("t: 0 width 10:	[%010d]\n", 0);
 	ft_printf("m: 0 width 10:	[%010d]\n", 0); // BROKEN
 	
-    printf("0 width 5:	[%05d]\n", -42);
-	ft_printf("0 width 5:	[%05d]\n", -42);
+    // printf("0 width 5:	[%05d]\n", -42);
+	// ft_printf("0 width 5:	[%05d]\n", -42);
 	
-	ft_printf("- width 5:	[%-5d]\n", -42); // BROKEN
 	printf("- width 5:	[%-5d]\n", -42);
+	ft_printf("- width 5:	[%-5d]\n", -42); // BROKEN
 
-    printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
-	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
+    // printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
+	// ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
 	
     // printf("0 width 3 prec 2:	[%03.2d]\n", 0);
 	// ft_printf("0 width 3 prec 2:	[%03.2d]\n", 0);

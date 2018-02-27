@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/26 17:35:11 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/27 15:39:09 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	set_flags(char *str, int *x, t_utils *i)
 		i->space = true;
 	else if (str[*x] == '#')
 		i->hash = true;
-	if (str[*x] == '-' || str[*x] == '0' || str[*x] == '+' || str[*x] == ' ' ||
-	 str[*x] == '#')
-		*x+=1;
+	if ((str[*x] == '-') || (str[*x] == '0') || str[*x] == '+' || (str[*x] == ' ') ||
+	 (str[*x] == '#'))
+	 	*x += 1;
 }
 
 void	set_mods(char *str, int *x, t_utils *i)
@@ -49,17 +49,20 @@ void	set_mods(char *str, int *x, t_utils *i)
 		i->modifier = 6;
 	if (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' || str[*x] == 'z' ||
 	 str[*x] == 'q')
-	  	*x+=1;
+	  	*x += 1;
 }
 
 void	set_width(char *str, int *x, t_utils *i)
 {
-	while (str[*x] && (ft_isdigit(str[*x]) != 0))
+	char *tmp;
+
+	tmp = str;
+	while (str[*x] && (ft_isdigit(str[*x])) )
 	{
-		if (i->width == 0)
+		if (i->width == -1)
 		{
-			str += *x;
-			i->width = ft_atoi(str);
+			tmp += *x;
+			i->width = ft_atoi(tmp);
 		}
 		*x += 1;
 	}
@@ -67,18 +70,23 @@ void	set_width(char *str, int *x, t_utils *i)
 
 void	set_prec(char *str, int *x, t_utils *i)
 {
+	char *tmp;
+
 	if (str[*x] == '.')
 		*x+= 1;
+	else
+		return ;
+	tmp = str;
 	if (ft_isdigit(str[*x]) != 1 && (str[*x - 1] == '.'))
 		i->precision = -69;
 	while (str[*x] && (ft_isdigit(str[*x])) && (i->precision != -69))
 	{
 		if (i->precision == 0)
 		{
-			str += *x;
-			i->precision = ft_atoi(str);
+			tmp += *x;
+			i->precision = ft_atoi(tmp);
 		}
-		*x+= 1;
+		*x += 1;
 	}
 }
 
