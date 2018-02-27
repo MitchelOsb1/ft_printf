@@ -31,21 +31,19 @@ void	s_wpl(t_utils *i, char cha_r)
 			ft_putchar(cha_r);
 }
 
-void	i_wpl(t_utils *i, char cha_r)
+void	i_wpl(t_utils *i, char cha_r, int w)
 {
-	int		x;
 
-	x = i->width;
 	if (i->precision > i->len && i->len > 0)
 		i->buf = i->precision - i->len;
 	if (i->precision > i->width)
 		i->width = i->precision - i->len - i->buf;
 	if (i->width > i->len && i->len > 0)
 		i->width = i->len + i->buf;
-	if ((x > i->len && i->minus == false && i->zero == false) || (i->precision == -69))
+	if ((w > i->len && i->minus == false && i->zero == false) || (i->precision == -69))
 		while (i->width-- && i->width > 0)
 			ft_putchar(cha_r);
-	if (x > i->len && i->minus == false && i->zero == true && i->i_nt > 0)
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0)
 		while (i->width-- && i->width > 0)
 			ft_putchar(' ');
 }
@@ -75,11 +73,10 @@ void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w)
 			count++;
 		ft_putchar(str[count]);
 	}
-	if (w > i->len && i->minus == true && i->zero == false)
+	if ((w > i->len && i->minus == true && i->zero == false) || (i->precision == -69))
 		while (i->width-- && i->width > 0)
 			ft_putchar(cha_r);
 	if (w > i->len && i->minus == true && i->zero == true)
 		while (i->width-- && i->width > 0)
 			ft_putchar(' ');
 }
-		

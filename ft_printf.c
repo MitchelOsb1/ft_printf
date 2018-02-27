@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/24 17:04:52 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/26 17:43:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_width(str, x, i);
 		set_prec(str, x, i);
 	}
-	// printf("\nW:%d", i->width);
-	// printf("\nCharacter: [%c]", str[*x]);	
-	// printf("\nM:%d", i->minus);
-	// printf("\nP:%d", i->precision);
+	printf("\nW:%d", i->width);
+	printf("\nCharacter: [%c]", str[*x]);	
+	printf("\nM:%d", i->minus);
+	printf("\nP:%d", i->precision);
 	set_conv(str, x, input, i);
 	print_postfix(str, *x);
 }
@@ -210,13 +210,13 @@ int	main(void)
 	ft_printf("width 4 prec.:	[%4.d]\n", 0);
 	
     printf("t: 0 width 10:	[%010d]\n", 0);
-	ft_printf("m: 0 width 10:	[%010d]\n", 0);
+	ft_printf("m: 0 width 10:	[%010d]\n", 0); // BROKEN
 	
     printf("0 width 5:	[%05d]\n", -42);
 	ft_printf("0 width 5:	[%05d]\n", -42);
 	
-    printf("- width 5:	[%-5d]\n", -42);
-	ft_printf("- width 5:	[%-5d]\n", -42);
+	ft_printf("- width 5:	[%-5d]\n", -42); // BROKEN
+	printf("- width 5:	[%-5d]\n", -42);
 
     printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
 	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);

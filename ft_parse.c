@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/24 14:13:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/26 17:35:11 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	set_width(char *str, int *x, t_utils *i)
 			str += *x;
 			i->width = ft_atoi(str);
 		}
-		// printf("\nStringX:%c", str[*x]);
-		// printf("\nW:[%d]", i->width);
 		*x += 1;
 	}
 }
