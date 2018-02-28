@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/27 15:37:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/28 12:37:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,8 +175,8 @@ int	main(void)
 	// printf("W 10 P 1:	[%10.1i]\n", 12);
 	// ft_printf("W 10 P 1:	[%10.1i]\n", 12);
 	
-    printf("- width 10 prec 6:	[%-10.6i]\n", 12);
-	ft_printf("- width 10 prec 6:	[%-10.6i]\n", 12);
+    // printf("- width 10 prec 6:	[%-10.6i]\n", 12);
+	// ft_printf("- width 10 prec 6:	[%-10.6i]\n", 12);
 	
     // printf("0 width 4 prec 3:	[%04.3d]\n", -1);
 	// ft_printf("0 width 4 prec 3:	[%04.3d]\n", -1);
@@ -196,8 +196,8 @@ int	main(void)
     printf("width 5 prec .:	[%5.d]\n", 0);
 	ft_printf("width 5 prec .:	[%5.d]\n", 0);
 	
-    // printf("42:	[%d]\n", 42);
-	// ft_printf("42:	[%d]\n", 42);
+    printf("42:	[%d]\n", 42);
+	ft_printf("42:	[%d]\n", 42);
 	
     printf("t: 0 width 3:	[% 04d]\n", 1);
 	ft_printf("m: 0 width 3:	[% 04d]\n", 1);
@@ -208,20 +208,20 @@ int	main(void)
     printf("t: 0 width 10:	[%010d]\n", 0);
 	ft_printf("m: 0 width 10:	[%010d]\n", 0); // BROKEN
 	
-    // printf("0 width 5:	[%05d]\n", -42);
-	// ft_printf("0 width 5:	[%05d]\n", -42);
+    printf("0 width 5:	[%05d]\n", -42);
+	ft_printf("0 width 5:	[%05d]\n", -42);
 	
 	printf("- width 5:	[%-5d]\n", -42);
 	ft_printf("- width 5:	[%-5d]\n", -42); // BROKEN
 
-    // printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
-	// ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
+    printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
+	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
 	
-    // printf("0 width 3 prec 2:	[%03.2d]\n", 0);
-	// ft_printf("0 width 3 prec 2:	[%03.2d]\n", 0);
+    printf("0 width 3 prec 2:	[%03.2d]\n", 0);
+	ft_printf("0 width 3 prec 2:	[%03.2d]\n", 0);
 
-    // printf("0 width 3 prec 2:	[%03.2d]\n", -1);
-	// ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+    printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+	ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
 
 
 	return (1);
