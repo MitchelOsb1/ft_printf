@@ -34,7 +34,7 @@ void	s_wpl(t_utils *i, char cha_r)
 void	i_wpl(t_utils *i, char cha_r, int w)
 {
 
-	if (i->precision > i->len && i->len > 0)
+	if (i->precision > i->len && i->len >= 0)
 		i->buf = i->precision - i->len;
 	if (i->precision > i->width)
 		i->width = i->precision - i->len - i->buf;
@@ -44,7 +44,7 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 		while (i->width-- && i->width > 0)
 			ft_putchar(cha_r);
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0)
-		while (i->width-- && i->width > -1)
+		while (i->width--)
 			ft_putchar(' ');
 }
 
