@@ -33,16 +33,20 @@ void	s_wpl(t_utils *i, char cha_r)
 
 void	i_wpl(t_utils *i, char cha_r, int w)
 {
-
-	if (i->precision > i->len && i->len >= 0)
+	if (cha_r == '0' && i->i_nt == 0)
+		cha_r = ' ';
+	if (i->precision > i->len && i->i_nt >= 0)
 		i->buf = i->precision - i->len;
-	if (i->precision > i->width)
+	if (i->precision > i->len && i->i_nt < 0)
+		i->buf = i->precision - i->len + 1;
+	if (i->precision > i->width && i->width > 0)
 		i->width = i->precision - i->len - i->buf;
 	if (i->width > i->len && i->len > 0 && i->precision != -69)
 		i->width -= i->len + i->buf;
-	if ((w > i->len && i->minus == false && i->zero == false) || (i->precision == -69))
-		while (i->width-- && i->width > 0)
-			ft_putchar(cha_r);
+	printf("[%d]", i->width);
+	if (w > i->len && i->minus == false && i->zero == false)
+		while (i->width--)
+			ft_putchar('*'); //char
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0)
 		while (i->width--)
 			ft_putchar(' ');
@@ -52,6 +56,7 @@ void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w)
 {
 	int			count;
 	char		buf;
+	char		ch_ar;
 	long int	x;
 
 	x = i->i_nt;
@@ -63,17 +68,17 @@ void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w)
 		ft_putchar(sign);
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt <= 0)
 		while (i->width--)
-			ft_putchar('0');
-	if (i->buf > 0)
+			ft_putchar('/'); // 0
+	if (i->buf)
 		while (i->buf--)
-			ft_putchar(buf);
+			ft_putchar('|'); // 0
 	while (++count < i->len && i->precision != -69)
 	{
 		if (str[count] == '+' || str[count] == '-')
 			count++;
 		ft_putchar(str[count]);
 	}
-	if ((w > i->len && i->minus == true && i->zero == false) || (i->precision == -69))
+	if (w > i->len && i->minus == true && i->zero == false)
 		while (i->width--)
 			ft_putchar(cha_r);
 	if (w > i->len && i->minus == true && i->zero == true)

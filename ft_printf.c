@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/28 13:38:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/28 19:03:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,79 +108,79 @@ int	main(void)
     // printf("width 5 prec . = [%5.s]\n", "supfag");
 	// ft_printf("width 5 prec . = [%5.s]\n", "supfag");
 	// // ---------------------------------------------
-	printf("[Printf:%d]\n", 10);
-	ft_printf("[Dopeee:%d]\n", 10);
+	// printf("[Printf:%d]\n", 10);
+	// ft_printf("[Dopeee:%d]\n", 10);
 	
-	printf("[Printf:%5d]\n", 10);
-	ft_printf("[Dopeee:%5d]\n", 10);
+	// printf("[Printf:%5d]\n", 10);
+	// ft_printf("[Dopeee:%5d]\n", 10);
 
-	printf("[Printf:%5.1d]\n", 10);
-	ft_printf("[Dopeee:%5.1d]\n", 10);
+	// printf("[Printf:%5.1d]\n", 10);
+	// ft_printf("[Dopeee:%5.1d]\n", 10);
 
-	printf("[Printf:%.1d]\n", 10);
-	ft_printf("[Dopeee:%.1d]\n", 10);
+	// printf("[Printf:%.1d]\n", 10);
+	// ft_printf("[Dopeee:%.1d]\n", 10);
 
-	printf("[Printf:%.1d]\n", 123456);
-	ft_printf("[Dopeee:%.1d]\n", 123456);
+	// printf("[Printf:%.1d]\n", 123456);
+	// ft_printf("[Dopeee:%.1d]\n", 123456);
 	
-	printf("[Printf:%10.1d]\n", 123456);
-	ft_printf("[Dopeee:%10.1d]\n", 123456);
+	// printf("[Printf:%10.1d]\n", 123456);
+	// ft_printf("[Dopeee:%10.1d]\n", 123456);
 	
-	printf("[Printf:%5.1d]\n", 123456);
-	ft_printf("[Dopeee:%5.1d]\n", 123456);
+	// printf("[Printf:%5.1d]\n", 123456);
+	// ft_printf("[Dopeee:%5.1d]\n", 123456);
 	
-	ft_printf("[Dopeee:%0.15d]\n", 123456);
-	printf("[Printf:%0.15d]\n", 123456);
+	// ft_printf("[Dopeee:%0.15d]\n", 123456);
+	// printf("[Printf:%0.15d]\n", 123456);
 
-	printf("[Printf:%-5d]\n", 10);
-	ft_printf("[Dopeee:%-5d]\n", 10);
+	// printf("[Printf:%-5d]\n", 10);
+	// ft_printf("[Dopeee:%-5d]\n", 10);
 	
-	printf("[Printf:%-5.1d]\n", 10);
-	ft_printf("[Dopeee:%-5.1d]\n", 10);
+	// printf("[Printf:%-5.1d]\n", 10);
+	// ft_printf("[Dopeee:%-5.1d]\n", 10);
 
-	printf("[Printf:%.1d]\n", 10);
-	ft_printf("[Dopeee:%.1d]\n", 10);
+	// printf("[Printf:%.1d]\n", 10);
+	// ft_printf("[Dopeee:%.1d]\n", 10);
 
-	printf("[Printf:%-10.1d]\n", 123456);
-	ft_printf("[Dopeee:%-10.1d]\n", 123456);
+	// printf("[Printf:%-10.1d]\n", 123456);
+	// ft_printf("[Dopeee:%-10.1d]\n", 123456);
 
 	// -----------------------------------------------
 
-	printf("' ':	[% d]\n", -12);
-    ft_printf("' ':	[% d]\n", -12);
+	// printf("' ':	[% d]\n", -12);
+    // ft_printf("' ':	[% d]\n", -12);
 	
-	printf("10.6:	[% 10.6d]\n", 12);
-    ft_printf("10.6:	[% 10.6d]\n", 12);
+	// printf("10.6:	[% 10.6d]\n", 12);
+    // ft_printf("10.6:	[% 10.6d]\n", 12);
 	
-	printf("0 10.6:	[%0 10.6d]\n", 12);
-    ft_printf("0 10.6:	[%0 10.6d]\n", 12);
+	// printf("0 10.6:	[%0 10.6d]\n", 12);
+    // ft_printf("0 10.6:	[%0 10.6d]\n", 12);
 	
 	printf("-+10.5:	[%-+10.5d]\n", -12);
     ft_printf("-+10.5:	[%-+10.5d]\n", -12);
 	
-	printf("zero:	[%0i]\n", 12);
-    ft_printf("zero:	[%0i]\n", 12);
+	// printf("zero:	[%0i]\n", 12);
+    // ft_printf("zero:	[%0i]\n", 12);
 	
-	printf("width 10:	[%10i]\n", 12);
-    ft_printf("width 10:	[%10i]\n", 12);
+	// printf("width 10:	[%10i]\n", 12);
+    // ft_printf("width 10:	[%10i]\n", 12);
 	
-    printf("minus and width 10:	[%-10i]\n", 12);
-	ft_printf("minus and width 10:	[%-10i]\n", 12);
+    // printf("minus and width 10:	[%-10i]\n", 12);
+	// ft_printf("minus and width 10:	[%-10i]\n", 12);
 	
-    printf("precyzja 1:	[%.1i]\n", 12);
-	ft_printf("precyzja 1:	[%.1i]\n", 12);
+    // printf("precyzja 1:	[%.1i]\n", 12);
+	// ft_printf("precyzja 1:	[%.1i]\n", 12);
 	
-    printf("width 10 prec 6:	[%10.6i]\n", 12);
-	ft_printf("width 10 prec 6:	[%10.6i]\n", 12);
+    // printf("width 10 prec 6:	[%10.6i]\n", 12);
+	// ft_printf("width 10 prec 6:	[%10.6i]\n", 12);
 
-	printf("W 10 P 1:	[%10.1i]\n", 12);
-	ft_printf("W 10 P 1:	[%10.1i]\n", 12);
+	// printf("W 10 P 1:	[%10.1i]\n", 12);
+	// ft_printf("W 10 P 1:	[%10.1i]\n", 12);
 	
-    printf("- width 10 prec 6:	[%-10.6i]\n", 12);
-	ft_printf("- width 10 prec 6:	[%-10.6i]\n", 12);
+    // printf("- width 10 prec 6:	[%-10.6i]\n", 12);
+	// ft_printf("- width 10 prec 6:	[%-10.6i]\n", 12);
 	
-    printf("0 width 4 prec 3:	[%04.3d]\n", -1);
-	ft_printf("0 width 4 prec 3:	[%04.3d]\n", -1);
+    // printf("0 width 4 prec 3:	[%04.3d]\n", -1);
+	// ft_printf("0 width 4 prec 3:	[%04.3d]\n", -1);
 	
     printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
 	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 25);
@@ -188,32 +188,32 @@ int	main(void)
     printf("width 10 prec 5:	[%+10.5d]\n", -25);
 	ft_printf("width 10 prec 5:	[%+10.5d]\n", -25);
 	
-    printf("0 width 3 prec 2:	[%03.2d]\n", -1);
-	ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+    // printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+	// ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
 	
     printf("prec 10:	[%.10d]\n", -12);
 	ft_printf("prec 10:	[%.10d]\n", -12);
 	
-    printf("width 5 prec .:	[%5.d]\n", 0);
-	ft_printf("width 5 prec .:	[%5.d]\n", 0);
+    // printf("width 5 prec .:	[%5.d]\n", 0);
+	// ft_printf("width 5 prec .:	[%5.d]\n", 0);
 	
-    printf("42:	[%d]\n", 42);
-	ft_printf("42:	[%d]\n", 42);
+    // printf("42:	[%d]\n", 42);
+	// ft_printf("42:	[%d]\n", 42);
 	
-    printf("t: 0 width 3:	[% 04d]\n", 1);
-	ft_printf("m: 0 width 3:	[% 04d]\n", 1);
+    printf("t: 0 width 4:	[% 04d]\n", 1);
+	ft_printf("m: 0 width 4:	[% 04d]\n", 1);
 	
-    printf("width 4 prec.:	[%4.d]\n", 0);
-	ft_printf("width 4 prec.:	[%4.d]\n", 0);
+    // printf("width 4 prec.:	[%4.d]\n", 0);
+	// ft_printf("width 4 prec.:	[%4.d]\n", 0);
 	
-    printf("t: 0 width 10:	[%010d]\n", 0);
-	ft_printf("m: 0 width 10:	[%010d]\n", 0); // BROKEN
+    // printf("t: 0 width 10:	[%010d]\n", 0);
+	// ft_printf("m: 0 width 10:	[%010d]\n", 0);
 	
-    printf("0 width 5:	[%05d]\n", -42);
-	ft_printf("0 width 5:	[%05d]\n", -42);
+    // printf("0 width 5:	[%05d]\n", -42);
+	// ft_printf("0 width 5:	[%05d]\n", -42);
 	
-	printf("- width 5:	[%-5d]\n", -42);
-	ft_printf("- width 5:	[%-5d]\n", -42); // BROKEN
+	// printf("- width 5:	[%-5d]\n", -42);
+	// ft_printf("- width 5:	[%-5d]\n", -42);
 
     printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
 	ft_printf("+ width 10 prec 5:	[%+10.5d]\n", 4242);
@@ -221,8 +221,8 @@ int	main(void)
     printf("0 width 3 prec 2:	[%03.2d]\n", 0);
 	ft_printf("0 width 3 prec 2:	[%03.2d]\n", 0);
 
-    printf("0 width 3 prec 2:	[%03.2d]\n", -1);
-	ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+    // printf("0 width 3 prec 2:	[%03.2d]\n", -1);
+	// ft_printf("0 width 3 prec 2:	[%03.2d]\n", -1);
 
 
 	return (1);

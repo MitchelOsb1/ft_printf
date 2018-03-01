@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/28 13:45:57 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/02/28 20:15:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	convert_int(t_utils *i, va_list input)
 		sign = '-';
 	if (i->space == 1 && x > 0)
 		sign = ' ';
-	i_wpl(i, cha_r, w);
+	i_wpl(i, cha_r, w);	
 	i2_wpl(i, str, cha_r, sign, w);
 	ft_strdel(&str);
 }
