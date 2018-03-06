@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/03 14:36:38 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/05 19:33:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	convert_int(t_utils *i, va_list input)
 		sign = ' ';
 	i_wpl(i, cha_r, w);	
 	i2_wpl(i, str, cha_r, sign, w);
+	i3_wpl(); // add 3rd wpl function
 	ft_strdel(&str);
 }
 
