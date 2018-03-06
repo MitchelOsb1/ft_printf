@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/28 20:15:13 by marvin           ###   ########.fr       */
+/*   Updated: 2018/03/03 14:36:38 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	convert_int(t_utils *i, va_list input)
 		i->plus = 0;
 		sign = '-';
 	}
-	if ((i->minus == 0 && i->plus == 0 )|| (x < 0))
+	if ((i->minus == 0 && i->plus == 0)|| (x < 0))
 		sign = '-';
 	if (i->space == 1 && x > 0)
 		sign = ' ';

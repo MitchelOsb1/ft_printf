@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@42.us.org>              +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/27 15:39:09 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/05 12:31:21 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,46 @@
 
 void	set_flags(char *str, int *x, t_utils *i)
 {
-	if (str[*x] == '-')
-		i->minus = true;
-	else if (str[*x] == '+')
-		i->plus = true;
-	else if (str[*x] == '0' && i->minus == false)
-		i->zero = true;
-	else if (str[*x] == ' ' && i->plus == false)
-		i->space = true;
-	else if (str[*x] == '#')
-		i->hash = true;
-	if ((str[*x] == '-') || (str[*x] == '0') || str[*x] == '+' || (str[*x] == ' ') ||
-	 (str[*x] == '#'))
-	 	*x += 1;
+	while ((str[*x]) && ((str[*x] == '-') || (str[*x] == '0') || str[*x] == '+' || (str[*x] == ' ') ||
+		(str[*x] == '#')))
+	{
+		if (str[*x] == '-')
+			i->minus = true;
+		else if (str[*x] == '+')
+			i->plus = true;
+		else if (str[*x] == '0' && i->minus == false)
+			i->zero = true;
+		else if (str[*x] == ' ' && i->plus == false)
+			i->space = true;
+		else if (str[*x] == '#')
+			i->hash = true;
+		 *x += 1;
+	}
 }
 
 void	set_mods(char *str, int *x, t_utils *i)
 {
-	if (str[*x] == 'h')
+	while ((str[*x]) && (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' || str[*x] == 'z' ||
+		str[*x] == 'q'))
 	{
-		*x+= 1;
-		i->modifier = str[*x] == 'h' ? 1 : 0;
+		if (str[*x] == 'h')
+		{
+			*x+= 1;
+			i->modifier = str[*x] == 'h' ? 1 : 0;
+		}
+		if (str[*x] == 'l')
+		{
+			*x+= 1;
+			i->modifier = str[*x] == 'l' ? 3 : 2;
+		}
+		else if (str[*x] == 'j')
+			i->modifier = 4;
+		else if (str[*x] == 'z')
+			i->modifier = 5;
+		else if (str[*x] == 'q')
+			i->modifier = 6;
+		*x += 1;
 	}
-	if (str[*x] == 'l')
-	{
-		*x+= 1;
-		i->modifier = str[*x] == 'l' ? 3 : 2;
-	}
-	else if (str[*x] == 'j')
-		i->modifier = 4;
-	else if (str[*x] == 'z')
-		i->modifier = 5;
-	else if (str[*x] == 'q')
-		i->modifier = 6;
-	if (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' || str[*x] == 'z' ||
-	 str[*x] == 'q')
-	  	*x += 1;
 }
 
 void	set_width(char *str, int *x, t_utils *i)

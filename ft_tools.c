@@ -43,35 +43,44 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 		i->width = i->precision - i->len - i->buf;
 	if (i->width > i->len && i->len > 0 && i->precision != -69)
 		i->width -= i->len + i->buf;
-	printf("[%d]", i->width);
+	if (i->plus == 1 && i->i_nt > 0)
+		i->width -= 1;
 	if (w > i->len && i->minus == false && i->zero == false)
 		while (i->width--)
-			ft_putchar('*'); //char
+			ft_putchar('*'); //cha_r
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0)
 		while (i->width--)
-			ft_putchar(' ');
+			ft_putchar('0');
 }
 
 void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w)
 {
 	int			count;
 	char		buf;
-	char		ch_ar;
+	char		z_ero;
 	long int	x;
 
 	x = i->i_nt;
 	count = -1;
 	buf = '0';
+	z_ero = '0';
+	if (i->zero == 1 && i->i_nt == 0 && i->precision > 0)
+		z_ero = ' ';
 	if (i->precision < i->len)
 		buf = ' ';
+	if (i->space == 1 && i->i_nt >= 0)
+		sign = ' ';
 	if ((i->minus == true && x < 0) || (i->plus == true && x > 0) || (x < 0))
 		ft_putchar(sign);
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt <= 0)
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
 		while (i->width--)
-			ft_putchar('/'); // 0
+			ft_putchar('0');
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt == 0)
+		while (i->width--)
+			ft_putchar(z_ero);
 	if (i->buf)
 		while (i->buf--)
-			ft_putchar('|'); // 0
+			ft_putchar('0');
 	while (++count < i->len && i->precision != -69)
 	{
 		if (str[count] == '+' || str[count] == '-')
