@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/05 19:33:24 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/06 11:37:17 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,10 @@ void	convert_int(t_utils *i, va_list input)
 	i->i_nt = x;
 	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
 	sign = '0';
-	if (i->plus == 1 && i->minus == 0 && x > 0)
-	{
-		i->plus = 1;
-		sign = '+';
-	}
-	if ((i->minus == 1 && i->plus == 1) || i->minus == 1)
-	{
-		i->minus = 1;
-		i->plus = 0;
-		sign = '-';
-	}
-	if ((i->minus == 0 && i->plus == 0)|| (x < 0))
-		sign = '-';
-	if (i->space == 1 && x > 0)
-		sign = ' ';
+	sign = h_mps(i, sign, x);
 	i_wpl(i, cha_r, w);	
-	i2_wpl(i, str, cha_r, sign, w);
-	i3_wpl(); // add 3rd wpl function
+	i2_wpl(i, sign, w);
+	i3_wpl(i, str, cha_r, w); // add 3rd wpl function
 	ft_strdel(&str);
 }
 

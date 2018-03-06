@@ -30,6 +30,26 @@ void	s_wpl(t_utils *i, char cha_r)
 		while (i->width--)
 			ft_putchar(cha_r);
 }
+		
+char	h_mps(t_utils *i, char sign, long int x)
+{
+	if (i->plus == 1 && i->minus == 0 && x > 0)
+	{
+		i->plus = 1;
+		sign = '+';
+	}
+	if ((i->minus == 1 && i->plus == 1) || i->minus == 1)
+	{
+		i->minus = 1;
+		i->plus = 0;
+		sign = '-';
+	}
+	if ((i->minus == 0 && i->plus == 0)|| (x < 0))
+		sign = '-';
+	if (i->space == 1 && x > 0)
+		sign = ' ';
+	return (sign);
+}
 
 void	i_wpl(t_utils *i, char cha_r, int w)
 {
@@ -53,37 +73,45 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 			ft_putchar('0');
 }
 
-void	i2_wpl(t_utils *i, char *str, char cha_r, char sign, int w)
+void	i2_wpl(t_utils *i, char sign, int w)
 {
+	char buff;
+
+	buff = '0';
+	if (i->precision > i->len)
+		buff = ' ';
+	if (i->space == 1 && i->i_nt >= 0)
+		sign = ' ';
+	if ((i->minus == true && i->i_nt < 0) || (i->plus == true && i->i_nt > 0)
+		|| (i->i_nt < 0) || (i->space == 1))
+		ft_putchar(sign);
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
+		while (i->width--)
+			ft_putchar(buff);
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
+		while (i->width--)
+			ft_putchar('0'); // 0
+}
+
+void	i3_wpl(t_utils *i, char *str, char cha_r, int w)
+{
+	char		z_ero;
 	int			count;
 	char		buf;
-	char		z_ero;
-	long int	x;
 
-	x = i->i_nt;
 	count = -1;
-	buf = '0';
 	z_ero = '0';
+	buf = '0';
 	if (i->zero == 1 && i->i_nt == 0 && i->precision > 0)
 		z_ero = ' ';
 	if (i->precision < i->len)
 		buf = ' ';
-	if (i->space == 1 && i->i_nt >= 0)
-		sign = ' ';
-	if ((i->minus == true && x < 0) || (i->plus == true && x > 0) || (x < 0) || (i->space == 1))
-		ft_putchar(sign);
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
-		while (i->width--)
-			ft_putchar('0');
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
-		while (i->width--)
-			ft_putchar('0');
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt == 0)
 		while (i->width--)
 			ft_putchar(z_ero);
 	if (i->buf)
 		while (i->buf--)
-			ft_putchar('0');
+			ft_putchar(buf);
 	while (++count < i->len && i->precision != -69)
 	{
 		if (str[count] == '+' || str[count] == '-')
