@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/06 12:20:25 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/07 08:46:36 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	i2_wpl(t_utils *i, char sign, int w)
 			ft_putchar(buff);
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
 		while (i->width--)
-			ft_putchar('0'); // 0
+			ft_putchar('0');
 }
 
 void	i3_wpl(t_utils *i, char *str, int w)
@@ -110,4 +110,3 @@ void	i4_wpl(t_utils *i, char cha_r, int w)
 		while (i->width--)
             ft_putchar(' ');
 }
-    

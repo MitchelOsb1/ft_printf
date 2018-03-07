@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/06 11:36:16 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/07 08:38:27 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,18 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i);
 void	convert_string(t_utils *i, va_list input);
 void    convert_int(t_utils *i, va_list input);
 
-/* Tools */
+/* Strings */
 void    s_wpl(t_utils *i, char cha_r);
+
+/* Int */
 char	h_mps(t_utils *i, char sign, long int x);
 void	i_wpl(t_utils *i, char cha_r, int w);
 void	i2_wpl(t_utils *i, char sign, int w);
-void	i3_wpl(t_utils *i, char *str, char cha_r, int w);
+void	i3_wpl(t_utils *i, char *str, int w);
+void    i4_wpl(t_utils *i, char cha_r, int w);
+
+/* Char */
+void	convert_char(t_utils *i, va_list input);
 
 /*
     Modifier Flags

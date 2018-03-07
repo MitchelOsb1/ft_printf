@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/06 12:18:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/07 09:22:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,6 @@ void	convert_string(t_utils *i, va_list input)
 			ft_putchar(cha_r);
 }
 
-// void	convert_wchar_s(t_utils *i, va_list input)
-// {
-
-// }
-
-// void	convert_point(t_utils *i, va_list input)
-// {
-	
-// }
-
 void	convert_int(t_utils *i, va_list input)
 {
 	int			w;
@@ -67,7 +57,25 @@ void	convert_int(t_utils *i, va_list input)
 	ft_strdel(&str);
 }
 
+void	convert_char(t_utils *i, va_list input)
+{
+	unsigned char cha_r;
+
+	cha_r = va_arg(input, int);
+	c_wpl(i, cha_r);
+}
+
 // void	convert_unsigned_int(t_utils *i, va_list input)
+// {
+	
+// }
+
+// void	convert_wchar_s(t_utils *i, va_list input)
+// {
+
+// }
+
+// void	convert_point(t_utils *i, va_list input)
 // {
 	
 // }
