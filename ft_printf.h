@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 13:10:39 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/12 19:16:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ typedef struct      s_utils
 }                   t_utils;
 
 /* Printing */
-void	print_prefix(char *str, int x);
-void	print_postfix(char *str, int x);
+void	print_prefix(char *str, int x, t_utils *i);
+void	print_postfix(char *str, int x, t_utils *i);
 void	print_hex_addr(t_utils *i, unsigned long long int num);
 
 /* Setting Width/Precision/Len */
@@ -60,7 +60,7 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i);
 void	set_width(char *str, int *x, t_utils *i);
 void	parse_form(char *str, int *x, va_list input, t_utils *i);
 
-/* Convert / Print Flags */
+/* Convert */
 void	convert_string(t_utils *i, va_list input);
 void    convert_int(t_utils *i, va_list input);
 

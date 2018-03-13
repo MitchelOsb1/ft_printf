@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/11 14:29:54 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/12 19:15:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	init_tools(t_utils *format)
 
 void	parse_form(char *str, int *x, va_list input, t_utils *i)
 {
-	print_prefix(str, *x);
+	print_prefix(str, *x, i);
 	if (str[*x] == '%')
 		*x += 1;
 	while (str[*x] && (str[*x] == '-' || str[*x] == '+' || str[*x] == ' ' ||
@@ -47,7 +47,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_prec(str, x, i);
 	}
 	set_conv(str, x, input, i);
-	print_postfix(str, *x);
+	print_postfix(str, *x, i);
 }
 
 int	ft_printf(char const *restrict format, ...)
