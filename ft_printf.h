@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/07 09:35:27 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/12 13:10:39 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,29 @@
 # define STR tools.str
 # define LEN tools.len
 
-typedef struct  s_utils
+typedef struct      s_utils
 {
-    bool        plus;
-    bool        minus;
-    bool        zero;
-    bool        space;
-    bool        hash;
-    int         width;
-    int         precision;
-    int         modifier;
-    int         buf;
-    int         len;
-    long int    i_nt;
-}               t_utils;
+    bool            plus;
+    bool            minus;
+    bool            zero;
+    bool            space;
+    bool            hash;
+    char            cha_r;
+    int             width;
+    int             precision;
+    int             modifier;
+    int             buf;
+    int             len;
+    int             count;
+    long long int   i_nt;
+}                   t_utils;
 
-/* Print Before Precent */
+/* Printing */
 void	print_prefix(char *str, int x);
 void	print_postfix(char *str, int x);
+void	print_hex_addr(t_utils *i, unsigned long long int num);
 
-/* Setting Flags */
+/* Setting Width/Precision/Len */
 void	set_mods(char *str, int *x, t_utils *i);
 void	set_flags(char *str, int *x, t_utils *i);
 void	set_prec(char *str, int *x, t_utils *i);
@@ -61,8 +64,16 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i);
 void	convert_string(t_utils *i, va_list input);
 void    convert_int(t_utils *i, va_list input);
 
+/* Flag Sorting */
+long long   i_mod(t_utils *i, va_list input);
+long long   ui_mod(t_utils *i, va_list input);
+
 /* Strings */
 void    s_wpl(t_utils *i, char cha_r);
+
+/* Char */
+void	convert_char(t_utils *i, va_list input);
+void	c_wpl(t_utils *i, unsigned char cha_r);
 
 /* Int */
 char	h_mps(t_utils *i, char sign, long int x);
@@ -71,19 +82,28 @@ void	i2_wpl(t_utils *i, char sign, int w);
 void	i3_wpl(t_utils *i, char *str, int w);
 void    i4_wpl(t_utils *i, char cha_r, int w);
 
-/* Char */
-void	convert_char(t_utils *i, va_list input);
-void	c_wpl(t_utils *i, unsigned char cha_r);
+/* Unsigned Int */
+void    o_wpl(t_utils *i, unsigned long int num);
+// void    u_wpl(t_utils *i, unsigned long int num);
+// void    x_wpl(t_utils *i, unsigned long int num);
+
+/* Unsigned Int - Str Handle */
+char    *c_otoa(unsigned long int num);
+void    handl_ui(t_utils *i, unsigned long long int x);
+void    print_ui(t_utils *i, unsigned long long int x);
+
+/* Lib functions */
+char    *ft_strrev(char *str);
 
 /*
     Modifier Flags
-    0 = h
-    1 = hh
-    2 = l
-    3 = ll
-    4 = j
-    5 = z
-    6 = q
+    0 = h (short int) void*
+    1 = hh (char) void*
+    2 = l (long int) void*
+    3 = ll (long long int) void*
+    4 = j (intmax_t)
+    5 = z (size_t)
+    6 = q | d or i // (int) void*
 */
 
 

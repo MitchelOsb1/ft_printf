@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosborne <mosborne@42.us.org>              +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/02/27 13:09:51 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/11 14:30:20 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,16 @@ void	print_postfix(char *str, int x)
 		write(1, &str[x], 1);
 		x++;
 	}
+}
+
+void	print_hex_addr(t_utils *i, unsigned long long int num)
+{
+	if (i->cha_r == 'x' && num)
+		ft_putstr("0x");
+	if (i->cha_r == 'X' && num)
+		ft_putstr("0X");
+	if (i->cha_r == 'o' || i->cha_r == 'O')
+		if (i->precision - i->len < 0 && num)
+			ft_putchar('0');
+	i->hash = 0;
 }

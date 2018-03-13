@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/07 08:46:36 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/12 13:11:16 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 		i->width -= 1;
 	if (w > i->len && i->minus == false && i->zero == false)
 		while (i->width--)
-			ft_putchar(cha_r);
+			ft_putc_c(cha_r, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 0)
 		while (i->width--)
-			ft_putchar('0');
+			ft_putc_c('0', &(i->count));
 }
 
 void	i2_wpl(t_utils *i, char sign, int w)
@@ -65,13 +65,13 @@ void	i2_wpl(t_utils *i, char sign, int w)
 		sign = ' ';
 	if ((i->minus == true && i->i_nt < 0) || (i->plus == true && i->i_nt > 0)
 		|| (i->i_nt < 0) || (i->space == 1))
-		ft_putchar(sign);
+		ft_putc_c(sign, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
 		while (i->width--)
-			ft_putchar(buff);
+			ft_putc_c(buff, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
 		while (i->width--)
-			ft_putchar('0');
+			ft_putc_c('0', &(i->count));
 }
 
 void	i3_wpl(t_utils *i, char *str, int w)
@@ -89,24 +89,24 @@ void	i3_wpl(t_utils *i, char *str, int w)
 		buf = ' ';
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt == 0)
 		while (i->width--)
-			ft_putchar(z_ero);
+			ft_putc_c(z_ero, &(i->count));
 	if (i->buf)
 		while (i->buf--)
-			ft_putchar(buf);
+			ft_putc_c(buf, &(i->count));
 	while (++count < i->len && i->precision != -69)
 	{
 		if (str[count] == '+' || str[count] == '-')
 			count++;
-		ft_putchar(str[count]);
+		ft_putc_c(str[count], &(i->count));
 	}
 }
-		
+
 void	i4_wpl(t_utils *i, char cha_r, int w)
 {
 	if (w > i->len && i->minus == true && i->zero == false)
 		while (i->width--)
-			ft_putchar(cha_r);
+			ft_putc_c(cha_r, &(i->count));
 	if (w > i->len && i->minus == true && i->zero == true)
 		while (i->width--)
-            ft_putchar(' ');
+            ft_putc_c(' ', &(i->count));
 }

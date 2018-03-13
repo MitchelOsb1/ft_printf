@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/07 08:36:37 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/08 09:22:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		str[*x] == 'O' || str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' ||
 		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C')
 	{
+		i->cha_r = str[*x];
 		if (str[*x] == 's')
 			convert_string(i, input);
 		// else if (str[*x] == 'S')
