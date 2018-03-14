@@ -41,7 +41,10 @@ void    print_ui(t_utils *i, unsigned long long int x)
     if (i->cha_r == 'o' || i->cha_r == 'O')
         if (x == 0 && i->hash == 1 && (i->precision == -69 || i->precision == -1))
             ft_putc_c('0', &(i->count));
-    if (i->hash == 1 && i->width > -1)
+    
+
+
+    if (i->hash == 1 && i->width <= 0)
         print_hex_addr(i, x);
 
 }
