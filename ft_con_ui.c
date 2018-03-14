@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 11:26:25 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:21:34 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,16 @@ char    *c_hexoa(unsigned long int num, t_utils *i)
     bzero(str, 21);
     h_lower = "0123456789abcdef";
     h_upper = "0123456789ABCDEF";
-    if (i->cha_r == 'x')
+    if (num == 0)
+        str[x] = '0';
+    else if (i->cha_r == 'x')
         while (num)
             {
                 str[x] = h_lower[num % 16];
                 num = num / 16;
                 x++;
             }
-    if (i->cha_r == 'X')
+    else if (i->cha_r == 'X')
         while (num)
             {
                 str[x] = h_upper[num % 16];

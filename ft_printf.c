@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 11:47:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:02:54 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,30 +236,43 @@ int	main(void)
 
 	printf("t: normal:			[%x]\n", 1244);
 	ft_printf("m: normal:			[%x]\n", 1244);
+
 	printf("zero:				[%0x]\n", 1244);
 	ft_printf("zero:				[%0x]\n", 1244);
+
 	printf("width 10:			[%10x]\n", 1244);
 	ft_printf("width 10:			[%10x]\n", 1244);
+
 	printf("minus and width 10:		[%-10x]\n", 1244);
 	ft_printf("minus and width 10:		[%-10x]\n", 1244);
+
 	printf("hash:				[%#x]\n", 1244);
 	ft_printf("hash:				[%#x]\n", 1244);
+
 	printf("precyzja 1:			[%.1x]\n", 1244);
 	ft_printf("precyzja 1:			[%.1x]\n", 1244);
+	
 	printf("width 10 prec 6:		[%010.6x]\n", 1244);
 	ft_printf("width 10 prec 6:		[%010.6x]\n", 1244);
+
 	printf("# 0 width 10 prec 6:		[%#010.6x]\n", 1244);
 	ft_printf("# 0 width 10 prec 6:		[%#010.6x]\n", 1244);
+
 	printf("# width 10 prec 6:		[%#10.6x]\n", 1244);
 	ft_printf("# width 10 prec 6:		[%#10.6x]\n", 1244);
+
 	printf("ble ble:			[%20.5x]\n", 1245455464);
 	ft_printf("ble ble:			[%20.5x]\n", 1245455464);
+
 	printf("# [%#x]\n", 1244);
 	ft_printf("# [%#x]\n", 1244);
+
 	printf("# and width 10 [%#10x]\n", 1244);
 	ft_printf("# and width 10 [%#10x]\n", 1244);
+
 	printf("# prec 10[%#.10x]\n", 1244);
 	ft_printf("# prec 10[%#.10x]\n", 1244);
+	
 	printf("prec .:				[%.x]\n", 0);
 	ft_printf("prec .:				[%.x]\n", 0);
 	printf("lx:				[%lx]\n", 4294967296);

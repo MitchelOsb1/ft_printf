@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:35:02 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:02:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ void	convert_int(t_utils *i, va_list input)
 	long int	x;
 
 	w = i->width;
-	if (i->modifier > -1)
-		i->i_nt = i_mod(i, input);
-	else
-		i->i_nt = va_arg(input, int);
+	i->i_nt = va_arg(input, int);
 	x = i->i_nt;
 	str = ft_itoa(x);
 	i->len = ft_strlen(str);
@@ -74,10 +71,7 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 {
 	unsigned long long int num;
 
-	if (i->modifier > -1)
-		num = ui_mod(i, input);
-	else
-		num = va_arg(input, unsigned int);
+	num = va_arg(input, unsigned int);
 	if (i->cha_r == 'o' || i->cha_r == 'O') // need to add size of num
 		o_wpl(i, num);
 	else if (i->cha_r == 'u' || i->cha_r == 'U')

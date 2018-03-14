@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 11:23:29 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:19:59 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void    o_wpl(t_utils *i, unsigned long int num)
 {
     char    *str;
 
-    if (num <= (2^64))
+    if (num <= (2^63))
         str = c_octoa(num);
     else
-        str = NULL ;
+        str = NULL;
     i->len = ft_strlen(str);
     handl_ui(i, num);
     print_ui(i, num, str);
