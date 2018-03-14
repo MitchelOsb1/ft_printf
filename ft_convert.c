@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:31:39 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:35:02 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 		num = ui_mod(i, input);
 	else
 		num = va_arg(input, unsigned int);
-	if (i->cha_r == 'o' || i->cha_r == 'O')
+	if (i->cha_r == 'o' || i->cha_r == 'O') // need to add size of num
 		o_wpl(i, num);
 	else if (i->cha_r == 'u' || i->cha_r == 'U')
 		u_wpl(i, num);
@@ -86,7 +86,7 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 		x_wpl(i, num);
 }
 
-void	convert_point(t_utils *i, va_list input)
-{
+// void	convert_point(t_utils *i, va_list input)
+// {
 
-}
+// }

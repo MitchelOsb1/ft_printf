@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:28:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:45:51 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str);
 /* Lib functions */
 char    *ft_strrev(char *str);
 char    *ft_ui_toa(unsigned int n);
+char    *ft_ui_ll_toa(unsigned long long n);
 
 /*
     Modifier Flags
