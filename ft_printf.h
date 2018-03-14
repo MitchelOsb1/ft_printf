@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:00:30 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:28:08 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct      s_utils
 /* Printing */
 void	print_prefix(char *str, int x, t_utils *i);
 void	print_postfix(char *str, int x, t_utils *i);
-void	print_hex_addr(t_utils *i, unsigned long long int num);
+void	print_hex_addr(unsigned long long int num, t_utils *i);
 
 /* Setting Width/Precision/Len */
 void	set_mods(char *str, int *x, t_utils *i);
@@ -94,7 +94,7 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str);
 
 /* Lib functions */
 char    *ft_strrev(char *str);
-char    *ft_uitoa(unsigned int n);
+char    *ft_ui_toa(unsigned int n);
 
 /*
     Modifier Flags

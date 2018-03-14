@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 07:27:21 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:07:47 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str)
             i->precision == -1))
             ft_putc_c('0', &(i->count));
     if ((i->hash == 1 && i->width <= 0) || (i->hash == 1 && i->zero == 1))
-        print_hex_addr(i, x);
+        print_hex_addr(x, i);
     while (i->width-- && i->zero == 1)
         ft_putc_c('0', &(i->count));
     while (i->width-- && i->minus == 0)
         ft_putc_c(' ', &(i->count));
     if (i->hash == 1)
-        ft_print_hex_addr(i, x);
+        print_hex_addr(x, i);
     while ((i->precision-- && ((i->precision > -1 || i->precision == -69)
         && x != 0 && i->hash == 0)) && (i->cha_r == 'o' || i->cha_r == 'O'))
         ft_putc_c('0', &(i->count));
     if (x == 0 && (i->precision > -1 || i->precision == -69) && i->hash == 0
         && (i->cha_r == 'o' || i->cha_r == 'O'))
-        ft_putc_s(str, &(i->count))
+        ft_putc_s(str, &(i->count));
     while (i->width--)
         ft_putc_c(' ', &(i->count));
 }

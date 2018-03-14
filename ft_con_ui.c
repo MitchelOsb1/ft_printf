@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 08:42:17 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:11:21 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char    *c_octoa(unsigned long int num)
     str = ft_strnew(24);
     if (num == 0)
         str[x++] = '0';
-    if (num > 0 || num < 0)
+    if (num != 0)
     {
         while (num)
         {

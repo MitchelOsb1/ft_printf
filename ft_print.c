@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 08:59:50 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:07:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	print_postfix(char *str, int x, t_utils *i)
 	}
 }
 
-void	print_hex_addr(t_utils *i, unsigned long long int num)
+void	print_hex_addr(unsigned long long int num, t_utils *i)
 {
 	if (i->cha_r == 'x' && num)
 		ft_putc_s("0x", &(i->count));

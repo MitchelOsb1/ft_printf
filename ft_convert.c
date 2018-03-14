@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 08:58:55 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:31:39 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,9 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 		u_wpl(i, num);
 	else if (i->cha_r == 'x' || i->cha_r == 'X')
 		x_wpl(i, num);
+}
+
+void	convert_point(t_utils *i, va_list input)
+{
+
 }
