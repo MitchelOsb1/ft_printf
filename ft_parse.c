@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/08 09:22:50 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 08:57:48 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	set_flags(char *str, int *x, t_utils *i)
 {
-	while ((str[*x]) && ((str[*x] == '-') || (str[*x] == '0') || str[*x] == '+' || (str[*x] == ' ') ||
-		(str[*x] == '#')))
+	while ((str[*x]) && ((str[*x] == '-') || (str[*x] == '0') || str[*x] == '+'
+		|| (str[*x] == ' ') || (str[*x] == '#')))
 	{
 		if (str[*x] == '-')
 			i->minus = true;
@@ -33,8 +33,8 @@ void	set_flags(char *str, int *x, t_utils *i)
 
 void	set_mods(char *str, int *x, t_utils *i)
 {
-	while ((str[*x]) && (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' || str[*x] == 'z' ||
-		str[*x] == 'q'))
+	while ((str[*x]) && (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' ||
+		str[*x] == 'z' || str[*x] == 'q'))
 	{
 		if (str[*x] == 'h')
 		{
@@ -113,11 +113,9 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 			convert_char(i, input);
 		else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
 			convert_int(i, input);
-		// else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'b')
-		// 	convert_unsigned_int(i, input);
-		// else if (str[*x] == 'x' || str[*x] == 'X' || str[*x] == 'u' ||
-		// 		 str[*x] == 'U')
-		// 	convert_unsigned_int(i, input);
+		else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'x' ||
+			str[*x] == 'X' || str[*x] == 'u' || str[*x] == 'U')
+			convert_unsigned_int(i, input);
 		*x += 1;
 	}
 }

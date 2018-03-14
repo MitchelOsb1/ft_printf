@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 19:16:41 by marvin           ###   ########.fr       */
+/*   Updated: 2018/03/14 08:59:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	print_prefix(char *str, int x, t_utils *i)
 {
-	int i;
+	int z;
 
-	i = 0;
-	while (str[i] && i < x)
+	z = 0;
+	while (str[z] && z < x)
 	{
-		ft_putc_c(str[i], &(i->count));
-		i++;
+		ft_putc_c(str[z], &(i->count));
+		z++;
 	}
 }
 
@@ -28,7 +28,7 @@ void	print_postfix(char *str, int x, t_utils *i)
 {
 	while (str[x])
 	{
-		ft_putc_c(str[i], &(i->count));
+		ft_putc_c(str[x], &(i->count));
 		x++;
 	}
 }
@@ -36,11 +36,11 @@ void	print_postfix(char *str, int x, t_utils *i)
 void	print_hex_addr(t_utils *i, unsigned long long int num)
 {
 	if (i->cha_r == 'x' && num)
-		ft_putc_s("0x", i);
+		ft_putc_s("0x", &(i->count));
 	if (i->cha_r == 'X' && num)
-		ft_putc_s("0X", i);
+		ft_putc_s("0X", &(i->count));
 	if (i->cha_r == 'o' || i->cha_r == 'O')
 		if (i->precision - i->len < 0 && num)
-			ft_putc_c('0', i);
+			ft_putc_c('0', &(i->count));
 	i->hash = 0;
 }

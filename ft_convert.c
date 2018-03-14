@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 10:23:15 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 08:58:55 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	convert_int(t_utils *i, va_list input)
 	long int	x;
 
 	w = i->width;
-	if (i->modifier > 0)
+	if (i->modifier > -1)
 		i->i_nt = i_mod(i, input);
 	else
 		i->i_nt = va_arg(input, int);
@@ -74,24 +74,14 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 {
 	unsigned long long int num;
 
-	if (i->modifier > 0)
+	if (i->modifier > -1)
 		num = ui_mod(i, input);
 	else
 		num = va_arg(input, unsigned int);
 	if (i->cha_r == 'o' || i->cha_r == 'O')
 		o_wpl(i, num);
-	// else if (i->cha_r == 'u' || i->cha_r == 'U')
-	// 	u_wpl(i, num);
-	// else if (i->cha_r == 'x' || i->cha_r == 'X')
-	// 	x_wpl(i, num);
+	else if (i->cha_r == 'u' || i->cha_r == 'U')
+		u_wpl(i, num);
+	else if (i->cha_r == 'x' || i->cha_r == 'X')
+		x_wpl(i, num);
 }
-
-// void	convert_wchar_s(t_utils *i, va_list input)
-// {
-
-// }
-
-// void	convert_point(t_utils *i, va_list input)
-// {
-
-// }

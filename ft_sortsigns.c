@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 08:49:55 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 10:19:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 08:01:44 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 long long   i_mod(t_utils *i, va_list input)
 {
     if (i->modifier == 0)
-        return ((short int)va_arg(input, int));
+        return ((short int)va_arg(input, void*));
     else if (i->modifier == 1)
-        return ((char)va_arg(input, int));
+        return ((char)va_arg(input, void*));
     else if (i->modifier == 2)
-        return (va_arg(input, long int));
+        return ((long int)va_arg(input, void*));
     else if (i->modifier == 3)
-        return (va_arg(input, long long int));
+        return ((long long int)va_arg(input, void*));
     else if (i->modifier == 4)
-        return (va_arg(input, intmax_t));
+        return ((intmax_t)va_arg(input, void*));
     else if (i->modifier == 5)
-        return (va_arg(input, size_t));
+        return ((size_t)va_arg(input, void*));
     else if (i->modifier == 6)
-        return (va_arg(input, int));
+        return ((int)va_arg(input, void*));
     else
         return (0);
 }
@@ -35,46 +35,18 @@ long long   i_mod(t_utils *i, va_list input)
 long long   ui_mod(t_utils *i, va_list input)
 {
     if (i->modifier == 0)
-        return ((unsigned short int)va_arg(input, unsigned int));
+        return ((unsigned short int)va_arg(input, void*));
     else if (i->modifier == 1)
-        return ((unsigned char)va_arg(input, unsigned int));
+        return ((unsigned char)va_arg(input, void*));
     else if (i->modifier == 2)
-        return (va_arg(input, unsigned long int));
+        return ((unsigned long int)va_arg(input, void*));
     else if (i->modifier == 3)
-        return (va_arg(input, unsigned long long int));
+        return ((unsigned long long int)va_arg(input, void*));
     else if (i->modifier == 4)
-        return (va_arg(input, intmax_t));
+        return ((intmax_t)va_arg(input, void*));
     else if (i->modifier == 5)
-        return (va_arg(input, size_t));
+        return ((size_t)va_arg(input, void*));
     else if (i->modifier == 6)
-        return (va_arg(input, unsigned int));
-    return (0);
-}
-
-char    *c_otoa(unsigned long int num)
-{
-    char            *str;
-    unsigned int    x;
-
-    x = 0;
-    if (num)
-    {
-        str = ft_strnew(24);
-        if (num < x)
-            return ("Unsigned Only");
-        if (num == 0)
-        {
-            str[x] = '0';
-            x++;
-        }
-        while (num)
-        {
-            str[x] = (num % 8) + 48;
-            num = num / 8;
-            x++;
-        }
-        str[x] = '\0';
-        return (ft_strrev(str));
-    }
+        return ((unsigned int)va_arg(input, void*));
     return (0);
 }
