@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 07:56:40 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 15:38:18 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	convert_unsigned_int(t_utils *i, va_list input);
 /* Flag Sorting */
 long long   i_mod(t_utils *i, va_list input);
 long long   ui_mod(t_utils *i, va_list input);
+void        p_num(t_utils *i, unsigned long int x);
 
 /* Strings - Chars */
 void    s_wpl(t_utils *i, char cha_r);

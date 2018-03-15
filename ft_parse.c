@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 08:07:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:23:39 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	set_flags(char *str, int *x, t_utils *i)
 			i->minus = true;
 		else if (str[*x] == '+')
 			i->plus = true;
-		else if (str[*x] == '0' && i->minus == false)
-			i->zero = true;
 		else if (str[*x] == ' ' && i->plus == false)
 			i->space = true;
 		else if (str[*x] == '#')
 			i->hash = true;
-		 *x += 1;
+		else if (str[*x] == '0' && i->minus == false)
+			i->zero = true;
+		*x += 1;
 	}
 }
 
@@ -101,6 +101,7 @@ void	set_prec(char *str, int *x, t_utils *i)
 
 void	set_conv(char *str, int *x, va_list input, t_utils *i)
 {
+    printf("[%d]\n", i->width);
 	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' ||
 		str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' ||
 		str[*x] == 'O' || str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' ||

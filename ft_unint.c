@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 07:59:01 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 15:38:47 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void    o_wpl(t_utils *i, unsigned long int num)
     else
         str = NULL;
     i->len = ft_strlen(str);
+    p_num(i, num);
     handl_ui(i, num);
     print_ui(i, num, str);
     free(str);
@@ -37,6 +38,7 @@ void    u_wpl(t_utils *i, unsigned long int num)
     else
         str = NULL;
     i->len = ft_strlen(str);
+    p_num(i, num);
     handl_ui(i, num);
     print_ui(i, num, str);
     free(str);
@@ -48,8 +50,8 @@ void    x_wpl(t_utils *i, unsigned long int num)
 
     str = c_hexoa(num, i);
     i->len = ft_strlen(str);
+    p_num(i, num);
     handl_ui(i, num);
     print_ui(i, num, str);
     free(str);
 }
-
