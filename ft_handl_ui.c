@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 11:34:24 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:32:43 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void    handl_ui(t_utils *i, unsigned long long int x)
 {
-    i->zero = (i->precision == -69 || i->space == 0 || i->precision >= 0) ?
+    int tmp;
+
+    tmp = i->width;
+    i->zero = (i->precision == -69 || i->space == 1 || i->precision >= 0) ?
         i->zero = 0 : i->zero;
     i->width = ((i->precision == -69 || i->precision == 0) && x == 0) ?
         i->width = i->width + 1 : i->width;
@@ -22,38 +25,16 @@ void    handl_ui(t_utils *i, unsigned long long int x)
         i->width = i->width - 2 : i->width;
     i->width = ((i->cha_r == 'o' || i->cha_r == 'O') && (i->hash == 1)) ?
         i->width = i->width - 1 : i->width;
-    if (i->precision > 0 && (i->precision > i->len))
-        i->width -= i->precision;
-    else if (i->precision == -69 || i->precision == 0)
-        i->width -= 1;
-    else
+    i->width = (i->precision > 0 && i->precision > i->len) ?
+        i->width = i->width - i->precision : i->width;
+    i->width = (i->precision == -69 || i->precision == 0) ?
+        i->width = i->width - 1 : i->width;
+    if (i->width == tmp)
         i->width -= i->len;
-    i->precision = (i->precision != 69 || i->precision >= 0) ?
+    i->precision = (i->precision != 69 && i->precision >= 0) ?
         i->precision = i->precision - i->len : i->precision;
     i->width = (i->plus == 1) ? i->width = i->width - 1 : i->width;
 }
-
-// void    handl_ui(t_utils *i, unsigned long long int x)
-// {
-// 	if (i->precision == -100 || i->space == 1 || i->precision >= 0)
-// 		i->zero = 0;
-// 	if ((i->precision == -100 || i->precision == 0) && x == 0)
-// 		i->width += 1;
-// 	if ((i->cha_r == 'x' || i->cha_r == 'X') && (i->hash == 1))
-// 		i->width -= 2;
-// 	if ((i->cha_r == 'o' || i->cha_r == 'O') && i->hash == 1)
-// 		i->width -= 1;
-// 	if (i->precision > 0 && (i->len < i->precision))
-// 		i->width -= i->precision;
-// 	else if (i->precision == -100 || i->precision == 0)
-// 		i->width -= 1;
-// 	else
-// 		i->width -= i->len;
-// 	if (i->precision != -100 && i->precision >= 0)
-// 		i->precision -= i->len;
-// 	if (i->plus == 1)
-// 		i->width -= 1;
-// }
 
 void    print_ui(t_utils *i, unsigned long long int x, char *str)
 {
@@ -69,11 +50,12 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str)
         ft_putc_c(' ', &(i->count));
     if (i->hash == 1)
         print_hex_addr(x, i);
-    while ((i->precision-- > 0 && ((i->precision > -1 || i->precision == -69)
-        || (x == 0 && i->hash == 1)) && (i->cha_r == 'o' || i->cha_r == 'O')))
-        ft_putc_c('0', &(i->count));
-    if (!(((i->precision > 0 || i->precision == -69) || (i->hash == 1 && x == 0))
+    if ((i->precision > -1 || i->precision == -69) || (x == 0 && i->hash == 1
         && (i->cha_r == 'o' || i->cha_r == 'O')))
+        while (i->precision-- > 0)
+            ft_putc_c('0', &(i->count));
+    if (!((i->precision > -1 || i->precision == -69) || (i->hash == 1 && x == 0
+        && (i->cha_r == 'o' || i->cha_r == 'O'))))
         ft_putc_s(str, &(i->count));
     while (i->width-- > 0)
         ft_putc_c(' ', &(i->count));
