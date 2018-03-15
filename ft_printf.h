@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:45:51 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 07:56:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void    x_wpl(t_utils *i, unsigned long int num);
 /* Unsigned Int - Str Handle */
 char    *c_octoa(unsigned long int num);
 char    *c_hexoa(unsigned long int num, t_utils *i);
-void    handl_ui(t_utils *i, unsigned long long int x);
+void    handl_ui(t_utils *i, unsigned long int x);
 void    print_ui(t_utils *i, unsigned long long int x, char *str);
 
 /* Lib functions */

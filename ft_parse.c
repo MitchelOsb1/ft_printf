@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 08:57:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 08:07:08 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,17 @@ void	set_mods(char *str, int *x, t_utils *i)
 	{
 		if (str[*x] == 'h')
 		{
-			*x+= 1;
-			i->modifier = str[*x] == 'h' ? 1 : 0;
+			if (str[*x + 1] == 'h')
+				i->modifier = 1;
+			else
+				i->modifier = 0;
 		}
 		if (str[*x] == 'l')
 		{
-			*x+= 1;
-			i->modifier = str[*x] == 'l' ? 3 : 2;
+			if (str[*x + 1] == 'l')
+				i->modifier = 3;
+			else
+				i->modifier = 2;
 		}
 		else if (str[*x] == 'j')
 			i->modifier = 4;

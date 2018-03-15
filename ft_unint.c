@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 15:19:59 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 07:59:01 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void    u_wpl(t_utils *i, unsigned long int num)
 {
     char    *str;
 
-    if (num > 4294967295) // meaning behind this size?
+    if (num > (2^32) - 1)
         str = ft_ui_ll_toa(num);
-    else if (num <= 4294967295)
+    else if (num <= ((2^32) - 1))
         str = ft_ui_toa(num);
     else
         str = NULL;

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:45:47 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 07:54:36 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char    *ft_ui_toa(unsigned int n)
 {
         unsigned int    sign;
         unsigned int    count;
-        char    *str;
+        char            *str;
 
         count = 1;
         sign = n;
@@ -57,7 +57,7 @@ char    *ft_ui_toa(unsigned int n)
 
 char    *ft_ui_ll_toa(unsigned long long n)
 {
-        unsigned  long long int sign;
+        unsigned long long int  sign;
         unsigned int            count;
         char                    *str;
 

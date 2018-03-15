@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 15:02:06 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 08:12:10 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 	unsigned long long int num;
 
 	num = va_arg(input, unsigned int);
-	if (i->cha_r == 'o' || i->cha_r == 'O') // need to add size of num
+	if (i->cha_r == 'o' || i->cha_r == 'O')
 		o_wpl(i, num);
 	else if (i->cha_r == 'u' || i->cha_r == 'U')
 		u_wpl(i, num);

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 09:07:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/15 07:45:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_hex_addr(unsigned long long int num, t_utils *i)
 	if (i->cha_r == 'X' && num)
 		ft_putc_s("0X", &(i->count));
 	if (i->cha_r == 'o' || i->cha_r == 'O')
-		if (i->precision - i->len < 0 && num)
+		if (i->precision - i->len < 0 && num == 0)
 			ft_putc_c('0', &(i->count));
 	i->hash = 0;
 }
