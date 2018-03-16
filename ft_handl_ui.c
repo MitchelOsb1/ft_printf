@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 16:24:01 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/16 15:42:54 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,10 @@ void    handl_ui(t_utils *i, unsigned long int x)
     int tmp;
 
     tmp = i->width;
-    printf("[%d]", i->width);
     i->width = ((i->precision == -69 || i->precision == 0) && x == 0) ?
         i->width + 1 : i->width;
-    printf("[%d]", i->width);
     i->width = ((i->cha_r == 'x' || i->cha_r == 'X') && (i->hash == 1)) ?
         i->width - 2 : i->width;
-    printf("[%d]", i->width);
     i->width = ((i->cha_r == 'o' || i->cha_r == 'O') && (i->hash == 1)) ?
         i->width - 1 : i->width;
     if (i->precision > 0 && (i->precision > i->len))
@@ -45,12 +42,10 @@ void    handl_ui(t_utils *i, unsigned long int x)
     i->precision = (i->precision != 69 && i->precision >= 0) ?
         i->precision - i->len : i->precision;
     i->width = (i->plus == 1) ? i->width - 1 : i->width;
-    printf("[%d]", i->width);
 }
 
 void    print_ui(t_utils *i, unsigned long long int x, char *str)
 {
-    printf("[%d]\n", i->width);
     if(i->precision == -69 || i->space == 1 || i->precision >= 0)
         i->zero = 0;
     if (i->cha_r == 'o' || i->cha_r == 'O')

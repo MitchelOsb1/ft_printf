@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 16:23:39 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/16 15:42:39 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	set_prec(char *str, int *x, t_utils *i)
 		i->precision = -69;
 	while (str[*x] && (ft_isdigit(str[*x])) && (i->precision != -69))
 	{
-		if (i->precision == 0)
+		if (i->precision == -1)
 		{
 			tmp += *x;
 			i->precision = ft_atoi(tmp);
@@ -101,7 +101,6 @@ void	set_prec(char *str, int *x, t_utils *i)
 
 void	set_conv(char *str, int *x, va_list input, t_utils *i)
 {
-    printf("[%d]\n", i->width);
 	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' ||
 		str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' ||
 		str[*x] == 'O' || str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' ||
