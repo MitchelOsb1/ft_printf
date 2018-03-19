@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 15:38:18 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 07:07:38 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	convert_char(t_utils *i, va_list input);
 void	convert_unsigned_int(t_utils *i, va_list input);
 
 /* Flag Sorting */
-long long   i_mod(t_utils *i, va_list input);
-long long   ui_mod(t_utils *i, va_list input);
+long long int  i_mod(t_utils *i, va_list input);
+unsigned long long int  ui_mod(t_utils *i, va_list input);
 void        p_num(t_utils *i, unsigned long int x);
 
 /* Strings - Chars */
@@ -83,14 +83,14 @@ void	i3_wpl(t_utils *i, char *str, int w);
 void    i4_wpl(t_utils *i, char cha_r, int w);
 
 /* Unsigned Int */
-void    o_wpl(t_utils *i, unsigned long int num);
-void    u_wpl(t_utils *i, unsigned long int num);
-void    x_wpl(t_utils *i, unsigned long int num);
+void    o_wpl(t_utils *i, unsigned long long int num);
+void    u_wpl(t_utils *i, unsigned long long int num);
+void    x_wpl(t_utils *i, unsigned long long int num);
 
 /* Unsigned Int - Str Handle */
 char    *c_octoa(unsigned long int num);
 char    *c_hexoa(unsigned long int num, t_utils *i);
-void    handl_ui(t_utils *i, unsigned long int x);
+void    handl_ui(t_utils *i, unsigned long long int x);
 void    print_ui(t_utils *i, unsigned long long int x, char *str);
 
 /* Lib functions */

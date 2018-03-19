@@ -6,13 +6,13 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/16 16:11:29 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 07:16:16 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    o_wpl(t_utils *i, unsigned long int num)
+void    o_wpl(t_utils *i, unsigned long long int num)
 {
     char    *str;
 
@@ -27,7 +27,7 @@ void    o_wpl(t_utils *i, unsigned long int num)
     free(str);
 }
 
-void    u_wpl(t_utils *i, unsigned long int num)
+void    u_wpl(t_utils *i, unsigned long long int num)
 {
     char    *str;
 
@@ -44,7 +44,7 @@ void    u_wpl(t_utils *i, unsigned long int num)
     free(str);
 }
 
-void    x_wpl(t_utils *i, unsigned long int num)
+void    x_wpl(t_utils *i, unsigned long long int num)
 {
     char    *str;
 

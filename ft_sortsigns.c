@@ -6,13 +6,13 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 08:49:55 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/14 15:01:30 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 07:10:07 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-long long   i_mod(t_utils *i, va_list input)
+long long int  i_mod(t_utils *i, va_list input)
 {
     if (i->modifier == 0)
         return ((short int)va_arg(input, void*));
@@ -34,7 +34,7 @@ long long   i_mod(t_utils *i, va_list input)
         return (0);
 }
 
-long long   ui_mod(t_utils *i, va_list input)
+unsigned long long int  ui_mod(t_utils *i, va_list input)
 {
     if (i->modifier == 0)
         return ((unsigned short int)va_arg(input, void*));
@@ -57,4 +57,5 @@ long long   ui_mod(t_utils *i, va_list input)
         return ((unsigned int)va_arg(input, void*));
     else
         return ((unsigned long long int)va_arg(input, void*));
+    return ((unsigned long long int)NULL);
 }

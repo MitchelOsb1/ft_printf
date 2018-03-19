@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/16 15:42:54 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 07:54:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    p_num(t_utils *i, unsigned long int x)
         i->buf = 0;
 }
 
-void    handl_ui(t_utils *i, unsigned long int x)
+void    handl_ui(t_utils *i, unsigned long long int x)
 {
     int tmp;
 
@@ -42,6 +42,8 @@ void    handl_ui(t_utils *i, unsigned long int x)
     i->precision = (i->precision != 69 && i->precision >= 0) ?
         i->precision - i->len : i->precision;
     i->width = (i->plus == 1) ? i->width - 1 : i->width;
+    if (i->minus == 1)
+        i->width += 2;
 }
 
 void    print_ui(t_utils *i, unsigned long long int x, char *str)
