@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 07:07:38 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 08:10:49 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ typedef struct      s_utils
     int             count;
     long long int   i_nt;
 }                   t_utils;
+
+/* ft_printf */
+int	ft_printf(char const *restrict format, ...);
 
 /* Printing */
 void	print_prefix(char *str, int x, t_utils *i);
