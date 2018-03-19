@@ -6,11 +6,12 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 12:04:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 13:10:21 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 15:47:34 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void    ft_putc_c(char c, int *cnt_ret)
 {

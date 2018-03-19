@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 07:16:22 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:55:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ char    *c_hexoa(unsigned long int num, t_utils *i)
                 str[x++] = h_lower[num % 16];
                 num = num / 16;
             }
-    else if (i->cha_r == 'X')
+    printf("Str[%s]", str);
+    if (i->cha_r == 'X')
         while (num)
             {
                 str[x++] = h_upper[num % 16];

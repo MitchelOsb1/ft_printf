@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/15 07:54:36 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 13:37:25 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ char    *ft_ui_toa(unsigned int n)
         while (sign /= 10)
                 count++;
         str = ft_strnew(count);
-        if (!str)
+        if (!(str))
                 return (NULL);
-        while (--count >= sign)
+        while (count--)
         {
                 str[count] = n >= 10 ? (n % 10) + 48 : n + 48;
                 n /= 10;
@@ -55,7 +55,7 @@ char    *ft_ui_toa(unsigned int n)
         return (str);
 }
 
-char    *ft_ui_ll_toa(unsigned long long n)
+char    *ft_ui_ll_toa(unsigned long long int n)
 {
         unsigned long long int  sign;
         unsigned int            count;
@@ -68,7 +68,7 @@ char    *ft_ui_ll_toa(unsigned long long n)
         str = ft_strnew(count);
         if (!str)
                 return (NULL);
-        while (--count >= sign)
+        while (count--)
         {
                 str[count] = n >= 10 ? (n % 10) + 48 : n + 48;
                 n /= 10;
