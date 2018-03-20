@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 07:58:44 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:57:15 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_tools(t_utils *format)
 	format->i_nt = 0;
 	format->width = -1;
 	format->precision = -1;
-	format->modifier = 0;
+	format->modifier = -1;
 	format->buf = 0;
 	format->len = 0;
 }

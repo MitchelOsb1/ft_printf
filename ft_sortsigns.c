@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 08:49:55 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 07:10:07 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:57:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,5 @@ unsigned long long int  ui_mod(t_utils *i, va_list input)
     else if (i->cha_r == 'o' || i->cha_r == 'u' || i->cha_r == 'x' ||
         i->cha_r == 'X')
         return ((unsigned int)va_arg(input, void*));
-    else
-        return ((unsigned long long int)va_arg(input, void*));
     return ((unsigned long long int)NULL);
 }
