@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 17:57:15 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 09:01:37 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	init_tools(t_utils *format)
 	format->modifier = -1;
 	format->buf = 0;
 	format->len = 0;
+	format->count = 0;
 }
 
 void	parse_form(char *str, int *x, va_list input, t_utils *i)

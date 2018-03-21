@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 17:57:51 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 09:36:18 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,31 @@ void	convert_char(t_utils *i, va_list input)
 
 	cha_r = va_arg(input, int);
 	if (i->cha_r == 'C')
-		i->width = -2; // Fix to account for uppercase C
+		i->width = -2;
 	c_wpl(i, cha_r);
 }
 
 void	convert_int(t_utils *i, va_list input)
 {
-	int			w;
-	char		cha_r;
-	char		*str;
-	char		sign;
-	long int	x;
+	int				w;
+	char			cha_r;
+	char			*str;
+	char			sign;
+	long long int	x;
 
 	w = i->width;
 	x = i_mod(i, input);
-	i->i_nt = x;
 	str = ft_itoa(x);
+	i->i_nt = x;
 	i->len = ft_strlen(str);
+	ft_strdel(&str);
 	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
 	sign = '0';
 	sign = h_mps(i, sign, x);
 	i_wpl(i, cha_r, w);
 	i2_wpl(i, sign, w);
-	i3_wpl(i, str, w);
+	i3_wpl(i, w, x);
 	i4_wpl(i, cha_r, w);
-	ft_strdel(&str);
 }
 
 void	convert_unsigned_int(t_utils *i, va_list input)

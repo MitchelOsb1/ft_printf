@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 17:38:38 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/20 11:06:18 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    o_wpl(t_utils *i, unsigned long int num)
 {
     char    *str;
 
-    if (num <= ((2^63) - 1))
+    if (num <= 9223372036854775807)
         str = c_octoa(num);
     else
         str = (NULL);

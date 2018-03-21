@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 13:37:25 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 09:22:51 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,26 @@ char *ft_strrev(char *str)
     }
     tmp[i] = '\0';
     return (tmp);
+}
+
+void    ft_putc_nbr(long long int num, t_utils *i)
+{
+        if (num == (2^63))
+        {
+                ft_putc_s("-9223372036854775808", &(i->count));
+                return ;
+        }
+        if (num < 0)
+        {
+                ft_putc_nbr(-num, i);
+        }
+        else if (num >= 10)
+        {
+                ft_putc_nbr((num / 10), i);
+                ft_putc_nbr((num % 10), i);
+        }
+        else
+                ft_putc_c((num + 48), i);
 }
 
 char    *ft_ui_toa(unsigned int n)

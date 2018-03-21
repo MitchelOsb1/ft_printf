@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 15:47:32 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/20 11:41:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void    handl_ui(t_utils *i, unsigned long long int x)
         i->width -= 1;
     else
         i->width -= i->len;
-    i->precision = (i->precision != 69 && i->precision >= 0) ?
+    i->precision = (i->precision != 69 && i->precision > 0) ?
         i->precision - i->len : i->precision;
     i->width = (i->plus == 1) ? i->width - 1 : i->width;
     if (i->minus == 1)

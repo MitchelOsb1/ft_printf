@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 13:36:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 09:35:14 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct      s_utils
     int             buf;
     int             len;
     int             count;
-    int             i_nt;
+    long long int   i_nt;
 }                   t_utils;
 
 /* ft_printf */
@@ -79,10 +79,10 @@ void    s_wpl(t_utils *i, char cha_r);
 void	c_wpl(t_utils *i, unsigned char cha_r);
 
 /* Int */
-char	h_mps(t_utils *i, char sign, long int x);
+char	h_mps(t_utils *i, char sign, long long int x);
 void	i_wpl(t_utils *i, char cha_r, int w);
 void	i2_wpl(t_utils *i, char sign, int w);
-void	i3_wpl(t_utils *i, char *str, int w);
+void	i3_wpl(t_utils *i, int w, long long int x);
 void    i4_wpl(t_utils *i, char cha_r, int w);
 
 /* Unsigned Int */
@@ -100,6 +100,7 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str);
 char    *ft_strrev(char *str);
 char    *ft_ui_toa(unsigned int n);
 char    *ft_ui_ll_toa(unsigned long long int n);
+void    ft_putc_nbr(long long int num, t_utils *i);
 
 /*
     Modifier Flags

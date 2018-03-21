@@ -6,18 +6,19 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/12 13:11:16 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 09:36:05 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	h_mps(t_utils *i, char sign, long int x)
+char	h_mps(t_utils *i, char sign, long long int x)
 {
-	if (i->plus == 1 && i->minus == 0 && x > 0)
+	if (i->plus == 1 && i->minus == 0 && x >= 0)
 	{
 		i->plus = 1;
 		sign = '+';
+		
 	}
 	if ((i->minus == 1 && i->plus == 1) || i->minus == 1)
 	{
@@ -25,7 +26,7 @@ char	h_mps(t_utils *i, char sign, long int x)
 		i->plus = 0;
 		sign = '-';
 	}
-	if ((i->minus == 0 && i->plus == 0)|| (x < 0))
+	if ((i->minus == 0 && i->plus == 0) || (x < 0))
 		sign = '-';
 	if (i->space == 1 && x > 0)
 		sign = ' ';
@@ -49,9 +50,6 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 	if (w > i->len && i->minus == false && i->zero == false)
 		while (i->width--)
 			ft_putc_c(cha_r, &(i->count));
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 0)
-		while (i->width--)
-			ft_putc_c('0', &(i->count));
 }
 
 void	i2_wpl(t_utils *i, char sign, int w)
@@ -64,8 +62,11 @@ void	i2_wpl(t_utils *i, char sign, int w)
 	if (i->space == 1 && i->i_nt >= 0)
 		sign = ' ';
 	if ((i->minus == true && i->i_nt < 0) || (i->plus == true && i->i_nt > 0)
-		|| (i->i_nt < 0) || (i->space == 1))
-		ft_putc_c(sign, &(i->count));
+		|| (i->i_nt < 0) || (i->space == 1) || (i->plus == 1 && i->i_nt == 0))
+		ft_putc_c(sign, &(i->count)); //sign
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 0)
+		while (i->width--)
+			ft_putc_c('0', &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
 		while (i->width--)
 			ft_putc_c(buff, &(i->count));
@@ -74,7 +75,7 @@ void	i2_wpl(t_utils *i, char sign, int w)
 			ft_putc_c('0', &(i->count));
 }
 
-void	i3_wpl(t_utils *i, char *str, int w)
+void	i3_wpl(t_utils *i, int w, long long int x)
 {
 	char		z_ero;
 	int			count;
@@ -93,12 +94,8 @@ void	i3_wpl(t_utils *i, char *str, int w)
 	if (i->buf)
 		while (i->buf--)
 			ft_putc_c(buf, &(i->count));
-	while (++count < i->len && i->precision != -69)
-	{
-		if (str[count] == '+' || str[count] == '-')
-			count++;
-		ft_putc_c(str[count], &(i->count));
-	}
+	if (i->precision != -69)
+		ft_putc_nbr(x, &(i->count));
 }
 
 void	i4_wpl(t_utils *i, char cha_r, int w)
