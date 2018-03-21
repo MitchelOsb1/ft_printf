@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 09:36:18 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 13:33:02 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,13 @@ void	convert_unsigned_int(t_utils *i, va_list input)
 		x_wpl(i, num);
 }
 
-// void	convert_point(t_utils *i, va_list input)
-// {
+void	convert_point(t_utils *i, va_list input)
+{
+	char					*str;
+	unsigned long long int	num;
 
-// }
+	num = va_arg(input, unsigned long long int);
+	str = c_ptoa(num);
+	handl_p(i, str);
+	free(str);
+}

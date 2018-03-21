@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 13:58:06 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 11:57:44 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,8 @@ void	print_hex_addr(unsigned long long int num, t_utils *i)
 			ft_putc_c('0', &(i->count));
 	i->hash = 0;
 }
-		
+
+void	print_ptr_addr(t_utils *i)
+{
+	ft_putc_s("0x", &(i->count));
+}
