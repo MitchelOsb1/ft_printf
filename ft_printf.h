@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 12:06:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 14:14:10 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdbool.h>
+# include <wchar.h>
 
 # define PLUS tools->plus
 # define MINUS tools->minus
@@ -101,6 +102,7 @@ void    handl_p(t_utils *i, char *str);
 void	print_ptr_addr(t_utils *i);
 
 /* Conversions */
+char    *c_unitoa(wint_t wide);
 char    *c_ptoa(unsigned long int num);
 char    *c_octoa(unsigned long int num);
 char    *c_hexoa(unsigned long int num, t_utils *i);

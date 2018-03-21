@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 10:57:56 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 15:35:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,8 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		i->cha_r = str[*x];
 		if (str[*x] == 's')
 			convert_string(i, input);
-		// else if (str[*x] == 'S')
-		// 	convert_wchar_s(i, input);
+		else if (str[*x] == 'S')
+			convert_wchar(i, input);
 		else if (str[*x] == 'p')
 			convert_point(i, input);
 		else if (str[*x] == 'c' || str[*x] == 'C')
