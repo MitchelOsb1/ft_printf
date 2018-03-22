@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 14:14:10 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:07:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,11 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str);
 /* Handling Pointer */
 void    handl_p(t_utils *i, char *str);
 void	print_ptr_addr(t_utils *i);
+
+/* Handling whcar */
+void	convert_wchar(t_utils *i, va_list input);
+char    *handl_w_c(t_utils *i, va_list input);
+char    *handl_w_s(t_utils *i, va_list input);
 
 /* Conversions */
 char    *c_unitoa(wint_t wide);

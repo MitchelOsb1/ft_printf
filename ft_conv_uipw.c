@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 14:13:48 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:18:15 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char    *c_unitoa(wint_t wide)
 {
-    char    str[5];
+    char    *str;
 
-    bzero(str, 5);
+    str = ft_strnew(5);
     if (wide <= 127)
         str[0] = wide;
     else if (wide <= 2047)

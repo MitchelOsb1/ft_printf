@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 08:58:43 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 15:35:19 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:13:01 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 
 void	convert_wchar(t_utils *i, va_list input)
 {
-    wchar_t x;
-    char    *str;
+    char *ret;
 
-    x = va_arg(input, wint_t);
-    str = c_unitoa(x);
-
+    ret = NULL;
+    if (i->cha_r == 'C')
+        ret = handl_w_c(i, input);
+    if (i->cha_r == 'S')
+        ret = handl_w_s(i, input);
+    if (!(ret))
+        return ;
+    if (i->minus == 0)
+        while (i->width-- && i->width > 0)
+            ft_putc_c(' ', &(i->count));
+    if (i->precision != -69 || i->cha_r == 'C')
+        ft_putc_s(ret, &(i->count));
+    if (i->minus == 1)
+        while (i->width-- && i->width > 0)
+            ft_putc_c(' ', &(i->count));
 }
-

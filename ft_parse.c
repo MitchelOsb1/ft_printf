@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 15:35:24 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:19:42 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	set_mods(char *str, int *x, t_utils *i)
 			i->modifier = 4;
 		else if (str[*x] == 'z')
 			i->modifier = 5;
-		else if (str[*x] == 'q')
+		else if (str[*x] == 'w')
 			i->modifier = 6;
 		*x += 1;
 	}
