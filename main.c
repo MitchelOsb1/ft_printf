@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 08:13:36 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 09:37:08 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:23:45 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,39 +358,32 @@ int main(void)
 	// ft_printf("- width 5 prec 10:		[%-5.10o]\n", 25);
 	// printf("hh:				[%hho]\n", 1234);
 	// ft_printf("hh:				[%hho]\n", 1234);
-
 	// ft_printf("o:				[%o]\n", 0);
 	// printf("o:				[%o]\n", 0);
+	// printf("# prec .:			[%#.o]\n", 0);
+	// ft_printf("# prec .:			[%#.o]\n", 0);
+	// printf("# prec 0:			[%#.0o]\n", 0);
+	// ft_printf("# prec 0:			[%#.0o]\n", 0);
+	// printf("prec .:				[%.o]\n", 0);
+	// ft_printf("prec .:				[%.o]\n", 0);
+	// printf("prec 0:				[%.0o]\n", 0);
+	// ft_printf("prec 0:				[%.0o]\n", 0);
+	// printf("l:				[%lo]\n", 9223372036854775807);
+	// ft_printf("l:				[%lo]\n", 9223372036854775807);
+	// printf("ll:				[%llo]\n", 18446744073709551615);
+	// ft_printf("ll:				[%llo]\n", 18446744073709551615);
 
-	printf("# prec .:			[%#.o]\n", 0);
-	ft_printf("# prec .:			[%#.o]\n", 0);
+	// printf("z:				[%zo]\n", 0);
+	// ft_printf("z:				[%zo]\n", 0);
 
-	printf("# prec 0:			[%#.0o]\n", 0);
-	ft_printf("# prec 0:			[%#.0o]\n", 0);
+	// printf("z:				[%zo]\n", 18446744073709551615);
+	// ft_printf("z:				[%zo]\n", 18446744073709551615);
 
-	printf("prec .:				[%.o]\n", 0);
-	ft_printf("prec .:				[%.o]\n", 0);
+	// printf("hh:				[%hhO]\n", 0);
+	// ft_printf("hh:				[%hhO]\n", 0);
 
-	printf("prec 0:				[%.0o]\n", 0);
-	ft_printf("prec 0:				[%.0o]\n", 0);
-
-	printf("l:				[%lo]\n", 9223372036854775807);
-	ft_printf("l:				[%lo]\n", 9223372036854775807);
-
-	printf("ll:				[%llo]\n", 18446744073709551615);
-	ft_printf("ll:				[%llo]\n", 18446744073709551615);
-
-	printf("z:				[%zo]\n", 0);
-	ft_printf("z:				[%zo]\n", 0);
-
-	printf("z:				[%zo]\n", 18446744073709551615);
-	ft_printf("z:				[%zo]\n", 18446744073709551615);
-
-	printf("hh:				[%hhO]\n", 0);
-	ft_printf("hh:				[%hhO]\n", 0);
-
-	printf("hh:				[%hhO]\n", 65535);
-	ft_printf("hh:				[%hhO]\n", 65535);
+	// printf("hh:				[%hhO]\n", 65535);
+	// ft_printf("hh:				[%hhO]\n", 65535);
 	
 // //    // ------------------------------ p --------------------------
     
@@ -399,16 +392,18 @@ int main(void)
 // //     // 0 padding!
 // //     // ' '!
 
-//     printf("normal =        [%p]\n", swag);
-//     ft_printf("normal =        [%p]\n", swag);
-//     printf("10 width =      [%10p]\n", swag);
-//     ft_printf("10 width =      [%10p]\n", swag);
-//     printf(". =             [%.p]\n", swag);
-//     ft_printf(". =             [%.p]\n", swag);
-//     printf("width 20. =     [%20.p]\n", swag);
-//     ft_printf("width 20. =     [%20.p]\n", swag);
-//     printf("width -20 =     [%-20p]\n", swag);
-// 	ft_printf("width -20 =     [%-20p]\n", swag);
+	// char *swag = "Hello world!";
+
+    // printf("normal =        [%p]\n", swag);
+    // ft_printf("normal =        [%p]\n", swag);
+    // printf("10 width =      [%10p]\n", swag);
+    // ft_printf("10 width =      [%10p]\n", swag);
+    // printf(". =             [%.p]\n", swag);
+    // ft_printf(". =             [%.p]\n", swag);
+    // printf("width 20. =     [%20.p]\n", swag);
+    // ft_printf("width 20. =     [%20.p]\n", swag);
+    // printf("width -20 =     [%-20p]\n", swag);
+	// ft_printf("width -20 =     [%-20p]\n", swag);
 	
 // // 	//-------------------------%%----------------------------
 // 	//so it doesnt handle space!
@@ -537,14 +532,14 @@ int main(void)
 // 	// no # str
 // 	// no plus str
 	
-// 	printf("normal no k = [%S]\n", L"갔갔");
-// 	ft_printf("normal no k = [%S]\n", L"갔갔");
+	ft_printf("normal no k = [%S]\n", L"갔갔");
+	printf("normal no k = [%S]\n", L"갔갔");
 	
-// 	printf("width 20 prec . k = [%20.S]\n", L"갔갔");
-// 	ft_printf("width 20 prec . k = [%k20.S]\n", L"갔갔");
+	ft_printf("width 20 prec . k = [%20.S]\n", L"갔갔");
+	printf("width 20 prec . k = [%20.S]\n", L"갔갔");
 	
-// 	// printf("zero padding width 20 = %020S\n", L"갔갔");
-// 	// ft_printf("zero padding width 20 = %020C\n", L'갔');
+	// printf("zero padding width 20 = %020S\n", L"갔갔");
+	// ft_printf("zero padding width 20 = %020C\n", L'갔');
 // 	// printf("space and width 20 = % 20S\n", L"갔갔");
 // 	// ft_printf("space and width 20 = % 20C\n", L'갔');
 
@@ -618,7 +613,7 @@ int main(void)
 	// printf("@moulitest: [%.d] [%.0d]\n", 0, 0);
 	// ft_printf("@moulitest: [%5.d] [%5.0d]\n", 0, 0);
 	// printf("@moulitest: [%5.d] [%5.0d]\n", 0, 0);
-	ft_printf("%hU", 4294967296);
-	printf("%hU", 4294967296);
+	// ft_printf("%hU", 4294967296);
+	// printf("%hU", 4294967296);
 	return (0);
 }
