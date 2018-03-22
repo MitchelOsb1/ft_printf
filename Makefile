@@ -6,11 +6,11 @@
 #    By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/03 20:02:51 by mosborne          #+#    #+#              #
-#    Updated: 2018/03/21 18:29:05 by mosborne         ###   ########.fr        #
+#    Updated: 2018/03/21 18:41:56 by mosborne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = libftprintf.a
 
 GCC = gcc
 

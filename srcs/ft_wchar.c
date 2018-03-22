@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 08:58:43 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:29 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:41:43 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    handl_w_c(t_utils *i, va_list input)
     i->len = ft_strlen(str);
     i->width -= i->len;
     handl_wp_c(i, wide);
-    free(str);
+    ft_strdel(&str);
 }
 
 void    handl_w_s(t_utils *i, va_list input)
@@ -49,5 +49,5 @@ void    handl_w_s(t_utils *i, va_list input)
         i->len = 0;
     i->width -= i->len;
     handl_wp_s(i, str);
-    free(str);
+    ft_strdel(&str);
 }

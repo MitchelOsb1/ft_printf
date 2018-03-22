@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:32 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 19:03:19 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ int	ft_printf(char const *restrict format, ...)
 		x++;
 	}
 	va_end(input);
-	return (strut.len);
+	return (strut.count);
 }
