@@ -6,11 +6,11 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 08:49:55 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/19 17:57:50 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:31:32 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 long long int  i_mod(t_utils *i, va_list input)
 {

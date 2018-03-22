@@ -6,11 +6,11 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 10:51:26 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:31:54 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char *ft_strrev(char *str)
 {

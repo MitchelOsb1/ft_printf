@@ -6,11 +6,11 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 13:32:44 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:31:15 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void    handl_p(t_utils *i, char *str)
 {

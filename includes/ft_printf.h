@@ -6,14 +6,14 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:01:46 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:32:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
+# include "../srcs/libft/libft.h"
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdbool.h>

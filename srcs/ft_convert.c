@@ -6,11 +6,11 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 13:33:02 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:31:16 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	convert_string(t_utils *i, va_list input)
 {

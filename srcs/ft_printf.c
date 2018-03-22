@@ -6,14 +6,11 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 09:01:37 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:31:32 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdbool.h>
+#include "../includes/ft_printf.h"
 
 void	init_tools(t_utils *format)
 {
