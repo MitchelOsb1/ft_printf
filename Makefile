@@ -6,32 +6,32 @@
 #    By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/03 20:02:51 by mosborne          #+#    #+#              #
-#    Updated: 2018/03/19 08:01:27 by mosborne         ###   ########.fr        #
+#    Updated: 2018/03/21 18:12:50 by mosborne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf
+NAME = printf.a
 
 GCC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_print.c ft_parse.c ft_convert.c ft_int.c ft_str-char.c ft_unint.c ft_sortsigns.c ft_libfunc.c ft_handl_ui.c ft_con_ui.c main.c
+SRCS = ft_printf.c ft_print.c ft_parse.c ft_convert.c ft_int.c ft_str-char.c ft_unint.c ft_sortsigns.c ft_libfunc.c ft_handl_uip.c ft_conv_uipw.c main.c ft_wchar.c ft_handl_wc.c
 
 INCUDES = ft_printf.h
 
 all: $(NAME)
 
 $(NAME):
-	@$(MAKE) -C ./libft/
-	@gcc $(FLAGS) $(SRCS) -L./libft/ -lft -o $(NAME)
-	@echo "printf created"
+	@$(GCC) $(FLAGS) -c $(SRCS) libft/*.c
+	@ar rcs $(NAME) *.o
+	@ranlib $(NAME)
 
 clean:
-	@$(MAKE) clean -C ./libft/
-	@rm -rf $(NAME)
+	@rm -rf *.o
 
 fclean: clean
 	@$(MAKE) fclean -C ./libft/
+	@rm -rf $(NAME)
 
 re: fclean all
