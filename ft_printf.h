@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 17:07:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 18:01:46 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,10 @@ void	print_ptr_addr(t_utils *i);
 
 /* Handling whcar */
 void	convert_wchar(t_utils *i, va_list input);
-char    *handl_w_c(t_utils *i, va_list input);
-char    *handl_w_s(t_utils *i, va_list input);
+void    handl_w_c(t_utils *i, va_list input);
+void    handl_w_s(t_utils *i, va_list input);
+void    handl_wp_c(t_utils *i, wchar_t wide);
+void    handl_wp_s(t_utils *i, char *str);
 
 /* Conversions */
 char    *c_unitoa(wint_t wide);
@@ -126,7 +128,7 @@ void    ft_putc_nbr(long long int num, int *int_cnt);
     3 = ll (long long int) void*
     4 = j (intmax_t)
     5 = z (size_t)
-    6 = q | d or i // (int) void*
+    6 = w | d or i // (int) void*
 */
 
 

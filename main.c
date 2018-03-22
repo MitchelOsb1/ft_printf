@@ -6,17 +6,19 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 08:13:36 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 17:23:45 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:40:01 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <locale.h>
 
 /* Need to fix d and i */
 
 
 int main(void)
 {
+	setlocale(LC_ALL, "");
 // 	//---------------------- d and i -------------------------------
 	// printf("' ':				[% d]\n", -12);
 	// ft_printf("' ':				[% d]\n", -12);
@@ -532,64 +534,74 @@ int main(void)
 // 	// no # str
 // 	// no plus str
 	
-	ft_printf("normal no k = [%S]\n", L"갔갔");
-	printf("normal no k = [%S]\n", L"갔갔");
+	printf("normal n1o k =	[%S]\n", L"갔갔");
+	ft_printf("normal no k =	[%S]\n", L"갔갔");
 	
-	ft_printf("width 20 prec . k = [%20.S]\n", L"갔갔");
-	printf("width 20 prec . k = [%20.S]\n", L"갔갔");
+	printf("width 20 prec . k =	[%20.S]\n", L"갔갔");
+	ft_printf("width 20 prec . k =	[%20.S]\n", L"갔갔");
 	
 	// printf("zero padding width 20 = %020S\n", L"갔갔");
 	// ft_printf("zero padding width 20 = %020C\n", L'갔');
-// 	// printf("space and width 20 = % 20S\n", L"갔갔");
-// 	// ft_printf("space and width 20 = % 20C\n", L'갔');
 
-// 	printf("width 20 = [%20S]\n", L"갔갔");
-// 	ft_printf("width 20 no k = %20S\n", L"갔갔");
-// 	printf("width -20 = [%-20S]\n", L"갔갔");
-// 	ft_printf("width -20 = [%-20kS]\n", L"갔갔");
+	// printf("space and width 20 = % 20S\n", L"갔갔");
+	// ft_printf("space and width 20 = % 20C\n", L'갔');
+
+	printf("width 20 =	[%20S]\n", L"갔갔");
+	ft_printf("width 20 no k =	[%20S]\n", L"갔갔");
+
+	// printf("width -20 = [%-20wS]\n", L"갔갔");
+	// ft_printf("width -20 = [%-20wS]\n", L"갔갔");
+
+	// printf("Hashtag = %#S\n", L"갔갔");
+	// ft_printf("Hashtag = %#S\n", L'갔갔');
+
+	// printf("space = [% S]\n", L"갔갔");
+	// ft_printf("space = [% C]\n", L'갔');
+
+	// printf("plus = %+S\n", L"갔갔");
+	// ft_printf("plus = %+C\n", L'갔');
 	
-// 	// printf("Hashtag = %#S\n", L"갔갔");
-// 	// ft_printf("Hashtag = %#C\n", L'갔');
-// 	// printf("space = % S\n", L"갔갔");
-// 	// ft_printf("space = % C\n", L'갔');
-// 	// printf("plus = %+S\n", L"갔갔");
-// 	// ft_printf("plus = %+C\n", L'갔');
+	printf("width 20 no k =	[%20C]\n", L'갔');
+	ft_printf("width 20 no k =	[%20C]\n", L'갔');
+
+	printf("width 20 =	[%20c]\n", 'i');
+	ft_printf("width 20 =	[%20c]\n", 'i');
+
+	printf("width 20 prec . no k =	[%20.C]\n", L'갔');
+	ft_printf("width 20 prec . no k =	[%20.C]\n", L'갔');
+
+	printf("width 20 prec . no k =	[%20.C]\n", L'@');
+	ft_printf("width 20 prec . no k =	[%20.C]\n", L'@');
+
+	printf("width 20 prec . k =	[%20.C]\n", L'갔');
+	ft_printf("width 20 prec . k =	[%20.C]\n", L'갔');
+
+	printf("width 20 k =	[%20C]\n", L'갔');
+	ft_printf("width 20 k =	[%w20C]\n", L'갔');
 	
-// 	printf("width 20 no k = [%20C]\n", L'갔');
-// 	ft_printf("width 20 no k = [%20C]\n", L'갔');
+	printf("width 20 no k =	[%20C]\n", L'갔');
+	ft_printf("width 20 no k =	[%20C]\n", L'갔');
 
-// 	printf("width 20 = [%20c]\n", 'i');
-// 	ft_printf("width 20 = [%20c]\n", 'i');
-// 	printf("width 20 prec . no k = [%20.C]\n", L'갔');
-// 	ft_printf("width 20 prec . no k = [%20.C]\n", L'갔');
-// 	printf("width 20 prec . no k = [%20.C]\n", L'@');
-// 	ft_printf("width 20 prec . no k = [%20.C]\n", L'@');
+	printf("width -20 no k =	[%-20C]\n", L'갔');
+	ft_printf("width -20 no k =	[%-20C]\n", L'갔');
 
-// 	printf("width 20 prec . k = [%20.C]\n", L'갔');
-// 	ft_printf("width 20 prec . k = [%20.C]\n", L'갔');
+	printf("lots of stuff =	[%20S]\n", L"갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔");
+	ft_printf("lots of stuff =	[%k20S]\n", L"갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔");
 
-// 	printf("width 20 k = [%20C]\n", L'갔');
-// 	ft_printf("width 20 k = [%k20C]\n", L'갔');
-	
-// 	printf("width 20 no k = [%20C]\n", L'갔');
-// 	ft_printf("width 20 no k = [%20C]\n", L'갔');
+	printf("normal no k =	[%C]\n", L'갔');
+	ft_printf("normal no k =	[%C]\n", L'갔');
 
-// 	printf("width -20 no k = [%-20C]\n", L'갔');
-// 	ft_printf("width -20 no k = [%-20C]\n", L'갔');
-// 	printf("lots of stuff = [%20S]\n", L"갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔");
-// 	ft_printf("lots of stuff = [%k20S]\n", L"갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔갔");
-// 	printf("normal no k =          [%C]\n", L'갔');
-// 	ft_printf("normal no k =          [%C]\n", L'갔');
-	// printf("normal k =          [%C ]\n", L'😨');
-	// ft_printf("normal k =          [%kC ]\n", L'👼');
-// 	printf("normal S no k =          [%S]\n", L"@@");
-// 	ft_printf("normal S no k =          [%S]\n", L"@@");
-// 	printf("ls        =          [%ls]\n", L"@@");
-// 	ft_printf("ls        =          [%ls]\n", L"@@");
-// 	printf("S no k =          [%S]\n", L"갔@∆");
-// 	ft_printf("S no k  =          [%S]\n", L"갔@∆");
-// 	printf("S k =          [%S]\n", L"갔@∆");
-// 	ft_printf("S k =          [%kS]\n", L"갔@∆");
+	printf("normal k =	[%C ]\n", L'😨');
+	ft_printf("normal k =	[%kC ]\n", L'👼');
+
+	printf("normal S no k =	[%S]\n", L"@@");
+	ft_printf("normal S no k =	[%S]\n", L"@@");
+
+	printf("ls        =	[%ls]\n", L"@@");
+	ft_printf("ls        =	[%ls]\n", L"@@");
+
+	printf("S no k =	[%S]\n", L"갔@∆");
+	ft_printf("S no k  =	[%S]\n", L"갔@∆");
 
 // 	printf("width 20 prec . k = [%-20.S]\n", L"갔갔");
 // 	ft_printf("width 20 prec . k = [%-20.kS]\n", L"갔갔");
