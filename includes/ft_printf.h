@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:39:18 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/27 11:10:35 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct      s_utils
 int	ft_printf(char const *restrict format, ...);
 
 /* Printing */
-void	print_prefix(char *str, int x, t_utils *i);
+void	print_prefix(char *str, int x, int y, t_utils *i);
 void	print_postfix(char *str, int x, t_utils *i);
 void	print_hex_addr(unsigned long long int num, t_utils *i);
 
@@ -101,12 +101,15 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str);
 void    handl_p(t_utils *i, char *str);
 void	print_ptr_addr(t_utils *i);
 
-/* Handling whcar */
+/* Handling wchar */
 void	convert_wchar(t_utils *i, va_list input);
 void    handl_w_c(t_utils *i, va_list input);
 void    handl_w_s(t_utils *i, va_list input);
 void    handl_wp_c(t_utils *i, wchar_t wide);
 void    handl_wp_s(t_utils *i, char *str);
+
+/* Handling Percent */
+void    convert_percent(t_utils *i);
 
 /* Conversions */
 char    *c_unitoa(wint_t wide);

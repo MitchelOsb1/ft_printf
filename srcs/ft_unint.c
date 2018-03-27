@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:31 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/26 17:24:32 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,18 @@ void    x_wpl(t_utils *i, unsigned long int num)
     print_ui(i, num, str);
     ft_strdel(&str);
 }
+
+void    convert_percent(t_utils *i)
+{
+    if (i->zero == 1)
+        while (i->width-- && i->width > 0)
+            ft_putc_c('0', &(i->count));
+    if (i->minus == 0)
+        while (i->width-- && i->width > 0)
+            ft_putc_c(' ', &(i->count));
+    ft_putc_c('%', &(i->count));
+    if (i->minus == 1)
+        while(i->width-- && i->width > 0)
+            ft_putc_c(' ', &(i->count));
+}
+

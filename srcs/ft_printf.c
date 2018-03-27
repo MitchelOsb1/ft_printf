@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 19:03:19 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/27 15:08:01 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	init_tools(t_utils *format)
 
 void	parse_form(char *str, int *x, va_list input, t_utils *i)
 {
-	print_prefix(str, *x, i);
 	if (str[*x] == '%')
 		*x += 1;
 	while (str[*x] && (str[*x] == '-' || str[*x] == '+' || str[*x] == ' ' ||
@@ -45,28 +44,34 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		set_prec(str, x, i);
 	}
 	set_conv(str, x, input, i);
-	print_postfix(str, *x, i);
 }
 
 int	ft_printf(char const *restrict format, ...)
 {
-	char 		*ret;
 	int			x;
 	va_list		input;
 	t_utils		strut;
+	static int	y = 0;
+	static int	ret = 0;
 
 	x = 0;
-	ret = NULL;
 	va_start(input, format);
+	init_tools(&strut);
 	while (format[x])
 	{
 		if (format[x] == '%')
 		{
 			init_tools(&strut);
+			print_prefix((char *)format, y, x, &strut);
 			parse_form((char *)format, &x, input, &strut);
+			ret += strut.count;
+			y = x;
 		}
 		x++;
 	}
+	print_prefix((char *)format, y, x, &strut);
+	if (ret < strut.count)
+		ret = strut.count;
 	va_end(input);
-	return (strut.count);
+	return (ret);
 }

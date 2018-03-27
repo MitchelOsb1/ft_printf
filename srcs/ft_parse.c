@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:18 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/26 12:48:42 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' ||
 		str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' ||
 		str[*x] == 'O' || str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' ||
-		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C')
+		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C' || str[*x] == '%')
 	{
 		i->cha_r = str[*x];
 		if (str[*x] == 's')
@@ -120,6 +120,8 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'x' ||
 			str[*x] == 'X' || str[*x] == 'u' || str[*x] == 'U')
 			convert_unsigned_int(i, input);
+		else if (str[*x] == '%')
+			convert_percent(i);
 		*x += 1;
 	}
 }

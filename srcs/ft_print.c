@@ -6,18 +6,20 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 18:24:38 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:33 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/27 14:59:00 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	print_prefix(char *str, int x, t_utils *i)
+void	print_prefix(char *str, int begin, int end, t_utils *i)
 {
 	int z;
 
 	z = 0;
-	while (str[z] && z < x)
+	while (z < begin && str[z])
+		z++;
+	while (z < end && str[z])
 	{
 		ft_putc_c(str[z], &(i->count));
 		z++;
