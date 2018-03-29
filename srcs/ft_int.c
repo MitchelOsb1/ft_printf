@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:49 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/28 15:55:47 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 char	h_mps(t_utils *i, char sign, long long int x)
 {
-	if (i->plus == 1 && i->minus == 0 && x >= 0)
+	if (i->plus == 1 && i->minus == 0)
 	{
 		i->plus = 1;
 		sign = '+';
-		
+	}
+	if (i->minus == 1 && i->plus == 1 && i->i_nt > 0)
+	{
+		sign = '+';
+		return (sign);
 	}
 	if ((i->minus == 1 && i->plus == 1) || i->minus == 1)
 	{
@@ -28,7 +32,7 @@ char	h_mps(t_utils *i, char sign, long long int x)
 	}
 	if ((i->minus == 0 && i->plus == 0) || (x < 0))
 		sign = '-';
-	if (i->space == 1 && x > 0)
+	if (i->space == 1 && x > 0 && i->plus == 0)
 		sign = ' ';
 	return (sign);
 }
@@ -43,7 +47,7 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 		i->buf = i->precision - i->len + 1;
 	if (i->precision > i->width && i->width > 0)
 		i->width = i->precision - i->len - i->buf;
-	if (i->width > i->len && i->len > 0 && i->precision != -69)
+	if ((i->width > i->len && i->len > 0) && i->precision != -69 && i->precision != 0)
 		i->width -= i->len + i->buf;
 	if ((i->plus == 1 || i->space == 1) && i->i_nt > 0)
 		i->width -= 1;
@@ -59,14 +63,14 @@ void	i2_wpl(t_utils *i, char sign, int w)
 	buff = '0';
 	if (i->precision > i->len)
 		buff = ' ';
-	if (i->space == 1 && i->i_nt >= 0)
+	if (i->space == 1 && i->i_nt >= 0 && i->plus == 0)
 		sign = ' ';
 	if ((i->minus == true && i->i_nt < 0) || (i->plus == true && i->i_nt > 0)
 		|| (i->i_nt < 0) || (i->space == 1) || (i->plus == 1 && i->i_nt == 0))
 		ft_putc_c(sign, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 0)
 		while (i->width--)
-			ft_putc_c('0', &(i->count));
+			ft_putc_c(buff, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
 		while (i->width--)
 			ft_putc_c(buff, &(i->count));
@@ -94,8 +98,9 @@ void	i3_wpl(t_utils *i, int w, long long int x)
 	if (i->buf)
 		while (i->buf--)
 			ft_putc_c(buf, &(i->count));
-	if (i->precision != -69)
-		ft_putc_nbr(x, &(i->count));
+	if (i->i_nt == 0 && (i->precision == -69 || i->precision == 0))
+		return ;
+	ft_putc_nbr(x, &(i->count));
 }
 
 void	i4_wpl(t_utils *i, char cha_r, int w)

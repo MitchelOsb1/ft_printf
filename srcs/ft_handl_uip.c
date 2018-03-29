@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 10:25:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:15 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/28 09:17:16 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void    print_ui(t_utils *i, unsigned long long int x, char *str)
     if (i->hash == 1)
         print_hex_addr(x, i);
     if (i->buf != 0)
-        while (i->precision-- > 0)
+        while (i->precision > 0 && i->precision--)
             ft_putc_c('0', &(i->count));
     if (!(i->buf == 1 && x == 0))
         ft_putc_s(str, &(i->count));

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:31:54 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/29 11:29:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ char *ft_strrev(char *str)
 
 void    ft_putc_nbr(long long int num, int *int_cnt)
 {
-        if (num == (2^63))
+        if (num == (-9223372036854775807)-1)
         {
-                ft_putc_s("-9223372036854775808", int_cnt);
+                ft_putc_s("9223372036854775808", int_cnt);
                 return ;
         }
-        if (num < 0)
+        else if (num < 0)
         {
                 ft_putc_nbr(-num, int_cnt);
         }
@@ -95,4 +95,45 @@ char    *ft_ui_ll_toa(unsigned long long int n)
         }
         str[ft_strlen(str)] = '\0';
         return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	int		sign;
+	int		count;
+	char	*str;
+
+	count = 1;
+	sign = n;
+	while (sign /= 10)
+		count++;
+	sign = n < 0 ? 1 : 0;
+	count = n < 0 ? count += 1 : count;
+	if (n == -2147483648)
+		return (str = ft_strdup("-2147483648"));
+	str = ft_strnew(count);
+	if (!str)
+		return (NULL);
+	if (sign == 1)
+		str[0] = '-';
+	n = n < 0 ? n *= -1 : n;
+	while (--count >= sign)
+	{
+		str[count] = n >= 10 ? (n % 10) + 48 : n + 48;
+		n /= 10;
+	}
+	str[ft_strlen(str)] = '\0';
+	return (str);
+}
+
+void    ft_putc_c(char c, int *cnt_ret)
+{
+    *cnt_ret += 1;
+    write(1, &c, 1);
+}
+
+void    ft_putc_s(char *str, int *cnt_ret)
+{
+	while (*str)
+		ft_putc_c(*str++, cnt_ret);
 }

@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/26 17:24:32 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/29 11:23:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void    u_wpl(t_utils *i, unsigned long int num)
 {
     char    *str;
 
-    if (num > ((2^32)-1))
+    if (num >= (2^32))
         str = ft_ui_ll_toa(num);
     else if (num <= ((2^32)-1))
         str = ft_ui_toa(num);
@@ -69,4 +69,3 @@ void    convert_percent(t_utils *i)
         while(i->width-- && i->width > 0)
             ft_putc_c(' ', &(i->count));
 }
-
