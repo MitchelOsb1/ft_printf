@@ -1,16 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_libfunc2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/02 19:06:39 by mosborne          #+#    #+#             */
-/*   Updated: 2017/10/04 16:49:34 by mosborne         ###   ########.fr       */
+/*   Created: 2018/03/29 13:29:33 by mosborne          #+#    #+#             */
+/*   Updated: 2018/03/29 13:32:26 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
+
+char	*ft_strnew(size_t size)
+{
+	char *s1;
+
+	if (!(s1 = (char *)malloc(size + 1)))
+		return (NULL);
+	ft_bzero(s1, size + 1);
+	return (s1);
+}
+
+void	ft_strdel(char **as)
+{
+	if (!as)
+		return ;
+	free(*as);
+	*as = NULL;
+}
+
+char	*ft_strdup(const char *str)
+{
+	char	*x;
+	int		i;
+
+	i = ft_strlen(str);
+	x = (char *)malloc((i + 1) * sizeof(char));
+	if (x)
+		return (ft_strcpy(x, str));
+	return (NULL);
+}
+
+void	ft_bzero(void *str, size_t n)
+{
+	ft_memset(str, 0, n);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

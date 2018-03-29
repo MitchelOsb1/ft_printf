@@ -6,16 +6,16 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/27 11:10:35 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/29 13:37:51 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../srcs/libft/libft.h"
-# include <stdio.h>
+# include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 # include <stdbool.h>
 # include <wchar.h>
 
@@ -52,6 +52,8 @@ typedef struct      s_utils
 int	ft_printf(char const *restrict format, ...);
 
 /* Printing */
+void    ft_putc_c(char c, int *cnt_ret);
+void    ft_putc_s(char *str, int *cnt_ret);
 void	print_prefix(char *str, int x, int y, t_utils *i);
 void	print_postfix(char *str, int x, t_utils *i);
 void	print_hex_addr(unsigned long long int num, t_utils *i);
@@ -70,7 +72,6 @@ void	convert_string(t_utils *i, va_list input);
 void    convert_int(t_utils *i, va_list input);
 void	convert_unsigned_int(t_utils *i, va_list input);
 void	convert_point(t_utils *i, va_list input);
-
 
 /* Flag Sorting */
 void                    p_num(t_utils *i, unsigned long int x);
@@ -118,9 +119,21 @@ char    *c_octoa(unsigned long int num);
 char    *c_hexoa(unsigned long int num, t_utils *i);
 
 /* Lib functions */
+int     ft_isdigit(int c);
+int     ft_atoi(const char *str);
+size_t	ft_strlen(const char *s);
+char	*ft_itoa(int n);
+char	*ft_strcpy(char *s1, const char *s2);
 char    *ft_strrev(char *str);
+char	*ft_strcat(char *s1, const char *s2);
+char	*ft_strnew(size_t size);
+char	*ft_strdup(const char *str);
 char    *ft_ui_toa(unsigned int n);
 char    *ft_ui_ll_toa(unsigned long long int n);
+char	*ft_strjoin(char const *s1, char const *s2);
+void	ft_strdel(char **as);
+void	ft_bzero(void *str, size_t n);
+void	*ft_memset(void *str, int c, size_t n);
 void    ft_putc_nbr(long long int num, int *int_cnt);
 
 /*

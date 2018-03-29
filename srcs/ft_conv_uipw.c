@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/21 18:32:18 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/03/29 13:36:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char    *c_ptoa(unsigned long int num)
     char            *h_lower;
 
     x = 0;
-    bzero(str, 12);
+    ft_bzero(str, 12);
     h_lower = "0123456789abcdef";
     if (num < x)
         return (0);
@@ -68,7 +68,7 @@ char    *c_octoa(unsigned long int num)
     unsigned int    x;
 
     x = 0;
-    bzero(str, 21);
+    ft_bzero(str, 21);
     if (num < x)
         return (0);
     if (num == 0)
@@ -90,7 +90,7 @@ char    *c_hexoa(unsigned long int num, t_utils *i)
     int     x;
 
     x = 0;
-    bzero(str, 21);
+    ft_bzero(str, 21);
     h_lower = "0123456789abcdef";
     h_upper = "0123456789ABCDEF";
     if (num == 0)
