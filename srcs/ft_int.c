@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/28 15:55:47 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/01 08:40:12 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void	i_wpl(t_utils *i, char cha_r, int w)
 		i->buf = i->precision - i->len + 1;
 	if (i->precision > i->width && i->width > 0)
 		i->width = i->precision - i->len - i->buf;
-	if ((i->width > i->len && i->len > 0) && i->precision != -69 && i->precision != 0)
+	if ((i->width > i->len && i->len > 0) && i->precision != -69 &&
+		i->precision != 0)
 		i->width -= i->len + i->buf;
 	if ((i->plus == 1 || i->space == 1) && i->i_nt > 0)
 		i->width -= 1;
@@ -68,10 +69,12 @@ void	i2_wpl(t_utils *i, char sign, int w)
 	if ((i->minus == true && i->i_nt < 0) || (i->plus == true && i->i_nt > 0)
 		|| (i->i_nt < 0) || (i->space == 1) || (i->plus == 1 && i->i_nt == 0))
 		ft_putc_c(sign, &(i->count));
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 0)
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 &&
+		i->space == 0)
 		while (i->width--)
 			ft_putc_c(buff, &(i->count));
-	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 && i->space == 1)
+	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 &&
+		i->space == 1)
 		while (i->width--)
 			ft_putc_c(buff, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt < 0)
@@ -110,5 +113,5 @@ void	i4_wpl(t_utils *i, char cha_r, int w)
 			ft_putc_c(cha_r, &(i->count));
 	if (w > i->len && i->minus == true && i->zero == true)
 		while (i->width--)
-            ft_putc_c(' ', &(i->count));
+			ft_putc_c(' ', &(i->count));
 }

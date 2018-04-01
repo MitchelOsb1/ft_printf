@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/28 09:42:28 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/01 08:48:54 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	set_width(char *str, int *x, t_utils *i)
 	char *tmp;
 
 	tmp = str;
-	while (str[*x] && (ft_isdigit(str[*x])) )
+	while (str[*x] && (ft_isdigit(str[*x])))
 	{
 		if (i->width == -1)
 		{
@@ -81,7 +81,7 @@ void	set_prec(char *str, int *x, t_utils *i)
 	char *tmp;
 
 	if (str[*x] == '.')
-		*x+= 1;
+		*x += 1;
 	else
 		return ;
 	tmp = str;
@@ -97,7 +97,6 @@ void	set_prec(char *str, int *x, t_utils *i)
 		*x += 1;
 	}
 }
-
 
 void	set_conv(char *str, int *x, va_list input, t_utils *i)
 {

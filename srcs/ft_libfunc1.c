@@ -6,19 +6,19 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 13:25:33 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/29 13:28:06 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/01 08:47:26 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void    ft_putc_c(char c, int *cnt_ret)
+void	ft_putc_c(char c, int *cnt_ret)
 {
-    *cnt_ret += 1;
-    write(1, &c, 1);
+	*cnt_ret += 1;
+	write(1, &c, 1);
 }
 
-void    ft_putc_s(char *str, int *cnt_ret)
+void	ft_putc_s(char *str, int *cnt_ret)
 {
 	while (*str)
 		ft_putc_c(*str++, cnt_ret);
@@ -34,7 +34,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int sign;
@@ -61,7 +61,7 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-int	ft_isdigit(int c)
+int		ft_isdigit(int c)
 {
 	if (c > 47 && c < 58)
 		return (1);

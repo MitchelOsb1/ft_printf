@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/29 11:32:03 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/01 09:12:33 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,15 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 	set_conv(str, x, input, i);
 }
 
-int	ft_printf(char const *restrict format, ...)
+int		ft_printf(char const *restrict format, ...)
 {
-	int	x;
-	int y;
-	int ret;
+	int			x;
+	int			ret;
+	static int	y = 0;
 	va_list		input;
 	t_utils		strut;
 
 	x = 0;
-	y = 0;
 	ret = 0;
 	va_start(input, format);
 	init_tools(&strut);
@@ -76,6 +75,5 @@ int	ft_printf(char const *restrict format, ...)
 	if (ret < strut.count)
 		ret = strut.count;
 	va_end(input);
-	printf("[%d]\n", ret);
 	return (ret);
 }

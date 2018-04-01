@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/03/29 11:24:01 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/01 08:37:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	convert_string(t_utils *i, va_list input)
 	if (va_string == NULL)
 		va_string = "(null)";
 	i->len = ft_strlen(va_string);
-	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	cha_r = i->zero == 1 ?
+		cha_r = '0' : ' ';
 	s_wpl(i, cha_r);
 	while (++x < i->len && i->precision != -69)
 		ft_putc_c(va_string[x], &(i->count));
@@ -58,7 +59,8 @@ void	convert_int(t_utils *i, va_list input)
 	i->i_nt = x;
 	i->len = ft_strlen(str);
 	ft_strdel(&str);
-	cha_r = i->zero == 1 ? cha_r = '0' : ' ';
+	cha_r = i->zero == 1 ?
+		cha_r = '0' : ' ';
 	sign = '0';
 	sign = h_mps(i, sign, x);
 	i_wpl(i, cha_r, w);
