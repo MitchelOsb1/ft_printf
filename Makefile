@@ -14,7 +14,7 @@ FILES =	ft_printf.c \
 		ft_parse.c \
 		ft_print.c \
 		ft_sortsigns.c \
-		ft_str-char.c \
+		ft_str_char.c \
 		ft_unint.c \
 		ft_wchar.c 
 
