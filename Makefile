@@ -23,29 +23,20 @@ HEAD = ./includes
 SRC	:=	$(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(SRC:.c=.o)
 
-BUILD_PRINT = @echo "\033[0;33mBuilding \"$<\"..."
-DONE = @echo "\033[0;32mFt_printf ready to use!"
-CLEAN_O = @echo "\033[0;32mObject files removed!"
-CLEAN_A = @echo "\033[0;32mExecutable removed!"
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	$(DONE)
 
 $(OBJ): %.o: %.c
-	$(BUILD_PRINT)
 	@gcc $(CFLAGS) -I $(HEAD) -c $< -o $@
 
 
 clean:
 	@/bin/rm -rf $(OBJ)
-	$(CLEAN_O)
 
 fclean: clean
 	@/bin/rm -rf $(NAME)
-	$(CLEAN_A)
 
 re: fclean all
 
