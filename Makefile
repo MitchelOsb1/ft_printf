@@ -1,6 +1,6 @@
 CC = gcc
 NAME = libftprintf.a
-SRC_DIR = srcs/
+SRC_DIR = srcs
 FILES =	atoi_and_ulltoa.c \
 		ft_printf.c \
 		ft_conv_uipw.c \
