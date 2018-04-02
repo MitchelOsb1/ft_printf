@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 14:51:09 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/02 10:12:13 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 	set_conv(str, x, input, i);
 }
 
-int	init_printf(char *str, va_list input, t_utils *i)
+int		init_printf(char *str, va_list input, t_utils *i)
 {
 	int			x;
 	int			ret;

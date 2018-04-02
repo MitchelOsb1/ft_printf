@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 14:43:39 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/02 10:19:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@
 # define MODIFIER tools.modifier
 # define STR tools.str
 # define LEN tools.len
+
+/*
+**	0 = h (short int)
+**	1 = hh (char)
+**	2 = l (long int)
+**	3 = ll (long long int)
+**	4 = j (intmax_t)
+**	5 = z (size_t)
+**	6 = w (int)
+*/
 
 typedef struct			s_utils
 {
@@ -124,15 +134,5 @@ void					ft_strdel(char **as);
 void					ft_bzero(void *str, size_t n);
 void					*ft_memset(void *str, int c, size_t n);
 void					ft_putc_nbr(long long int num, int *int_cnt);
-
-/*	Modifier Flags
-	0 = h (short int) void*
-	1 = hh (char) void*
-	2 = l (long int) void*
-	3 = ll (long long int) void*
-	4 = j (intmax_t)
-	5 = z (size_t)
-	6 = w | d or i // (int) void*
-*/
 
 #endif
