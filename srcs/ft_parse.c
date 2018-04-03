@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 10:31:49 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 15:16:14 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,15 +100,15 @@ void	set_prec(char *str, int *x, t_utils *i)
 
 void	set_conv(char *str, int *x, va_list input, t_utils *i)
 {
-	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' ||
-		str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' ||
-		str[*x] == 'O' || str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' ||
-		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C' || str[*x] == '%')
+	if (str[*x] == 's' || str[*x] == 'S' || str[*x] == 'p' || str[*x] == 'd' ||
+		str[*x] == 'D' || str[*x] == 'i' || str[*x] == 'o' || str[*x] == 'O' ||
+		str[*x] == 'u' || str[*x] == 'U' || str[*x] == 'x' || str[*x] == 'X' ||
+		str[*x] == 'c' || str[*x] == 'C' || str[*x] == '%')
 	{
 		i->cha_r = str[*x];
-		if (str[*x] == 's' && i->modifier != 4)
+		if ((str[*x] == 's' || str[*x] == 'S') && (i->modifier != 6))
 			convert_string(i, input);
-		else if ((str[*x] == 'S') || (str[*x] == 's' && i->modifier == 4))
+		else if ((str[*x] == 'S' || str[*x] == 's') && (i->modifier == 6))
 			convert_wchar(i, input);
 		else if (str[*x] == 'p')
 			convert_point(i, input);

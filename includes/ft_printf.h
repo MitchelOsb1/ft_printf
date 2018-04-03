@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:29 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/02 10:19:50 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:24:04 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int						ft_printf(char const *restrict format, ...);
 int						init_printf(char *str, va_list input, t_utils *i);
 
 void					ft_putc_c(char c, int *cnt_ret);
-void					ft_putc_s(char *str, int *cnt_ret);
+void					ft_putc_s(char const *str, int *cnt_ret);
 void					print_prefix(char *str, int x, int y, t_utils *i);
 void					print_postfix(char *str, int x, t_utils *i);
 void					print_hex_addr(unsigned long long int num, t_utils *i);
@@ -108,8 +108,8 @@ void					print_ptr_addr(t_utils *i);
 void					convert_wchar(t_utils *i, va_list input);
 void					handl_w_c(t_utils *i, va_list input);
 void					handl_w_s(t_utils *i, va_list input);
-void					handl_wp_c(t_utils *i, wchar_t wide);
-void					handl_wp_s(t_utils *i, char *str);
+void					handl_wc_c(t_utils *i, wchar_t wide);
+void					handl_wc_s(t_utils *i, char *str);
 
 void					convert_percent(t_utils *i);
 
