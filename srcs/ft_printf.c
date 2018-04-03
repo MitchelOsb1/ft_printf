@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/02 10:12:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:30:01 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	parse_form(char *str, int *x, va_list input, t_utils *i)
 		*x += 1;
 	while (str[*x] && (str[*x] == '-' || str[*x] == '+' || str[*x] == ' ' ||
 		str[*x] == '#' || ft_isdigit(str[*x]) == 1 || str[*x] == '.' ||
-		str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' ||
-		str[*x] == 'j' || str[*x] == 'z' || str[*x] == 'q'))
+		str[*x] == '*' || str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j'
+		|| str[*x] == 'z' || str[*x] == 'q' || str[*x] == 'w'))
 	{
 		set_flags(str, x, i);
 		set_mods(str, x, i);
@@ -50,8 +50,9 @@ int		init_printf(char *str, va_list input, t_utils *i)
 {
 	int			x;
 	int			ret;
-	static int	y = 0;
+	int			y;
 
+	y = 0;
 	x = 0;
 	ret = 0;
 	while (str[x])

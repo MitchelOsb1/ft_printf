@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 08:58:43 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:53:28 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:27:31 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	handl_w_c(t_utils *i, va_list input)
 	str = c_unitoa(wide);
 	i->len = ft_strlen(str);
 	i->width -= i->len;
-	handl_wp_c(i, wide);
-	ft_strdel(&str);
+	handl_wc_c(i, wide);
+	free(str);
 }
 
 void	handl_w_s(t_utils *i, va_list input)
@@ -42,12 +42,12 @@ void	handl_w_s(t_utils *i, va_list input)
 	str = c_unitoa(*wide++);
 	if ((i->modifier != 6) && (ft_strlen(str) > 1))
 		return ;
-	while (*wide)
+	while (*wide != '\0')
 		str = ft_strjoin(str, c_unitoa(*wide++));
 	i->len = ft_strlen(str);
 	if (i->precision == -69)
 		i->len = 0;
 	i->width -= i->len;
-	handl_wp_s(i, str);
-	ft_strdel(&str);
+	handl_wc_s(i, str);
+	free(str);
 }

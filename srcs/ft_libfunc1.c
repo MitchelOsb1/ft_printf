@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 13:25:33 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:47:26 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:24:53 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putc_c(char c, int *cnt_ret)
 	write(1, &c, 1);
 }
 
-void	ft_putc_s(char *str, int *cnt_ret)
+void	ft_putc_s(char const *str, int *cnt_ret)
 {
 	while (*str)
 		ft_putc_c(*str++, cnt_ret);

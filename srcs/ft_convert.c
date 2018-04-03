@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:37:40 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 09:40:18 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	convert_char(t_utils *i, va_list input)
 	unsigned char cha_r;
 
 	cha_r = va_arg(input, int);
-	if (i->cha_r == 'C')
-		i->width = -2;
+	if (i->cha_r == 'C' && i->modifier == 6)
+		handl_w_c(i, input);
 	c_wpl(i, cha_r);
 }
 
@@ -58,7 +58,7 @@ void	convert_int(t_utils *i, va_list input)
 	str = ft_itoa(x);
 	i->i_nt = x;
 	i->len = ft_strlen(str);
-	ft_strdel(&str);
+	free(str);
 	cha_r = i->zero == 1 ?
 		cha_r = '0' : ' ';
 	sign = '0';

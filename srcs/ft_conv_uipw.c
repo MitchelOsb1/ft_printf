@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:36:23 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:19:55 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*c_unitoa(wint_t wide)
 	char	*str;
 
 	str = ft_strnew(5);
-	if (wide <= 0x80)
-		str[0] = wide;
-	else if (wide <= 0x800)
+	if (wide < 0x80)
+		str[0] = ((wide >> 0) & 0x7F) | 0x00;
+	else if (wide < 0x800)
 	{
 		str[0] = (((wide >> 6) & 0x1F) | 0xC0);
 		str[1] = (((wide >> 0) & 0x3F) | 0x80);
 	}
-	else if (wide <= 0x10000)
+	else if (wide < 0x10000)
 	{
 		str[0] = (((wide >> 12) & 0x0F) | 0xE0);
 		str[1] = (((wide >> 6) & 0x3F) | 0x80);

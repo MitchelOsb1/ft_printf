@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:48:54 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:31:49 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	set_flags(char *str, int *x, t_utils *i)
 void	set_mods(char *str, int *x, t_utils *i)
 {
 	while ((str[*x]) && (str[*x] == 'h' || str[*x] == 'l' || str[*x] == 'j' ||
-		str[*x] == 'z' || str[*x] == 'q'))
+		str[*x] == 'z' || str[*x] == 'q' || str[*x] == 'w'))
 	{
 		if (str[*x] == 'h')
 		{
@@ -106,9 +106,9 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		str[*x] == 'X' || str[*x] == 'c' || str[*x] == 'C' || str[*x] == '%')
 	{
 		i->cha_r = str[*x];
-		if (str[*x] == 's')
+		if (str[*x] == 's' && i->modifier != 4)
 			convert_string(i, input);
-		else if (str[*x] == 'S')
+		else if ((str[*x] == 'S') || (str[*x] == 's' && i->modifier == 4))
 			convert_wchar(i, input);
 		else if (str[*x] == 'p')
 			convert_point(i, input);
