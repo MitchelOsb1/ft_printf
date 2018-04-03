@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 15:16:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 15:41:05 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,10 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 			convert_wchar(i, input);
 		else if (str[*x] == 'p')
 			convert_point(i, input);
-		else if (str[*x] == 'c' || str[*x] == 'C')
+		else if ((str[*x] == 'c' || str[*x] == 'C') && (i->modifier != 6))
 			convert_char(i, input);
+		else if ((str[*x] == 'c' || str[*x] == 'C') && (i->modifier == 6))
+			convert_wchar(i, input);
 		else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
 			convert_int(i, input);
 		else if (str[*x] == 'o' || str[*x] == 'O' || str[*x] == 'x' ||

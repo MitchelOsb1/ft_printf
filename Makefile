@@ -5,7 +5,6 @@ FILES =	ft_printf.c \
 		ft_conv_uipw.c \
 		ft_convert.c \
 		ft_handl_uip.c \
-		ft_handl_wc.c \
 		ft_int.c \
 		ft_libfunc.c \
 		ft_libfunc1.c \
