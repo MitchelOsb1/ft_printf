@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 15:40:13 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/04 13:04:05 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ void	convert_char(t_utils *i, va_list input)
 {
 	unsigned char cha_r;
 
-	cha_r = va_arg(input, int);
-	if (i->cha_r == 'C' && i->modifier == 6)
-		handl_w_c(i, input);
+	cha_r = (unsigned char)va_arg(input, int);
 	c_wpl(i, cha_r);
 }
 

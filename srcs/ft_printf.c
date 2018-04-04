@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 20:27:08 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 10:30:01 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/03 16:24:07 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ int		init_printf(char *str, va_list input, t_utils *i)
 			x++;
 	}
 	print_prefix((char *)str, y, x, i);
-	if (ret < i->count)
-		ret = i->count;
+	ret = ret + x - y;
 	return (ret);
 }
 
