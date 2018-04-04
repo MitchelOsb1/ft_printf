@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 09:24:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 17:12:19 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/04 15:40:07 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	o_wpl(t_utils *i, unsigned long int num)
 		str = c_octoa(num);
 	else
 		str = (NULL);
+	if (str == NULL)
+		return ;
 	i->len = ft_strlen(str);
 	p_num(i, num);
 	handl_ui(i, num);
