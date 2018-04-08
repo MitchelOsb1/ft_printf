@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 15:53:51 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/04 15:49:33 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/04 19:40:55 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,14 @@ void	set_conv(char *str, int *x, va_list input, t_utils *i)
 		str[*x] == 'c' || str[*x] == 'C' || str[*x] == '%')
 	{
 		i->cha_r = str[*x];
-		if ((str[*x] == 's') && i->modifier != 6)
+		if ((str[*x] == 'S' || str[*x] == 's') && i->modifier != 6)
 			convert_string(i, input);
-		else if ((str[*x] == 'S') || (str[*x] == 's' && i->modifier == 6))
+		if ((str[*x] == 'S' || str[*x] == 's') && i->modifier == 6)
+			convert_wchar(i, input);
+		else if ((str[*x] == 'c' || str[*x] == 'C') && i->modifier == 6)
 			convert_wchar(i, input);
 		else if ((str[*x] == 'c' || str[*x] == 'C') && i->modifier != 6)
 			convert_char(i, input);
-		else if ((str[*x] == 'c' || str[*x] == 'C') && i->modifier == 6)
-			convert_wchar(i, input);
 		else if (str[*x] == 'p')
 			convert_point(i, input);
 		else if (str[*x] == 'd' || str[*x] == 'D' || str[*x] == 'i')
