@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 08:58:43 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/04 19:47:36 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 11:07:37 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	convert_wchar(t_utils *i, va_list input)
 {
 	if (i->cha_r == 'C')
 		handl_w_c(i, input);
-	if (i->cha_r == 'S')
+	if (i->cha_r == 'S' || i->cha_r == 's')
 		handl_w_s(i, input);
 }
 

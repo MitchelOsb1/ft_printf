@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 08:49:55 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/03 17:12:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 12:58:22 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ long long int			i_mod(t_utils *i, va_list input)
 		return ((long int)va_arg(input, void*));
 	else if (i->modifier == 3)
 		return ((long long int)va_arg(input, void*));
-	else if (i->modifier == 4)
+	else if (i->modifier == 4 || i->cha_r == 'D')
 		return ((intmax_t)va_arg(input, void*));
 	else if (i->modifier == 5)
 		return ((size_t)va_arg(input, void*));
 	else if (i->modifier == 6)
-		return ((int)va_arg(input, void*));
-	if (i->cha_r == 'd' || i->cha_r == 'i')
-		return ((int)va_arg(input, void*));
-	else
 		return (0);
+	else if (i->cha_r == 'd' || i->cha_r == 'i')
+		return ((int)va_arg(input, void*));
+	return (0);
 }
 
 unsigned long long int	ui_mod(t_utils *i, va_list input)
@@ -49,7 +48,7 @@ unsigned long long int	ui_mod(t_utils *i, va_list input)
 	else if (i->modifier == 5)
 		return ((size_t)va_arg(input, void *));
 	else if (i->modifier == 6)
-		return ((unsigned int)va_arg(input, void *));
+		return (0);
 	if (i->cha_r == 'U' || i->cha_r == 'O')
 		return ((unsigned long long int)va_arg(input, void *));
 	else if (i->cha_r == 'o' || i->cha_r == 'u' || i->cha_r == 'x' ||

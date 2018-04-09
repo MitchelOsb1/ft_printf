@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/01 08:46:33 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 11:37:44 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ char	*ft_strrev(char *str)
 {
 	int		x;
 	int		i;
+	int 	a;
 	char	*tmp;
 
 	i = 0;
 	x = ft_strlen(str);
+	a = x;
 	tmp = ft_strnew(x);
 	x--;
-	ft_bzero(tmp, x);
-	while (str[x])
+	while (str[x] && i < a)
 	{
 		tmp[i] = str[x];
 		x--;
 		i++;
 	}
-	tmp[i] = '\0';
 	return (tmp);
 }
 
@@ -109,11 +109,11 @@ char	*ft_itoa(int n)
 		count++;
 	sign = n < 0 ? 1 : 0;
 	count = n < 0 ? count += 1 : count;
-	if (n == -2147483648)
-		return (str = ft_strdup("-2147483648"));
 	str = ft_strnew(count);
 	if (!str)
 		return (NULL);
+	if (n == -2147483648)
+		return (str = ft_strdup("-2147483648"));
 	if (sign == 1)
 		str[0] = '-';
 	n = n < 0 ? n *= -1 : n;
