@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 15:22:19 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/09 12:58:21 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 20:10:50 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	convert_point(t_utils *i, va_list input)
 	unsigned long long int	num;
 
 	num = va_arg(input, unsigned long long int);
-	str = c_ptoa(num);
+	str = c_hexoa(num, i);
 	handl_p(i, str);
 	free(str);
 }

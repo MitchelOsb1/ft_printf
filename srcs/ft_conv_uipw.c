@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 07:30:05 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/09 10:56:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 15:03:44 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,14 @@ char	*c_ptoa(unsigned long int num)
 	x = 0;
 	str = ft_strnew(12);
 	h_lower = "0123456789abcdef";
-	if (num < x)
-		return (0);
 	if (num == 0)
-		str[x++] = '0';
-	while (num)
+		str[x] = '0';
+	while (num != 0)
 	{
 		str[x++] = h_lower[num % 16];
 		num = num / 16;
 	}
-	str[x] = '\0';
-	str = ft_strrev(str);
-	return (str);
+	return (ft_strrev(str));
 }
 
 char	*c_octoa(unsigned long int num)
@@ -96,7 +92,7 @@ char	*c_hexoa(unsigned long int num, t_utils *i)
 	h_upper = "0123456789ABCDEF";
 	if (num == 0)
 		str[x] = '0';
-	if (i->cha_r == 'x')
+	if (i->cha_r == 'x' || i->cha_r == 'p')
 		while (num)
 		{
 			str[x++] = h_lower[num % 16];
