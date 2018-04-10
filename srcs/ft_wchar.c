@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 08:58:43 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/09 11:07:37 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 20:50:34 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	handl_wc_c(t_utils *i, wchar_t wide)
 
 	ptr = c_unitoa(wide);
 	while (i->width-- > 0 && i->minus == 0)
-		ft_putc_c(' ', &(i->count));;
+		ft_putc_c(' ', &(i->count));
 	ft_putc_s(ptr, &(i->count));
 	while (i->width-- > 0 && i->minus == 1)
 		ft_putc_c(' ', &(i->count));
@@ -75,5 +75,5 @@ void	handl_w_s(t_utils *i, va_list input)
 		i->len = 0;
 	i->width -= i->len;
 	handl_wc_s(i, str);
- 	ft_strdel(&str);
+	ft_strdel(&str);
 }

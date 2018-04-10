@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 09:54:46 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/09 13:06:17 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 20:51:26 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrev(char *str)
 {
 	int		x;
 	int		i;
-	int 	a;
+	int		a;
 	char	*tmp;
 
 	i = 0;

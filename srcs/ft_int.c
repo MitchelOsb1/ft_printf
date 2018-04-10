@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:20:03 by mosborne          #+#    #+#             */
-/*   Updated: 2018/04/09 20:22:56 by mosborne         ###   ########.fr       */
+/*   Updated: 2018/04/09 20:51:10 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	i2_wpl(t_utils *i, char sign, int w)
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 &&
 		i->space == 0)
 		while (i->width-- > 0)
-			ft_putc_c(buff, &(i->count)); //buff
+			ft_putc_c(buff, &(i->count));
 	if (w > i->len && i->minus == false && i->zero == true && i->i_nt > 0 &&
 		i->space == 1)
 		while (i->width-- > 0)
